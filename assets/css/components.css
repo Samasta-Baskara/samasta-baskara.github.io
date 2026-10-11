@@ -242,9 +242,7 @@
   outline-offset: 2px;
 }
 
-.replay:hover {
-  transform: rotate(45deg);
-}
+.replay:hover { transform: none; }
 
 pre {
   margin: 0;
@@ -348,11 +346,11 @@ code, .inline {
   min-width: 236px;
   height: 44px;
   border-radius: var(--radius-pill);
-  background: rgba(8, 11, 10, 0.92);
-  -webkit-backdrop-filter: blur(20px) saturate(190%);
-  backdrop-filter: blur(20px) saturate(190%);
-  border: 1px solid rgba(0, 214, 143, 0.3);
-  box-shadow: 0 10px 32px rgba(0, 0, 0, 0.5), 0 0 1px rgba(255, 255, 255, 0.12) inset;
+  background: linear-gradient(180deg, rgba(0, 214, 143, 0.12), rgba(0, 214, 143, 0.04)), rgba(9, 13, 12, 0.55);
+  -webkit-backdrop-filter: blur(34px) saturate(200%);
+  backdrop-filter: blur(34px) saturate(200%);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.45), 0 1px 0 rgba(255, 255, 255, 0.14) inset, 0 0 24px rgba(0, 214, 143, 0.10) inset;
   overflow: hidden;
   transition: width 0.42s cubic-bezier(0.16, 1, 0.3, 1),
               height 0.42s cubic-bezier(0.16, 1, 0.3, 1),
@@ -362,16 +360,16 @@ code, .inline {
 }
 
 [data-theme="light"] .island {
-  background: rgba(245, 248, 246, 0.95);
-  border-color: rgba(0, 158, 105, 0.3);
-  box-shadow: 0 10px 28px rgba(13, 20, 16, 0.14);
+  background: linear-gradient(180deg, rgba(0, 214, 143, 0.14), rgba(0, 214, 143, 0.05)), rgba(255, 255, 255, 0.66);
+  border-color: rgba(255, 255, 255, 0.65);
+  box-shadow: 0 18px 40px rgba(13, 20, 16, 0.12), 0 1px 0 rgba(255, 255, 255, 0.85) inset;
 }
 
 .island.expanded {
   width: min(calc(100vw - 28px), 430px);
   height: auto;
   border-radius: 28px;
-  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.75), 0 0 0 1px rgba(0, 214, 143, 0.4);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.55), 0 1px 0 rgba(255, 255, 255, 0.16) inset, 0 0 0 1px rgba(255, 255, 255, 0.12);
   cursor: default;
 }
 
@@ -412,12 +410,7 @@ code, .inline {
   inset: -4px;
   border-radius: 50%;
   border: 1.5px solid var(--accent-emerald);
-  animation: islandPulse 2s cubic-bezier(0, 0.2, 0.8, 1) infinite;
-}
-
-@keyframes islandPulse {
-  0%   { transform: scale(0.6); opacity: 1; }
-  100% { transform: scale(2.4); opacity: 0; }
+  border-color: rgba(0, 214, 143, 0.35);
 }
 
 .island-pill-badge {
@@ -1613,4 +1606,105 @@ code.inline {
 @keyframes confettiFall {
   0%   { transform: translateY(0) rotate(0deg); opacity: 1; }
   100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+}
+
+/* ==========================================================================
+   MOBILE CARD STACK: PROGRESSIVE REVEAL/FOLD + RESPONSIVE SAFETY NET
+   KEEP AT END OF FILE: this stylesheet loads last, so these rules
+   override the base component rules above at equal specificity.
+   (The old media queries in style.css are dead — components.css loads
+   after style.css and re-declares .features/.bento-grid/etc.)
+   ========================================================================== */
+
+.reveal-hint {
+  display: none;
+  margin-top: 14px;
+  padding: 9px 12px;
+  border-radius: 10px;
+  border: 1px dashed rgba(0, 214, 143, 0.45);
+  background: rgba(0, 214, 143, 0.07);
+  color: var(--accent-emerald);
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+/* Stack controls: Buka semua / Lipat semua (mobile only — see media query) */
+.pr-controls {
+  display: none;
+  gap: 10px;
+  margin: 0 0 16px;
+}
+
+.pr-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 9px 16px;
+  border-radius: 999px;
+  border: 1px solid rgba(0, 214, 143, 0.4);
+  background: rgba(0, 214, 143, 0.08);
+  color: var(--accent-emerald);
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
+}
+
+.pr-btn:hover { background: rgba(0, 214, 143, 0.16); border-color: var(--accent-emerald); }
+.pr-btn:active { transform: scale(0.96); }
+.pr-btn[hidden] { display: none; }
+
+.pr-btn.fold {
+  border-color: rgba(212, 175, 55, 0.45);
+  background: rgba(212, 175, 55, 0.08);
+  color: var(--accent-gold);
+}
+.pr-btn.fold:hover { background: rgba(212, 175, 55, 0.16); border-color: var(--accent-gold); }
+
+/* Terminal: wrapped text + responsive font — readable on any device, no side-scroll */
+#terminal-pre {
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  font-size: clamp(10.5px, 2.6vw, 13.5px);
+}
+
+/* Terminal telemetry wraps instead of horizontal-scrolling off the card */
+.terminal-telemetry { flex-wrap: wrap; }
+
+@media (max-width: 820px) {
+  /* Mobile nav island (base rule above sets display:none) */
+  .island-wrapper { display: flex; }
+
+  /* Stack controls above each card stack */
+  .pr-controls { display: flex; flex-wrap: wrap; }
+
+  /* Stacked sections: one comfortable column, anchors clear the island */
+  .features, .bento-grid, .attack-grid, .benchmarks, .showcase-grid {
+    grid-template-columns: 1fr;
+  }
+  .features, .bento-grid, .attack-grid, .benchmarks { scroll-margin-top: 74px; }
+  .bento-card.span-5, .bento-card.span-7 { grid-column: auto; }
+
+  /* Progressive reveal: first card only, tap to reveal the next */
+  .pr-item { display: none; }
+  .pr-item.is-revealed {
+    display: block;
+    animation: prReveal 0.45s cubic-bezier(0.22, 0.61, 0.36, 1) both;
+  }
+  .bento-card.pr-item.is-revealed { display: flex; }
+
+  .pr-item.can-reveal { cursor: pointer; }
+  .pr-item.can-reveal .reveal-hint { display: block; }
+}
+
+@keyframes prReveal {
+  from { opacity: 0; transform: translateY(16px) scale(0.985); }
+  to   { opacity: 1; transform: none; }
 }

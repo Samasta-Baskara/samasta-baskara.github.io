@@ -70,12 +70,6 @@
           </div>
           <button class="island-close-btn" id="island-close-btn" type="button" aria-label="Close Dynamic Island">✕</button>
         </div>
-        <div class="island-telemetry">
-          <span class="island-tele-badge">⚡ 15 FPS TUI</span>
-          <span class="island-tele-badge">🛡️ TLS JA3/JA4</span>
-          <span class="island-tele-badge">🎭 10 Playwright</span>
-          <span class="island-tele-badge">🔍 7 Modes</span>
-        </div>
         <nav class="island-nav-grid" aria-label="Dynamic Island Links">
           <a href="#features" class="island-nav-item"><span class="ini-icon" aria-hidden="true">⌘</span><span data-i18n="nav.features">Features</span></a>
           <a href="#architecture" class="island-nav-item"><span class="ini-icon" aria-hidden="true">📐</span><span data-i18n="nav.architecture">Architecture</span></a>
@@ -221,7 +215,7 @@
         </div>
         <div class="features stagger">
           <!-- Card 1: 01 // NETWORK (Interactive Collapsible Card) -->
-          <article class="feature collapsible-card is-expanded" id="card-feature-1">
+          <article class="feature collapsible-card is-expanded pr-item is-revealed" id="card-feature-1">
             <button class="card-header-btn" type="button" aria-expanded="true" aria-controls="card-content-1" id="card-header-1">
               <div class="feature-top">
                 <span class="feature-tag">01 // NETWORK</span>
@@ -245,7 +239,7 @@
               </div>
             </div>
           </article>
-          <article class="feature">
+          <article class="feature pr-item">
             <div class="feature-top">
               <span class="feature-tag">02 // TLS SPOOF</span>
               <div class="feature-icon" aria-hidden="true">◎</div>
@@ -253,7 +247,7 @@
             <h3 data-i18n="features.f2.title">TLS impersonation</h3>
             <p data-i18n="features.f2.desc">JA3/JA4 fingerprint spoofing via curl_cffi, so traffic presents as a real browser to anti-bot defenses and WAFs.</p>
           </article>
-          <article class="feature">
+          <article class="feature pr-item">
             <div class="feature-top">
               <span class="feature-tag">03 // GO BRIDGE</span>
               <div class="feature-icon" aria-hidden="true">⌁</div>
@@ -261,7 +255,7 @@
             <h3 data-i18n="features.f3.title">Go native bridge</h3>
             <p data-i18n="features.f3.desc">Hands fuzzing straight to Go binaries — subfinder, httpx, katana, nuclei, dalfox, gau — for native throughput.</p>
           </article>
-          <article class="feature">
+          <article class="feature pr-item">
             <div class="feature-top">
               <span class="feature-tag">04 // PLAYWRIGHT</span>
               <div class="feature-icon" aria-hidden="true">▣</div>
@@ -269,7 +263,7 @@
             <h3 data-i18n="features.f4.title">Playwright verification</h3>
             <p data-i18n="features.f4.desc">Ten browser-based modules confirm findings live: DOM XSS, CSRF, postMessage leaks, clickjacking, and more.</p>
           </article>
-          <article class="feature">
+          <article class="feature pr-item">
             <div class="feature-top">
               <span class="feature-tag">05 // RICH TUI</span>
               <div class="feature-icon" aria-hidden="true">≡</div>
@@ -277,7 +271,7 @@
             <h3 data-i18n="features.f5.title">Tactical TUI dashboard</h3>
             <p data-i18n="features.f5.desc">A three-column terminal view refreshed at 15 FPS: pipeline stage, request-rate sparkline, and finding severity.</p>
           </article>
-          <article class="feature">
+          <article class="feature pr-item">
             <div class="feature-top">
               <span class="feature-tag">06 // POLICY AUDIT</span>
               <div class="feature-icon" aria-hidden="true">✓</div>
@@ -285,7 +279,7 @@
             <h3 data-i18n="features.f6.title">Policy &amp; audit engine</h3>
             <p data-i18n="features.f6.desc">Scope locks, request budgets, and a replayable .jsonl audit log that reconstructs every request as curl.</p>
           </article>
-          <article class="feature">
+          <article class="feature pr-item">
             <div class="feature-top">
               <span class="feature-tag">07 // STATE SNAPSHOT</span>
               <div class="feature-icon" aria-hidden="true">⟳</div>
@@ -306,7 +300,7 @@
         </div>
         <div class="bento-grid stagger">
           <!-- Bento Card 1: Entry Points -->
-          <div class="bento-card span-5">
+          <div class="bento-card span-5 pr-item is-revealed">
             <div class="bento-head">
               <span class="bento-badge">01 // INGESTION</span>
               <span class="bento-icon" aria-hidden="true">⌘</span>
@@ -322,7 +316,7 @@
           </div>
 
           <!-- Bento Card 2: Core Engine (Hero Bento) -->
-          <div class="bento-card span-7 hero">
+          <div class="bento-card span-7 hero pr-item">
             <div class="bento-head">
               <span class="bento-badge">02 // DUAL-ENGINE RUNTIME</span>
               <span class="bento-icon" aria-hidden="true">⚡</span>
@@ -339,7 +333,7 @@
           </div>
 
           <!-- Bento Card 3: Security Modules Suite -->
-          <div class="bento-card span-7">
+          <div class="bento-card span-7 pr-item">
             <div class="bento-head">
               <span class="bento-badge">03 // ASSAULT SUITE</span>
               <span class="bento-icon" aria-hidden="true">🛡️</span>
@@ -356,7 +350,7 @@
           </div>
 
           <!-- Bento Card 4: Output & State -->
-          <div class="bento-card span-5">
+          <div class="bento-card span-5 pr-item">
             <div class="bento-head">
               <span class="bento-badge">04 // DELIVERABLES</span>
               <span class="bento-icon" aria-hidden="true">📊</span>
@@ -411,7 +405,7 @@ python3 verd.py --resume outputs/target.com.state</pre>
         </div>
         <div class="attack-grid stagger">
           <!-- Card 1: Injections & Server-Side -->
-          <div class="attack-card">
+          <div class="attack-card pr-item is-revealed">
             <div class="attack-head">
               <div class="attack-title-wrap">
                 <span class="attack-icon" aria-hidden="true">⚡</span>
@@ -429,7 +423,7 @@ python3 verd.py --resume outputs/target.com.state</pre>
           </div>
 
           <!-- Card 2: Web Cache & HTTP Desync -->
-          <div class="attack-card">
+          <div class="attack-card pr-item">
             <div class="attack-head">
               <div class="attack-title-wrap">
                 <span class="attack-icon" aria-hidden="true">☣️</span>
@@ -447,7 +441,7 @@ python3 verd.py --resume outputs/target.com.state</pre>
           </div>
 
           <!-- Card 3: Client-Side & DOM Sinks -->
-          <div class="attack-card">
+          <div class="attack-card pr-item">
             <div class="attack-head">
               <div class="attack-title-wrap">
                 <span class="attack-icon" aria-hidden="true">🎭</span>
@@ -466,7 +460,7 @@ python3 verd.py --resume outputs/target.com.state</pre>
           </div>
 
           <!-- Card 4: Infra & WAF Origin Hunter -->
-          <div class="attack-card">
+          <div class="attack-card pr-item">
             <div class="attack-head">
               <div class="attack-title-wrap">
                 <span class="attack-icon" aria-hidden="true">🛰️</span>
@@ -493,22 +487,22 @@ python3 verd.py --resume outputs/target.com.state</pre>
           <h2 data-i18n="bench.title">Built for speed and stability.</h2>
         </div>
         <div class="benchmarks stagger">
-          <div class="bench-card">
+          <div class="bench-card pr-item is-revealed">
             <div class="bench-icon" aria-hidden="true">⚡</div>
             <h3 data-i18n="bench.b1.title">Dual-Engine Throughput</h3>
             <p data-i18n="bench.b1.desc">AsyncIO Python + Go native binaries working in parallel for maximum scan speed.</p>
           </div>
-          <div class="bench-card">
+          <div class="bench-card pr-item">
             <div class="bench-icon" aria-hidden="true">◎</div>
             <h3 data-i18n="bench.b2.title">15 FPS Live Dashboard</h3>
             <p data-i18n="bench.b2.desc">Real-time tactical TUI with sparkline RPS, pipeline status, and hardware metrics.</p>
           </div>
-          <div class="bench-card">
+          <div class="bench-card pr-item">
             <div class="bench-icon" aria-hidden="true">⟡</div>
             <h3 data-i18n="bench.b3.title">Zero Memory Leak</h3>
             <p data-i18n="bench.b3.desc">SharedBrowserPool singleton with isolated contexts prevents Playwright memory bloat.</p>
           </div>
-          <div class="bench-card">
+          <div class="bench-card pr-item">
             <div class="bench-icon" aria-hidden="true">⇄</div>
             <h3 data-i18n="bench.b4.title">HTTP/2 Multiplexing</h3>
             <p data-i18n="bench.b4.desc">Concurrent streams over a single TCP connection via httpx for efficient network usage.</p>

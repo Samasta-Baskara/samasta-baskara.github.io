@@ -56,6 +56,9 @@
       "features.f6.desc": "Scope locks, request budgets, and a replayable .jsonl audit log that reconstructs every request as curl.",
       "features.f7.title": "State management",
       "features.f7.desc": "Multi-token session handling (Bearer/Cookie jar) and save/resume scan checkpoints via .state files.",
+      "features.revealHint": "Tap to reveal the next module",
+      "ui.openAll": "Show all",
+      "ui.foldAll": "Fold all",
       "arch.eyebrow": "System design",
       "arch.title": "Four-layer modular architecture.",
       "arch.intro": "A deterministic pipeline from CLI entry to verified findings, with cross-cutting policy enforcement.",
@@ -165,6 +168,9 @@
       "features.f6.desc": "Penguncian scope, budget request, dan log audit .jsonl yang bisa direplay ulang menjadi perintah curl.",
       "features.f7.title": "Manajemen state",
       "features.f7.desc": "Pengelolaan multi-token sesi (Bearer/Cookie jar) dan mekanisme save/resume checkpoint pemindaian via file .state.",
+      "features.revealHint": "Ketuk untuk tampilkan modul berikutnya",
+      "ui.openAll": "Buka semua",
+      "ui.foldAll": "Lipat semua",
       "arch.eyebrow": "Desain sistem",
       "arch.title": "Arsitektur modular empat lapisan.",
       "arch.intro": "Pipeline deterministik dari entri CLI hingga temuan terverifikasi, dengan penegakan kebijakan lintas-lapisan.",
@@ -444,6 +450,9 @@
     var card = headerBtn.closest(".collapsible-card");
     if (!card) return;
 
+    // Mobile (≤820px): header tap drives the progressive reveal, not collapse
+    if (window.matchMedia("(max-width: 820px)").matches) return;
+
     var willExpand = !card.classList.contains("is-expanded");
     if (willExpand) {
       card.classList.add("is-expanded");
@@ -453,6 +462,118 @@
       headerBtn.setAttribute("aria-expanded", "false");
     }
   });
+
+  /* ---------- Progressive card stack reveal/fold (mobile, ≤820px) ----------
+     Stacked sections (features, system design, what it finds, performance)
+     show the first card only; tapping any revealed card reveals the next
+     one (1→N). "Buka semua" opens the rest, "Lipat semua" folds back to the
+     first card (N→1). Revealed cards always stay visible — not an accordion.
+     Desktop keeps the normal grid. */
+  (function () {
+    var GRIDS = [".features", ".bento-grid", ".attack-grid", ".benchmarks"];
+    var mq = window.matchMedia("(max-width: 820px)");
+    var stacks = [];
+
+    GRIDS.forEach(function (sel) {
+      var grid = $(sel);
+      if (!grid) return;
+      var cards = Array.prototype.slice.call(grid.children);
+      if (!cards.length) return;
+
+      if (!cards.some(function (c) { return c.classList.contains("is-revealed"); })) {
+        cards[0].classList.add("is-revealed");
+      }
+
+      // i18n hint per card (injected before the first translate() call)
+      cards.forEach(function (c) {
+        var h = document.createElement("span");
+        h.className = "reveal-hint";
+        h.setAttribute("data-i18n", "features.revealHint");
+        h.textContent = "Tap to reveal the next module";
+        c.appendChild(h);
+      });
+
+      // Control bar above the stack: open all / fold all
+      var bar = document.createElement("div");
+      bar.className = "pr-controls";
+      bar.innerHTML =
+        '<button type="button" class="pr-btn open" data-i18n="ui.openAll">Show all</button>' +
+        '<button type="button" class="pr-btn fold" data-i18n="ui.foldAll">Fold all</button>';
+      grid.parentNode.insertBefore(bar, grid);
+
+      var openBtn = bar.querySelector(".open");
+      var foldBtn = bar.querySelector(".fold");
+
+      function revealedCount() {
+        return cards.filter(function (c) { return c.classList.contains("is-revealed"); }).length;
+      }
+      function frontier() {
+        var f = null;
+        cards.forEach(function (c) { if (c.classList.contains("is-revealed")) f = c; });
+        return f;
+      }
+      function update() {
+        cards.forEach(function (c) { c.classList.remove("can-reveal"); });
+        if (mq.matches) {
+          var f = frontier();
+          if (f) {
+            var i = cards.indexOf(f);
+            if (i < cards.length - 1) f.classList.add("can-reveal");
+          }
+        }
+        var n = revealedCount();
+        openBtn.hidden = n >= cards.length;
+        foldBtn.hidden = n <= 1;
+      }
+      function revealNext() {
+        var f = frontier();
+        var i = f ? cards.indexOf(f) : -1;
+        if (i < 0 || i + 1 >= cards.length) return;
+        var next = cards[i + 1];
+        next.classList.add("is-revealed");
+        update();
+        var r = next.getBoundingClientRect();
+        if (r.bottom > window.innerHeight - 40) {
+          next.scrollIntoView({ block: "nearest", behavior: "smooth" });
+        }
+      }
+
+      cards.forEach(function (c) {
+        c.addEventListener("click", function () {
+          if (!mq.matches) return;
+          if (!c.classList.contains("is-revealed")) return;
+          revealNext();
+        });
+      });
+
+      openBtn.addEventListener("click", function () {
+        var step = 0;
+        cards.forEach(function (c) {
+          if (c.classList.contains("is-revealed")) return;
+          var d = step++ * 70;
+          setTimeout(function () { c.classList.add("is-revealed"); update(); }, d);
+        });
+      });
+
+      foldBtn.addEventListener("click", function () {
+        cards.forEach(function (c, i) {
+          if (i > 0) c.classList.remove("is-revealed");
+        });
+        update();
+        grid.scrollIntoView({ block: "start", behavior: "smooth" });
+      });
+
+      stacks.push({ update: update });
+      update();
+    });
+
+    function updateAll() {
+      stacks.forEach(function (s) { s.update(); });
+    }
+    if (mq.addEventListener) mq.addEventListener("change", updateAll);
+    else if (mq.addListener) mq.addListener(updateAll);
+    updateAll();
+  })();
 
   // Initial translation call
   translate(lang);

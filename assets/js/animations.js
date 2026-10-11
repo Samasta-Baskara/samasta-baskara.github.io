@@ -75,6 +75,20 @@
     '<span class="dim">audit summary: 2 Critical · 5 High · 1 Informational</span>',
     '<span class="dim">deliverables: outputs/example.com/audit.jsonl & report.html</span>',
     '',
+    '<span class="dim"># all supported commands</span>',
+    '<span class="prompt">$</span> ./snipe target.com <span class="dim"># interactive TUI launcher</span>',
+    '<span class="prompt">$</span> ./snipe 5 target.com -s -p socks5://127.0.0.1:9050 <span class="dim"># stealth + SOCKS5 proxy</span>',
+    '<span class="prompt">$</span> python3 verd.py example.com --dry-run <span class="dim"># validate scope, no traffic</span>',
+    '<span class="prompt">$</span> python3 verd.py example.com --passive <span class="dim"># GET/HEAD/OPTIONS only</span>',
+    '<span class="prompt">$</span> python3 verd.py example.com --recon <span class="dim"># subdomain mapping</span>',
+    '<span class="prompt">$</span> python3 verd.py example.com --origin <span class="dim"># WAF origin hunter</span>',
+    '<span class="prompt">$</span> python3 verd.py example.com --crawl <span class="dim"># katana + gau crawl</span>',
+    '<span class="prompt">$</span> python3 verd.py example.com --assault <span class="dim"># SQLi latency + SSRF callbacks</span>',
+    '<span class="prompt">$</span> python3 verd.py example.com --poison <span class="dim"># cache poisoning probes</span>',
+    '<span class="prompt">$</span> python3 verd.py example.com --browser <span class="dim"># playwright verification</span>',
+    '<span class="prompt">$</span> python3 verd.py example.com --full <span class="dim"># end-to-end pipeline</span>',
+    '<span class="prompt">$</span> python3 verd.py --resume outputs/example.com.state <span class="dim"># resume interrupted scan</span>',
+    '',
     '<span class="prompt">$</span> <span class="dim blink">_</span>'
   ];
 
@@ -120,7 +134,7 @@
     }
 
     if (currentLineIdx < allTerminalLines.length) {
-      var delay = currentLineIdx === 1 ? 240 : (currentLineIdx === 2 ? 140 : 45);
+      var delay = currentLineIdx === 1 ? 300 : (currentLineIdx === 2 ? 180 : 120);
       streamTimer = setTimeout(renderTerminalStep, delay);
     } else {
       isRunning = false;
