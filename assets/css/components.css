@@ -145,11 +145,15 @@
 .terminal {
   position: relative;
   overflow: hidden;
-  border: 1px solid var(--border-strong);
+  border: 1px solid var(--border-gold, #51421F);
   border-radius: var(--radius);
-  background: var(--bg-solid-code);
+  background: var(--bg-solid-code, #0b0d0c);
   color: #e3ede6;
-  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5), 0 0 32px var(--emerald-glow);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.65), 0 0 24px rgba(212, 175, 55, 0.08);
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  max-width: 100%;
 }
 
 .terminal::after {
@@ -166,9 +170,17 @@
   align-items: center;
   gap: 7px;
   height: 42px;
+  min-height: 42px;
   padding: 0 15px;
-  border-bottom: 1px solid var(--border-subtle);
-  background: #111814;
+  border-bottom: 1px solid var(--border-gold, #51421F);
+  background: #111111;
+  user-select: none;
+}
+
+.terminal-dots {
+  display: flex;
+  align-items: center;
+  gap: 7px;
 }
 
 .dot {
@@ -190,19 +202,47 @@
   letter-spacing: 0.05em;
 }
 
-.replay {
+.terminal-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
   margin-left: 10px;
-  border: 0;
-  background: transparent;
-  color: var(--text-secondary);
-  font-size: 15px;
+}
+
+.term-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  padding: 0;
+  border: 1px solid var(--border-gold, #51421F);
+  border-radius: 6px;
+  background: rgba(23, 23, 23, 0.85);
+  color: var(--accent-gold, #D4AF37);
+  font-size: 12px;
   line-height: 1;
   cursor: pointer;
-  transition: color 0.2s, transform 0.2s;
+  transition: all 0.2s ease;
+}
+
+.term-btn:hover {
+  background: rgba(212, 175, 55, 0.2);
+  border-color: var(--accent-gold, #D4AF37);
+  color: #FFF1A8;
+  transform: scale(1.06);
+}
+
+.term-btn:active {
+  transform: scale(0.96);
+}
+
+.term-btn:focus-visible {
+  outline: 2px solid var(--accent-gold, #D4AF37);
+  outline-offset: 2px;
 }
 
 .replay:hover {
-  color: var(--accent-emerald);
   transform: rotate(45deg);
 }
 
@@ -213,6 +253,35 @@ pre {
   font: 12px/1.9 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
   white-space: pre;
   color: #d1ded6;
+}
+
+#terminal-pre {
+  margin: 0;
+  padding: 20px 22px;
+  height: 380px;
+  min-height: 380px;
+  max-height: 380px;
+  overflow-y: auto;
+  overflow-x: auto;
+  font: 12px/1.85 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  white-space: pre;
+  color: #d1ded6;
+  box-sizing: border-box;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border-gold, #51421F) transparent;
+  min-width: 0;
+  max-width: 100%;
+}
+
+@media (max-width: 600px) {
+  #terminal-pre {
+    height: 320px;
+    min-height: 320px;
+    max-height: 320px;
+    padding: 14px 16px;
+    font-size: 11px;
+    line-height: 1.75;
+  }
 }
 
 code, .inline {
@@ -238,7 +307,7 @@ code, .inline {
 .terminal-telemetry {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   gap: 12px;
   padding: 9px 18px;
   border-top: 1px solid var(--border-subtle);
@@ -249,6 +318,8 @@ code, .inline {
   overflow-x: auto;
   white-space: nowrap;
   scrollbar-width: none;
+  min-width: 0;
+  max-width: 100%;
 }
 
 .terminal-telemetry::-webkit-scrollbar { display: none; }
@@ -549,6 +620,10 @@ code, .inline {
   gap: 18px;
 }
 
+.features > * {
+  min-width: 0;
+}
+
 .feature {
   position: relative;
   padding: 24px;
@@ -619,6 +694,160 @@ code, .inline {
   color: var(--text-secondary);
   font-size: 13.5px;
   line-height: 1.6;
+}
+
+/* ==========================================================================
+   COLLAPSIBLE CARDS (Bold Black & Gold + Dark Glassmorphism)
+   ========================================================================== */
+
+.feature.collapsible-card {
+  padding: 0;
+  border: 1px solid var(--border-gold, #51421F);
+  background: var(--glass-bg, rgba(23, 23, 23, 0.88));
+  backdrop-filter: var(--glass-blur, blur(10px) saturate(180%));
+  -webkit-backdrop-filter: var(--glass-blur, blur(10px) saturate(180%));
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.45);
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease, background 0.25s ease;
+  overflow: hidden;
+}
+
+@supports not (backdrop-filter: blur(10px)) {
+  .feature.collapsible-card {
+    background: #171717;
+  }
+}
+
+.feature.collapsible-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(212, 175, 55, 0.6);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.55), 0 0 14px rgba(212, 175, 55, 0.12);
+}
+
+.feature.collapsible-card.is-expanded {
+  border-color: var(--accent-gold, #D4AF37);
+  box-shadow: 0 12px 34px rgba(0, 0, 0, 0.65), 0 0 20px rgba(212, 175, 55, 0.18);
+  background: rgba(23, 23, 23, 0.95);
+}
+
+.card-header-btn {
+  display: block;
+  width: 100%;
+  padding: 22px 24px 16px;
+  background: transparent;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  color: inherit;
+  font: inherit;
+  transition: background-color 0.2s ease;
+  user-select: none;
+}
+
+.card-header-btn:hover {
+  background: rgba(212, 175, 55, 0.04);
+}
+
+.card-header-btn:focus-visible {
+  outline: 2px solid var(--accent-gold, #D4AF37);
+  outline-offset: -2px;
+}
+
+.card-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.card-chevron {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background: rgba(17, 17, 17, 0.7);
+  border: 1px solid var(--border-gold, #51421F);
+  color: var(--accent-gold, #D4AF37);
+  transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.feature.collapsible-card:not(.is-expanded) .card-chevron {
+  transform: rotate(-90deg);
+}
+
+.feature.collapsible-card.is-expanded .card-chevron {
+  transform: rotate(0deg);
+  background: rgba(212, 175, 55, 0.16);
+  border-color: var(--accent-gold, #D4AF37);
+  color: var(--gold-highlight, #FFF1A8);
+}
+
+.feature.collapsible-card h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text-white, #F5F5F5);
+  transition: color 0.2s ease;
+}
+
+.feature.collapsible-card.is-expanded h3 {
+  color: var(--gold-highlight, #FFF1A8);
+}
+
+/* Smooth CSS Grid Collapse Animation */
+.card-collapse-body {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.feature.collapsible-card.is-expanded .card-collapse-body {
+  grid-template-rows: 1fr;
+}
+
+.card-inner-content {
+  overflow: hidden;
+  padding: 0 24px 22px;
+}
+
+.card-inner-content p {
+  margin: 0 0 14px;
+  color: var(--text-secondary, #B8B8B8);
+  font-size: 13.5px;
+  line-height: 1.6;
+}
+
+.card-extra-specs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding-top: 12px;
+  border-top: 1px dashed rgba(81, 66, 31, 0.6);
+}
+
+.spec-pill {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10.5px;
+  font-weight: 600;
+  color: var(--accent-gold, #D4AF37);
+  background: rgba(212, 175, 55, 0.08);
+  border: 1px solid rgba(81, 66, 31, 0.7);
+  padding: 3px 8px;
+  border-radius: 6px;
+  letter-spacing: 0.03em;
+}
+
+@media (max-width: 600px) {
+  .card-header-btn {
+    padding: 16px 18px 12px;
+  }
+  .feature.collapsible-card:not(.is-expanded) .card-header-btn {
+    padding-bottom: 16px;
+  }
+  .card-inner-content {
+    padding: 0 18px 18px;
+  }
 }
 
 /* ==========================================================================

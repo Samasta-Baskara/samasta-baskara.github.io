@@ -432,6 +432,28 @@
     });
   });
 
+  /* ---------- Interactive Collapsible Cards (Phase 1) ---------- */
+  document.addEventListener("click", function (e) {
+    var headerBtn = e.target.closest(".card-header-btn");
+    if (!headerBtn) return;
+
+    // Ignore clicks on nested links or buttons inside the header
+    var interactiveEl = e.target.closest("a, button:not(.card-header-btn), [data-copy]");
+    if (interactiveEl) return;
+
+    var card = headerBtn.closest(".collapsible-card");
+    if (!card) return;
+
+    var willExpand = !card.classList.contains("is-expanded");
+    if (willExpand) {
+      card.classList.add("is-expanded");
+      headerBtn.setAttribute("aria-expanded", "true");
+    } else {
+      card.classList.remove("is-expanded");
+      headerBtn.setAttribute("aria-expanded", "false");
+    }
+  });
+
   // Initial translation call
   translate(lang);
 })();

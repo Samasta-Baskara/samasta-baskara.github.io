@@ -6,44 +6,49 @@
 :root {
   color-scheme: dark;
 
-  /* --- Obsidian Black & Dark Forest Core --- */
-  --bg-primary: #080B0A;
-  --bg-surface: #151D19;
-  --bg-surface-elevated: #1a241f;
-  --bg-soft: #121915;
-  --bg-solid-code: #0b100d;
+  /* --- Bold Black & Gold Core Palette (Phase 2) --- */
+  --bg-obsidian: #080808;
+  --bg-charcoal: #111111;
+  --bg-card: #171717;
+  --bg-primary: var(--bg-obsidian);
+  --bg-surface: var(--bg-card);
+  --bg-surface-elevated: #1e1e1e;
+  --bg-soft: #141414;
+  --bg-solid-code: #0b0d0c;
 
   /* --- Typography --- */
-  --text-primary: #F0F3F0;
-  --text-secondary: #A5ACA8;
-  --text-muted: #727e77;
+  --text-white: #F5F5F5;
+  --text-primary: #F5F5F5;
+  --text-secondary: #B8B8B8;
+  --text-muted: #7d7d7d;
 
   /* --- Borders & Dividers --- */
-  --border-subtle: #304137;
-  --border-strong: #3d5246;
+  --border-subtle: #302816;
+  --border-strong: #51421F;
+  --border-gold: #51421F;
 
-  /* --- Primary Accent: Emerald Neon --- */
+  /* --- Primary Accent: Bold Metallic Gold --- */
+  --accent-gold: #D4AF37;
+  --accent-gold-bright: #FFD700;
+  --gold-dark: #8C6818;
+  --gold-highlight: #FFF1A8;
+  --gold-gradient: linear-gradient(135deg, #8C6818 0%, #D4AF37 38%, #FFF1A8 62%, #D4AF37 100%);
+  --gold-glow: rgba(212, 175, 55, 0.28);
+  --gold-glow-strong: rgba(212, 175, 55, 0.5);
+
+  /* --- Security Status Indicator: Emerald Neon --- */
   --accent-emerald: #00D68F;
   --accent-emerald-hover: #1affab;
   --accent-emerald-dim: #008f60;
   --emerald-glow: rgba(0, 214, 143, 0.22);
   --emerald-glow-strong: rgba(0, 214, 143, 0.45);
 
-  /* --- Secondary Accent: Metallic Gold & Champagne --- */
-  --accent-gold: #D4AF37;
-  --accent-gold-hover: #e5c358;
-  --gold-highlight: #FFF1A8;
-  --gold-dark: #8C6818;
-  --gold-gradient: linear-gradient(135deg, #8C6818 0%, #D4AF37 38%, #FFF1A8 62%, #D4AF37 100%);
-  --gold-glow: rgba(212, 175, 55, 0.28);
-  --gold-glow-strong: rgba(212, 175, 55, 0.5);
-
-  /* --- Restrained Glassmorphism Tokens --- */
-  --glass-bg: rgba(21, 29, 25, 0.65);
-  --glass-bg-heavy: rgba(15, 22, 18, 0.85);
+  /* --- Dark Glassmorphism Tokens --- */
+  --glass-bg: rgba(23, 23, 23, 0.82);
+  --glass-bg-heavy: rgba(17, 17, 17, 0.94);
   --glass-blur: blur(10px) saturate(180%);
-  --glass-border: 1px solid rgba(48, 65, 55, 0.7);
-  --glass-border-hover: 1px solid rgba(0, 214, 143, 0.45);
+  --glass-border: 1px solid rgba(81, 66, 31, 0.65);
+  --glass-border-hover: 1px solid rgba(212, 175, 55, 0.55);
 
   /* --- Backward-Compatible Standard Tokens --- */
   --page: var(--bg-primary);

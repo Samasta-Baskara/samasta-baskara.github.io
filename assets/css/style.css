@@ -10,10 +10,13 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 90px;
+  overflow-x: hidden;
 }
 
 body {
   margin: 0;
+  overflow-x: hidden;
+  max-width: 100%;
   background: var(--bg-primary);
   color: var(--text-primary);
   font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -185,9 +188,14 @@ a:focus-visible, button:focus-visible {
 
 .hero-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.05fr) minmax(340px, .95fr);
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr);
   align-items: center;
   gap: clamp(36px, 7vw, 86px);
+}
+
+.hero-grid > * {
+  min-width: 0;
+  max-width: 100%;
 }
 
 .eyebrow {

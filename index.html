@@ -149,9 +149,14 @@
           </div>
           <div class="terminal reveal" id="terminal-container" aria-label="Interactive terminal preview">
             <div class="terminal-top">
-              <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+              <div class="terminal-dots" aria-hidden="true">
+                <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+              </div>
               <span class="terminal-label" id="term-label">bash — Verdamt-Snipe v1.4.5 — example.com</span>
-              <button class="replay" id="replay" type="button" aria-label="Replay terminal simulation">↻</button>
+              <div class="terminal-actions">
+                <button class="term-btn" id="term-pause" type="button" aria-label="Pause terminal simulation" title="Pause simulation">⏸</button>
+                <button class="term-btn replay" id="replay" type="button" aria-label="Replay terminal simulation" title="Replay simulation">↻</button>
+              </div>
             </div>
             <pre id="terminal-pre"><span class="prompt">$</span> python3 verd.py example.com --full
 
@@ -215,13 +220,30 @@
           <p class="section-intro" data-i18n="features.intro">What actually powers a scan, from the network layer to browser-based verification.</p>
         </div>
         <div class="features stagger">
-          <article class="feature">
-            <div class="feature-top">
-              <span class="feature-tag">01 // NETWORK</span>
-              <div class="feature-icon" aria-hidden="true">⌘</div>
+          <!-- Card 1: 01 // NETWORK (Interactive Collapsible Card) -->
+          <article class="feature collapsible-card is-expanded" id="card-feature-1">
+            <button class="card-header-btn" type="button" aria-expanded="true" aria-controls="card-content-1" id="card-header-1">
+              <div class="feature-top">
+                <span class="feature-tag">01 // NETWORK</span>
+                <div class="card-header-actions">
+                  <span class="feature-icon" aria-hidden="true">⌘</span>
+                  <span class="card-chevron" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                  </span>
+                </div>
+              </div>
+              <h3 data-i18n="features.f1.title">Async network engine</h3>
+            </button>
+            <div class="card-collapse-body" id="card-content-1" role="region" aria-labelledby="card-header-1">
+              <div class="card-inner-content">
+                <p data-i18n="features.f1.desc">Python AsyncIO plus HTTP/2 via httpx, with host rate-limiting and a circuit breaker for thousands of concurrent requests.</p>
+                <div class="card-extra-specs">
+                  <span class="spec-pill">HTTP/2 Multiplex</span>
+                  <span class="spec-pill">Circuit Breaker</span>
+                  <span class="spec-pill">AsyncIO Loop</span>
+                </div>
+              </div>
             </div>
-            <h3 data-i18n="features.f1.title">Async network engine</h3>
-            <p data-i18n="features.f1.desc">Python AsyncIO plus HTTP/2 via httpx, with host rate-limiting and a circuit breaker for thousands of concurrent requests.</p>
           </article>
           <article class="feature">
             <div class="feature-top">

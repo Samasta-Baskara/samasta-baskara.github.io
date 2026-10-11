@@ -55,9 +55,9 @@
   }
 
   /* ---------- Terminal Stream Engine (Full Pipeline + Cache Poisoning) ---------- */
-  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   var termPre = $("#terminal-pre");
   var replayBtn = $("#replay");
+  var pauseBtn = $("#term-pause");
 
   var fullStreamLines = [
     '<span class="dim">Verdamt-Snipe v1.4.5 — NEXUS Architecture</span>',
@@ -78,31 +78,120 @@
     '<span class="prompt">$</span> <span class="dim blink">_</span>'
   ];
 
-  function runTerminalSimulation(animate) {
-    if (!termPre) return;
-    var cmdHeader = '<span class="prompt">$</span> python3 verd.py example.com --full\n\n';
-    if (!animate || reduce) {
-      termPre.innerHTML = cmdHeader + fullStreamLines.join("\n");
-      return;
-    }
-    var allLines = (cmdHeader + fullStreamLines.join("\n")).split("\n");
-    termPre.innerHTML = "";
-    var idx = 0;
+  var cmdHeader = '<span class="prompt">$</span> python3 verd.py example.com --full\n\n';
+  var allTerminalLines = (cmdHeader + fullStreamLines.join("\n")).split("\n");
 
-    function nextLine() {
-      idx++;
-      termPre.innerHTML = allLines.slice(0, idx).join("\n");
-      if (idx < allLines.length) {
-        setTimeout(nextLine, idx === 1 ? 260 : 45);
+  var streamTimer = null;
+  var currentLineIdx = 0;
+  var isPaused = false;
+  var isRunning = false;
+  var userScrolledUp = false;
+
+  // Track user manual scroll inside terminal to avoid disrupting reading
+  if (termPre) {
+    termPre.addEventListener("scroll", function () {
+      var distanceToBottom = termPre.scrollHeight - termPre.scrollTop - termPre.clientHeight;
+      userScrolledUp = distanceToBottom > 24;
+    });
+  }
+
+  function updatePauseBtnUI() {
+    if (!pauseBtn) return;
+    if (isPaused) {
+      pauseBtn.textContent = "▶";
+      pauseBtn.setAttribute("aria-label", "Resume terminal simulation");
+      pauseBtn.title = "Resume simulation";
+    } else {
+      pauseBtn.textContent = "⏸";
+      pauseBtn.setAttribute("aria-label", "Pause terminal simulation");
+      pauseBtn.title = "Pause simulation";
+    }
+  }
+
+  function renderTerminalStep() {
+    if (!termPre || isPaused) return;
+
+    currentLineIdx++;
+    termPre.innerHTML = allTerminalLines.slice(0, currentLineIdx).join("\n");
+
+    // Scroll internally downward without ever scrolling the outer page
+    if (!userScrolledUp) {
+      termPre.scrollTop = termPre.scrollHeight;
+    }
+
+    if (currentLineIdx < allTerminalLines.length) {
+      var delay = currentLineIdx === 1 ? 240 : (currentLineIdx === 2 ? 140 : 45);
+      streamTimer = setTimeout(renderTerminalStep, delay);
+    } else {
+      isRunning = false;
+      if (pauseBtn) {
+        pauseBtn.textContent = "▶";
+        pauseBtn.setAttribute("aria-label", "Restart terminal simulation");
+        pauseBtn.title = "Restart simulation";
       }
     }
+  }
 
-    nextLine();
+  function startTerminalStream(fromBeginning) {
+    if (!termPre) return;
+
+    // Clear any existing timer to avoid overlapping streams
+    if (streamTimer) {
+      clearTimeout(streamTimer);
+      streamTimer = null;
+    }
+
+    var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduce) {
+      termPre.innerHTML = allTerminalLines.join("\n");
+      termPre.scrollTop = termPre.scrollHeight;
+      isRunning = false;
+      isPaused = false;
+      updatePauseBtnUI();
+      return;
+    }
+
+    if (fromBeginning) {
+      currentLineIdx = 0;
+      userScrolledUp = false;
+      termPre.scrollTop = 0;
+      termPre.innerHTML = "";
+    }
+
+    isRunning = true;
+    isPaused = false;
+    updatePauseBtnUI();
+    renderTerminalStep();
+  }
+
+  function togglePauseTerminal() {
+    if (!isRunning && currentLineIdx >= allTerminalLines.length) {
+      startTerminalStream(true);
+      return;
+    }
+    if (isPaused) {
+      isPaused = false;
+      updatePauseBtnUI();
+      renderTerminalStep();
+    } else {
+      isPaused = true;
+      if (streamTimer) {
+        clearTimeout(streamTimer);
+        streamTimer = null;
+      }
+      updatePauseBtnUI();
+    }
   }
 
   if (replayBtn) {
     replayBtn.addEventListener("click", function () {
-      runTerminalSimulation(true);
+      startTerminalStream(true);
+    });
+  }
+
+  if (pauseBtn) {
+    pauseBtn.addEventListener("click", function () {
+      togglePauseTerminal();
     });
   }
 
@@ -111,7 +200,7 @@
     var tio = new IntersectionObserver(function (es) {
       if (es[0].isIntersecting && !played) {
         played = true;
-        runTerminalSimulation(true);
+        startTerminalStream(true);
         tio.disconnect();
       }
     }, { threshold: 0.25 });
@@ -119,7 +208,7 @@
     var tCont = $("#terminal-container") || $(".terminal");
     if (tCont) tio.observe(tCont);
   } else {
-    runTerminalSimulation(false);
+    startTerminalStream(false);
   }
 
   /* ---------- Screenshot Lightbox Modal ---------- */
@@ -192,7 +281,9 @@
 
   window.VS = window.VS || {};
   window.VS.fireConfetti = fireConfetti;
-  window.VS.runTerminalSimulation = runTerminalSimulation;
+  window.VS.startTerminalStream = startTerminalStream;
+  window.VS.runTerminalSimulation = startTerminalStream;
+  window.VS.togglePauseTerminal = togglePauseTerminal;
   window.VS.openLightbox = openLightbox;
   window.VS.closeLightbox = closeLightbox;
 })();
