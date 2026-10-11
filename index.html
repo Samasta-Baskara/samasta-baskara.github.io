@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="google-site-verification" content="GgTmEIXJ8sVG6xcNqe3dQNVbA8HdJc1oMrNCI6PDviE">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#080B0A">
+  <meta name="theme-color" content="#f3f6f4">
   <meta name="author" content="Samasta Baskara">
   <meta name="description" content="Verdamt-Snipe is a personal, open-source async web security reconnaissance and vulnerability assessment framework by Samasta Baskara.">
   <meta property="og:type" content="website">
@@ -17,7 +17,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+CiAgPHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByeD0iMTQiIGZpbGw9IiMwODBCMEEiLz4KICA8Y2lyY2xlIGN4PSIzMiIgY3k9IjMyIiByPSIyMiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMDBENjhGIiBzdHJva2Utb3BhY2l0eT0iLjMiIHN0cm9rZS13aWR0aD0iMS44Ii8+CiAgPGNpcmNsZSBjeD0iMzIiIGN5PSIzMiIgcj0iMTQiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI0Q0QUYzNyIgc3Ryb2tlLW9wYWNpdHk9Ii4yNSIgc3Ryb2tlLXdpZHRoPSIxLjIiLz4KICA8cGF0aCBkPSJNMzIgNnY4TTMyIDUwdjhNNiAzMmg4TTUwIDMyaDgiIHN0cm9rZT0iI0Q0QUYzNyIgc3Ryb2tlLW9wYWNpdHk9Ii40IiBzdHJva2Utd2lkdGg9IjEuOCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CiAgPHBhdGggZD0iTTE2IDE2bDE2IDMwIDE2LTMwIiBmaWxsPSJub25lIiBzdHJva2U9IiMwMEQ2OEYiIHN0cm9rZS13aWR0aD0iNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+CiAgPHBhdGggZD0iTTE2IDE2bDE2IDMwIDE2LTMwIiBmaWxsPSJub25lIiBzdHJva2U9IiNGRkYxQTgiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBvcGFjaXR5PSIuNyIvPgo8L3N2Zz4=">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+CiAgPHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByeD0iMTQiIGZpbGw9IiMwZjE1MTIiLz4KICA8Y2lyY2xlIGN4PSIzMiIgY3k9IjMyIiByPSIyMiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjN2ZhOThjIiBzdHJva2Utb3BhY2l0eT0iLjMiIHN0cm9rZS13aWR0aD0iMS44Ii8+CiAgPGNpcmNsZSBjeD0iMzIiIGN5PSIzMiIgcj0iMTQiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzdmYTk4YyIgc3Ryb2tlLW9wYWNpdHk9Ii4yIiBzdHJva2Utd2lkdGg9IjEuMiIvPgogIDxwYXRoIGQ9Ik0zMiA2djhNMzIgNTB2OE02IDMyaDhNNTAgMzJoOCIgc3Ryb2tlPSIjN2ZhOThjIiBzdHJva2Utb3BhY2l0eT0iLjM1IiBzdHJva2Utd2lkdGg9IjEuOCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CiAgPHBhdGggZD0iTTE2IDE2bDE2IDMwIDE2LTMwIiBmaWxsPSJub25lIiBzdHJva2U9IiM0YTdjNTkiIHN0cm9rZS13aWR0aD0iNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+CiAgPHBhdGggZD0iTTE2IDE2bDE2IDMwIDE2LTMwIiBmaWxsPSJub25lIiBzdHJva2U9IiM3ZmE5OGMiIHN0cm9rZS13aWR0aD0iMi41IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIG9wYWNpdHk9Ii44Ii8+Cjwvc3ZnPg==">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -35,9 +35,1142 @@
   }
   </script>
   <script>try{var t=localStorage.getItem("vs-theme");if(!t&&matchMedia("(prefers-color-scheme: dark)").matches)t="dark";if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
-  <link rel="stylesheet" href="assets/css/theme.css">
-  <link rel="stylesheet" href="assets/css/style.css">
-  <link rel="stylesheet" href="assets/css/components.css">
+  <style>
+    :root {
+      color-scheme: light;
+      --page: #f3f6f4;
+      --surface: #ffffff;
+      --ink: #1b2820;
+      --muted: #536b5c;
+      --line: #d8e2dc;
+      --soft: #e7ede9;
+      --accent: #4a7c59;
+      --accent-hover: #3b6346;
+      --accent-glow: rgba(74, 124, 89, 0.16);
+      --radius: 18px;
+      --width: 1080px;
+    }
+    [data-theme="dark"] {
+      color-scheme: dark;
+      --page: #0f1512;
+      --surface: #151d18;
+      --ink: #e3ede6;
+      --muted: #8ca395;
+      --line: #223028;
+      --soft: #1c2720;
+      --accent: #7fa98c;
+      --accent-hover: #9ec1a9;
+      --accent-glow: rgba(127, 169, 140, 0.18);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+    body {
+      margin: 0;
+      background: var(--page);
+      color: var(--ink);
+      font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 16px;
+      line-height: 1.65;
+      letter-spacing: -0.01em;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+      transition: background .2s ease, color .2s ease;
+    }
+    a { color: inherit; }
+    a:focus-visible, button:focus-visible { outline: 3px solid rgba(74, 124, 89, 0.5); outline-offset: 4px; }
+    .wrap { width: min(var(--width), calc(100% - 48px)); margin-inline: auto; }
+
+    /* Skip link */
+    .skip-to-content {
+      position: absolute;
+      top: -100px;
+      left: 20px;
+      padding: 10px 18px;
+      background: var(--accent);
+      color: #fff;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 13px;
+      text-decoration: none;
+      z-index: 1000;
+      transition: top 0.2s ease;
+    }
+    .skip-to-content:focus {
+      top: 20px;
+      outline: 3px solid var(--ink);
+      outline-offset: 2px;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(243, 246, 244, .92);
+      -webkit-backdrop-filter: blur(16px);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(216, 226, 220, .85);
+    }
+    [data-theme="dark"] .topbar { background: rgba(15, 21, 18, .92); border-bottom-color: rgba(34, 48, 40, .85); }
+    .nav {
+      position: relative;
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 11px;
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 720;
+      letter-spacing: -.035em;
+      white-space: nowrap;
+    }
+    .brand-mark {
+      display: grid;
+      place-items: center;
+      width: 34px;
+      height: 34px;
+      flex: none;
+      border: 1px solid var(--line);
+      background: var(--surface);
+      border-radius: 11px;
+      color: var(--ink);
+    }
+    .brand-mark svg { display: block; }
+    .navlinks { display: flex; align-items: center; gap: 26px; }
+    .navlinks a {
+      text-decoration: none;
+      color: var(--muted);
+      font-size: 13px;
+      transition: color .2s ease;
+    }
+    .navlinks a:hover { color: var(--ink); }
+    .navlinks a.active { color: var(--ink); text-decoration: underline; text-decoration-color: var(--accent); text-underline-offset: 8px; text-decoration-thickness: 2px; }
+    .nav-cta, .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      border-radius: 999px;
+      padding: 10px 16px;
+      font-size: 13px;
+      font-weight: 650;
+      text-decoration: none;
+      border: 1px solid var(--line);
+      transition: background .2s ease, border-color .2s ease, transform .2s ease;
+      white-space: nowrap;
+    }
+    .nav-cta { background: var(--surface); }
+    .nav-cta:hover, .button.secondary:hover { background: var(--soft); border-color: #d4d7cf; }
+    .button.primary {
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(135deg, var(--accent), #365b41);
+      color: #fff;
+      border-color: var(--accent);
+    }
+    [data-theme="dark"] .button.primary { color: #0f1512; }
+    .button.primary:hover {
+      background: linear-gradient(135deg, var(--accent-hover), var(--accent));
+      transform: translateY(-2px);
+      box-shadow: 0 4px 20px var(--accent-glow);
+    }
+    .button.primary::after {
+      content: '';
+      position: absolute;
+      inset: -2px;
+      border-radius: inherit;
+      background: linear-gradient(135deg, var(--accent), var(--accent-hover));
+      z-index: -1;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      filter: blur(12px);
+    }
+    .button.primary:hover::after { opacity: 0.4; }
+    .button.secondary { background: transparent; }
+
+    .nav-tools { display: flex; align-items: center; gap: 8px; }
+    .icon-btn {
+      width: 36px; height: 36px;
+      display: inline-grid; place-items: center;
+      border: 1px solid var(--line); border-radius: 50%;
+      background: var(--surface); color: var(--ink);
+      font-size: 13px; font-weight: 700;
+      cursor: pointer; transition: background .2s ease;
+    }
+    .icon-btn:hover { background: var(--soft); }
+    .menu-btn { display: none; font-size: 15px; }
+
+    /* Hero */
+    .hero { padding: 92px 0 86px; }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(340px, .95fr);
+      align-items: center;
+      gap: clamp(36px, 7vw, 86px);
+    }
+    .eyebrow {
+      margin: 0 0 18px;
+      color: var(--accent);
+      font-size: 11px;
+      font-weight: 750;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 {
+      max-width: 650px;
+      margin-bottom: 20px;
+      font-size: clamp(38px, 5.8vw, 68px);
+      line-height: 1.06;
+      letter-spacing: -.055em;
+      font-weight: 760;
+    }
+    .lead {
+      max-width: 560px;
+      margin-bottom: 28px;
+      color: var(--muted);
+      font-size: clamp(16px, 1.9vw, 19px);
+      line-height: 1.75;
+    }
+    .actions { display: flex; flex-wrap: wrap; gap: 10px; }
+    .stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin-top: 26px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+    .stack span { padding: 4px 10px; border: 1px solid var(--line); border-radius: 999px; background: rgba(255,255,255,.5); }
+    [data-theme="dark"] .stack span { background: rgba(127,169,140,0.06); border-color: rgba(127,169,140,0.15); }
+    .byline { margin: 18px 0 0; color: var(--muted); font-size: 13px; }
+    .byline strong { color: var(--ink); font-weight: 650; }
+
+    /* Hero gradient background */
+    .hero-bg { position: absolute; inset: 0; overflow: hidden; z-index: -1; }
+    .hero-bg::before {
+      content: '';
+      position: absolute;
+      inset: -50%;
+      background: radial-gradient(ellipse at 20% 50%, rgba(74,124,89,0.08) 0%, transparent 60%),
+                  radial-gradient(ellipse at 80% 20%, rgba(127,169,140,0.06) 0%, transparent 50%);
+      animation: meshMove 20s ease-in-out infinite alternate;
+    }
+    @keyframes meshMove {
+      0% { transform: translate(0,0) rotate(0deg); }
+      100% { transform: translate(3%,2%) rotate(2deg); }
+    }
+    [data-theme="dark"] .hero-bg::before {
+      background: radial-gradient(ellipse at 20% 50%, rgba(74,124,89,0.09) 0%, transparent 60%),
+                  radial-gradient(ellipse at 80% 20%, rgba(127,169,140,0.08) 0%, transparent 50%),
+                  radial-gradient(ellipse at 50% 80%, rgba(34,60,44,0.15) 0%, transparent 50%);
+    }
+
+    /* Terminal */
+    .terminal {
+      position: relative;
+      overflow: hidden;
+      border: 1px solid #1c2720;
+      border-radius: var(--radius);
+      background: #0f1512;
+      color: #e3ede6;
+      box-shadow: 0 24px 60px rgba(15, 21, 18, .2);
+    }
+    [data-theme="dark"] .terminal { box-shadow: 0 0 40px rgba(127,169,140,0.09), 0 0 80px rgba(74,124,89,0.05), 0 24px 60px rgba(0,0,0,.45); }
+    .terminal::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255,255,255,0.01) 2px, rgba(255,255,255,0.01) 4px);
+      z-index: 1;
+    }
+    .terminal-top {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      height: 42px;
+      padding: 0 15px;
+      border-bottom: 1px solid #1c2720;
+      background: #131b17;
+    }
+    .dot { width: 8px; height: 8px; border-radius: 50%; background: #2f4538; }
+    .dot.red { background: #e06c75; }
+    .dot.yellow { background: #e5c07b; }
+    .dot.green { background: #7fa98c; }
+    .terminal-label { color: #8ca395; margin-left: auto; font-size: 11px; font-weight: 600; letter-spacing: 0.05em; }
+    .replay { margin-left: 10px; border: 0; background: transparent; color: #8ca395; font-size: 15px; line-height: 1; cursor: pointer; transition: color .2s; }
+    .replay:hover { color: #e3ede6; }
+
+
+
+    pre {
+      margin: 0;
+      padding: 22px;
+      overflow-x: auto;
+      font: 12px/1.9 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      white-space: pre;
+    }
+    code, .inline { font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+    .prompt { color: #7fa98c; font-weight: 600; }
+    .dim { color: #5a7364; }
+    .good { color: #7fa98c; font-weight: 600; }
+    .warn { color: #e0a96d; font-weight: 600; }
+    .err { color: #f87171; font-weight: 600; }
+    .info { color: #60a5fa; }
+    .terminal-note { padding: 0 22px 14px; color: #8ca395; font-size: 11px; }
+    .blink { animation: blink 1s steps(1) infinite; }
+    @keyframes blink { 50% { opacity: 0; } }
+
+    /* Terminal Telemetry Bar */
+    .terminal-telemetry {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 9px 18px;
+      border-top: 1px solid #1c2720;
+      background: #111814;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      color: #8ca395;
+      overflow-x: auto;
+      white-space: nowrap;
+      scrollbar-width: none;
+    }
+    .terminal-telemetry::-webkit-scrollbar { display: none; }
+    .tele-tag { display: inline-flex; align-items: center; gap: 5px; }
+    .tele-tag strong { color: var(--accent); }
+
+    /* Scroll animations */
+    .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    /* Staggered children */
+    .stagger > * { opacity: 0; transform: translateY(20px); transition: opacity 0.5s ease, transform 0.5s ease; }
+    .stagger.visible > *:nth-child(1) { transition-delay: 0s; }
+    .stagger.visible > *:nth-child(2) { transition-delay: 0.08s; }
+    .stagger.visible > *:nth-child(3) { transition-delay: 0.16s; }
+    .stagger.visible > *:nth-child(4) { transition-delay: 0.24s; }
+    .stagger.visible > *:nth-child(5) { transition-delay: 0.32s; }
+    .stagger.visible > *:nth-child(6) { transition-delay: 0.4s; }
+    .stagger.visible > *:nth-child(7) { transition-delay: 0.48s; }
+    .stagger.visible > * { opacity: 1; transform: none; }
+
+    /* Stats section */
+    .stats { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; padding: 0 0 20px; }
+    .stat-card {
+      flex: 1;
+      min-width: 140px;
+      max-width: 180px;
+      text-align: center;
+      padding: 24px 16px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: rgba(255,255,255,0.55);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    }
+    .stat-card:hover { transform: translateY(-3px); border-color: var(--accent); box-shadow: 0 8px 24px var(--accent-glow); }
+    [data-theme="dark"] .stat-card { background: rgba(255,255,255,0.04); }
+    .stat-num { font-size: 36px; font-weight: 800; letter-spacing: -0.04em; color: var(--accent); line-height: 1.1; }
+    .stat-label { margin-top: 6px; font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600; }
+
+    /* Section structure */
+    section { border-top: 1px solid var(--line); }
+    .section { padding: 76px 0; }
+    .section-head { max-width: 640px; margin-bottom: 34px; }
+    h2 { margin-bottom: 12px; font-size: clamp(28px, 4vw, 39px); line-height: 1.15; letter-spacing: -.045em; }
+    .section-intro { color: var(--muted); margin-bottom: 0; }
+
+    /* Neo-Brutalist + Glassmorphic Feature Cards */
+    .features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .feature {
+      position: relative;
+      padding: 24px;
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.65);
+      backdrop-filter: blur(14px) saturate(180%);
+      -webkit-backdrop-filter: blur(14px) saturate(180%);
+      border: 2px solid rgba(74, 124, 89, 0.4);
+      box-shadow: 5px 5px 0px rgba(74, 124, 89, 0.25);
+      transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1),
+                  box-shadow 0.22s cubic-bezier(0.16, 1, 0.3, 1),
+                  border-color 0.22s ease;
+    }
+    .feature:hover {
+      transform: translate(-3px, -3px);
+      box-shadow: 8px 8px 0px var(--accent);
+      border-color: var(--accent);
+    }
+    [data-theme="dark"] .feature {
+      background: rgba(21, 29, 24, 0.7);
+      border: 2px solid rgba(127, 169, 140, 0.45);
+      box-shadow: 5px 5px 0px rgba(127, 169, 140, 0.22);
+    }
+    [data-theme="dark"] .feature:hover {
+      box-shadow: 8px 8px 0px var(--accent);
+      border-color: var(--accent);
+    }
+    .feature-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 16px;
+    }
+    .feature-tag {
+      font-family: 'JetBrains Mono', ui-monospace, monospace;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+      background: var(--soft);
+      padding: 3px 8px;
+      border-radius: 6px;
+      border: 1px solid var(--line);
+    }
+    .feature-icon {
+      display: grid;
+      place-items: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      background: var(--soft);
+      border: 1.5px solid var(--line);
+      color: var(--accent);
+      font-size: 16px;
+      font-weight: 800;
+    }
+    .feature h3 { margin-bottom: 8px; font-size: 16px; font-weight: 700; letter-spacing: -.02em; }
+    .feature p { margin-bottom: 0; color: var(--muted); font-size: 13.5px; line-height: 1.6; }
+
+    /* Bento Grid Architecture */
+    .bento-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 16px;
+    }
+    .bento-card {
+      position: relative;
+      padding: 26px;
+      border-radius: 20px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .bento-card:hover {
+      transform: translateY(-3px);
+      border-color: var(--accent);
+      box-shadow: 0 12px 32px var(--accent-glow);
+    }
+    [data-theme="dark"] .bento-card {
+      background: rgba(21, 29, 24, 0.65);
+      border-color: rgba(127, 169, 140, 0.18);
+    }
+    [data-theme="dark"] .bento-card:hover {
+      border-color: var(--accent);
+      box-shadow: 0 12px 32px rgba(127, 169, 140, 0.12);
+    }
+    .bento-card.span-5 { grid-column: span 5; }
+    .bento-card.span-7 { grid-column: span 7; }
+    .bento-card.hero {
+      background: linear-gradient(135deg, var(--surface) 0%, rgba(74, 124, 89, 0.05) 100%);
+      border-color: rgba(74, 124, 89, 0.28);
+    }
+    [data-theme="dark"] .bento-card.hero {
+      background: linear-gradient(135deg, #151d18 0%, rgba(127, 169, 140, 0.09) 100%);
+      border-color: rgba(127, 169, 140, 0.28);
+    }
+    .bento-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+    }
+    .bento-badge {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10.5px;
+      font-weight: 750;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      background: rgba(74, 124, 89, 0.1);
+      padding: 3px 8px;
+      border-radius: 6px;
+    }
+    [data-theme="dark"] .bento-badge { background: rgba(127, 169, 140, 0.14); }
+    .bento-icon { font-size: 18px; color: var(--accent); }
+    .bento-card h3 { font-size: 17px; font-weight: 750; margin-bottom: 8px; letter-spacing: -0.02em; }
+    .bento-card p { font-size: 13.5px; color: var(--muted); margin-bottom: 16px; line-height: 1.55; }
+    .bento-chips { display: flex; flex-wrap: wrap; gap: 7px; margin-top: auto; }
+    .bento-chip {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11.5px;
+      padding: 5px 10px;
+      border-radius: 7px;
+      background: var(--soft);
+      color: var(--ink);
+      font-weight: 550;
+      border: 1px solid var(--line);
+      transition: all 0.2s ease;
+    }
+    .bento-chip.highlight {
+      border-color: var(--accent);
+      color: var(--accent);
+      background: rgba(74, 124, 89, 0.08);
+    }
+    [data-theme="dark"] .bento-chip.highlight { background: rgba(127, 169, 140, 0.12); }
+    .bento-card:hover .bento-chip { border-color: rgba(127, 169, 140, 0.4); }
+
+    /* Tactical Scannable Attack Surface */
+    .attack-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+    .attack-card {
+      padding: 24px;
+      border-radius: 16px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .attack-card:hover {
+      transform: translateY(-3px);
+      border-color: var(--accent);
+      box-shadow: 0 8px 24px var(--accent-glow);
+    }
+    [data-theme="dark"] .attack-card {
+      background: rgba(21, 29, 24, 0.65);
+    }
+    .attack-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+    .attack-title-wrap {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .attack-icon {
+      font-size: 18px;
+      line-height: 1;
+    }
+    .attack-card h3 {
+      margin: 0;
+      font-size: 16px;
+      font-weight: 750;
+      letter-spacing: -0.02em;
+    }
+    .attack-sev {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      font-weight: 800;
+      padding: 3px 8px;
+      border-radius: 6px;
+      letter-spacing: 0.05em;
+      white-space: nowrap;
+    }
+    .attack-sev.crit { background: rgba(239, 68, 68, 0.15); color: #ef4444; border: 1px solid rgba(239, 68, 68, 0.3); }
+    .attack-sev.high { background: rgba(249, 115, 22, 0.15); color: #f97316; border: 1px solid rgba(249, 115, 22, 0.3); }
+    .attack-sev.med  { background: rgba(234, 179, 8, 0.15); color: #eab308; border: 1px solid rgba(234, 179, 8, 0.3); }
+    .attack-sev.tactical { background: rgba(74, 124, 89, 0.15); color: var(--accent); border: 1px solid var(--accent); }
+    .attack-card p {
+      font-size: 13.5px;
+      color: var(--muted);
+      margin-bottom: 14px;
+      line-height: 1.5;
+    }
+    .attack-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: auto;
+    }
+    .attack-pill {
+      font-size: 12px;
+      font-weight: 600;
+      padding: 4px 9px;
+      border-radius: 6px;
+      background: var(--soft);
+      color: var(--ink);
+      border: 1px solid var(--line);
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .attack-card:hover .attack-pill {
+      border-color: rgba(127, 169, 140, 0.35);
+    }
+
+    /* Benchmark cards */
+    .benchmarks { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; }
+    .bench-card { padding: 22px; border: 1px solid var(--line); border-radius: 14px; background: var(--surface); transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; }
+    .bench-card:hover { border-color: var(--accent); transform: translateY(-3px); box-shadow: 0 8px 24px var(--accent-glow); }
+    .bench-icon { font-size: 22px; margin-bottom: 12px; }
+    .bench-card h3 { font-size: 15px; margin-bottom: 6px; }
+    .bench-card p { font-size: 13px; color: var(--muted); margin: 0; }
+
+    /* Workflow & detail grid */
+    .detail-grid {
+      display: grid;
+      grid-template-columns: .85fr 1.15fr;
+      align-items: center;
+      gap: clamp(32px, 6vw, 76px);
+    }
+    .detail-copy p { color: var(--muted); }
+    .list { display: grid; gap: 12px; margin: 24px 0 0; padding: 0; list-style: none; }
+    .list li { display: flex; gap: 10px; color: var(--muted); font-size: 14px; }
+    .list li::before { content: "✓"; color: var(--accent); font-weight: 800; }
+    .code-card { border: 1px solid var(--line); border-radius: 16px; overflow: hidden; background: var(--surface); }
+    .code-title { padding: 13px 18px; border-bottom: 1px solid var(--line); color: var(--muted); font-size: 12px; }
+    .code-card pre { padding: 20px; color: #2e4738; font-size: 12px; line-height: 2; }
+    [data-theme="dark"] .code-card pre { color: #7fa98c; }
+    .code-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+    .copy {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 7px 10px;
+      background: var(--surface);
+      color: var(--muted);
+      font: inherit;
+      font-size: 12px;
+      cursor: pointer;
+    }
+    .copy:hover { background: var(--soft); color: var(--ink); }
+    .tabs { display: flex; gap: 4px; flex-wrap: wrap; }
+    .tabs button { border: 0; border-radius: 8px; padding: 6px 10px; background: transparent; color: var(--muted); font: inherit; font-size: 12px; cursor: pointer; }
+    .tabs button[aria-pressed="true"] { background: var(--soft); color: var(--ink); font-weight: 650; }
+    .steps { display: grid; gap: 22px; }
+    .step { display: grid; grid-template-columns: 34px 1fr; gap: 13px; cursor: pointer; }
+    .step-num {
+      display: grid;
+      place-items: center;
+      width: 32px;
+      height: 32px;
+      border: 1px solid var(--line);
+      border-radius: 50%;
+      background: var(--surface);
+      font-size: 12px;
+      font-weight: 700;
+      transition: background .2s ease, border-color .2s ease, color .2s ease;
+    }
+    .step.done .step-num { background: var(--accent); border-color: var(--accent); color: var(--page); }
+    .step.done strong { text-decoration: line-through; text-decoration-thickness: 1px; color: var(--muted); }
+    .step strong { display: block; margin-bottom: 3px; font-size: 14px; }
+    .step p { margin: 0; color: var(--muted); font-size: 13px; }
+    code.inline { background: var(--soft); border-radius: 6px; padding: 2px 6px; display: inline-block; margin-top: 6px; color: var(--ink); font-size: 12px; }
+    .meter { margin-top: 26px; height: 6px; border-radius: 99px; background: var(--soft); overflow: hidden; }
+    .meter span { display: block; height: 100%; width: 0; background: var(--accent); transition: width .35s ease; }
+    .meter-text { margin: 10px 0 0; color: var(--muted); font-size: 12px; }
+    .notice { margin-top: 26px; padding: 14px 16px; border: 1px solid var(--line); border-radius: 12px; color: var(--muted); font-size: 12px; }
+
+    /* FAQ */
+    .faq { display: grid; gap: 10px; max-width: 760px; }
+    .faq details { border: 1px solid var(--line); border-radius: 14px; background: var(--surface); padding: 0 20px; transition: border-color .2s ease; }
+    .faq details[open] { border-color: var(--accent); }
+    .faq summary { display: flex; justify-content: space-between; gap: 16px; padding: 16px 0; font-size: 15px; font-weight: 650; cursor: pointer; list-style: none; }
+    .faq summary::-webkit-details-marker { display: none; }
+    .faq summary::after { content: "+"; color: var(--accent); font-size: 20px; line-height: 1; transition: transform .25s ease; }
+    .faq details[open] summary::after { transform: rotate(45deg); }
+    .faq details .faq-body { max-height: 0; overflow: hidden; transition: max-height 0.35s ease, padding 0.35s ease; padding: 0; }
+    .faq details[open] .faq-body { max-height: 200px; padding-bottom: 18px; }
+    .faq details p { margin: 0; color: var(--muted); font-size: 14px; }
+
+    /* Closing & footer */
+    .closing {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 30px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+    }
+    .closing h2 { margin-bottom: 7px; font-size: 25px; }
+    .closing p { margin-bottom: 0; color: var(--muted); font-size: 14px; }
+    .closing p strong { color: var(--ink); font-weight: 650; }
+    .quote { margin: 0 0 20px; color: var(--muted); font-size: 13px; font-style: italic; }
+    footer { border-top: 1px solid var(--line); padding: 28px 0 36px; }
+    .footer-row { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .footer-note { margin: 0; color: var(--muted); font-size: 12px; }
+    .footer-note strong { color: var(--ink); font-weight: 650; }
+    .footer-links { display: flex; flex-wrap: wrap; gap: 20px; }
+    .footer-links a { color: var(--muted); font-size: 12px; text-decoration: none; }
+    .footer-links a:hover { color: var(--ink); }
+
+    /* Confetti */
+    .confetti-container { position: fixed; inset: 0; pointer-events: none; z-index: 100; overflow: hidden; }
+    .confetti-piece { position: absolute; width: 8px; height: 8px; top: -10px; border-radius: 2px; animation: confettiFall 3s ease-in forwards; }
+    @keyframes confettiFall { 0% { transform: translateY(0) rotate(0deg); opacity: 1; } 100% { transform: translateY(100vh) rotate(720deg); opacity: 0; } }
+
+    /* Scroll progress & back-to-top */
+    .progress { position: fixed; inset: 0 0 auto 0; height: 3px; z-index: 30; background: var(--accent); transform: scaleX(0); transform-origin: left; }
+    .to-top { position: fixed; right: 20px; bottom: calc(20px + env(safe-area-inset-bottom, 0px)); z-index: 15; width: 42px; height: 42px; border-radius: 50%; border: 1px solid var(--line); background: var(--surface); color: var(--ink); font-size: 16px; cursor: pointer; opacity: 0; transform: translateY(8px); pointer-events: none; transition: opacity .25s ease, transform .25s ease; }
+    .to-top.show { opacity: 1; transform: none; pointer-events: auto; }
+
+    /* ==========================================================
+       DYNAMIC ISLAND (iPhone-style for Mobile & Tablet)
+       ========================================================== */
+    .island-wrapper {
+      display: none;
+      position: fixed;
+      top: 14px;
+      left: 0;
+      right: 0;
+      z-index: 999;
+      justify-content: center;
+      pointer-events: none;
+      padding: 0 14px;
+    }
+    .island {
+      pointer-events: auto;
+      width: auto;
+      min-width: 236px;
+      height: 44px;
+      border-radius: 999px;
+      background: rgba(15, 21, 18, 0.88);
+      -webkit-backdrop-filter: blur(24px) saturate(190%);
+      backdrop-filter: blur(24px) saturate(190%);
+      border: 1px solid rgba(127, 169, 140, 0.28);
+      box-shadow: 0 10px 32px rgba(0,0,0,0.38), 0 0 1px rgba(255,255,255,0.15) inset;
+      overflow: hidden;
+      transition: width 0.42s cubic-bezier(0.16, 1, 0.3, 1),
+                  height 0.42s cubic-bezier(0.16, 1, 0.3, 1),
+                  border-radius 0.42s cubic-bezier(0.16, 1, 0.3, 1),
+                  box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+    [data-theme="light"] .island, :root:not([data-theme="dark"]) .island {
+      background: rgba(243, 246, 244, 0.94);
+      border-color: rgba(74, 124, 89, 0.28);
+      box-shadow: 0 10px 28px rgba(27, 40, 32, 0.16), 0 0 1px rgba(0,0,0,0.06) inset;
+    }
+    .island.expanded {
+      width: min(calc(100vw - 28px), 430px);
+      height: auto;
+      border-radius: 28px;
+      box-shadow: 0 24px 60px rgba(0,0,0,0.6), 0 0 0 1px rgba(127, 169, 140, 0.35);
+      cursor: default;
+    }
+    [data-theme="light"] .island.expanded, :root:not([data-theme="dark"]) .island.expanded {
+      box-shadow: 0 24px 60px rgba(27, 40, 32, 0.25), 0 0 0 1px rgba(74, 124, 89, 0.3);
+    }
+    .island-compact {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 44px;
+      padding: 0 15px;
+      gap: 12px;
+      user-select: none;
+    }
+    .island.expanded .island-compact { display: none; }
+    .island-compact-left { display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 700; color: var(--ink); }
+    .island-radar {
+      width: 7px; height: 7px; border-radius: 50%; background: var(--accent);
+      position: relative; flex-shrink: 0; box-shadow: 0 0 8px var(--accent);
+    }
+    .island-radar::after {
+      content: ''; position: absolute; inset: -4px; border-radius: 50%;
+      border: 1.5px solid var(--accent); animation: islandPulse 2s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+    }
+    @keyframes islandPulse {
+      0% { transform: scale(0.6); opacity: 1; }
+      100% { transform: scale(2.4); opacity: 0; }
+    }
+    .island-pill-badge {
+      font-size: 10px; font-weight: 700; padding: 2px 7px; border-radius: 99px;
+      background: rgba(127, 169, 140, 0.15); color: var(--accent); letter-spacing: 0.04em;
+    }
+    .island-toggle-icon {
+      display: flex; flex-direction: column; justify-content: center; gap: 3.5px;
+      width: 20px; height: 20px;
+    }
+    .island-bar {
+      height: 2px; width: 100%; background: var(--ink); border-radius: 2px;
+    }
+    .island-expanded-content {
+      display: none;
+      padding: 18px;
+      opacity: 0;
+      transform: translateY(-8px);
+      transition: opacity 0.3s ease 0.08s, transform 0.3s ease 0.08s;
+    }
+    .island.expanded .island-expanded-content {
+      display: block;
+      opacity: 1;
+      transform: none;
+    }
+    .island-exp-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--line);
+    }
+    .island-exp-status { display: flex; align-items: center; gap: 10px; }
+    .island-title { display: block; font-size: 14px; font-weight: 750; color: var(--ink); }
+    .island-subtitle { display: block; font-size: 11px; color: var(--muted); }
+    .island-close-btn {
+      width: 30px; height: 30px; border-radius: 50%; border: 1px solid var(--line);
+      background: var(--surface); color: var(--muted); display: grid; place-items: center;
+      font-size: 13px; font-weight: 700; cursor: pointer; transition: background 0.2s, color 0.2s;
+    }
+    .island-close-btn:hover { background: var(--soft); color: var(--ink); }
+    .island-telemetry {
+      display: flex; flex-wrap: wrap; gap: 6px; padding: 12px 0 10px;
+    }
+    .island-tele-badge {
+      font-size: 10px; font-weight: 650; padding: 4px 8px; border-radius: 7px;
+      background: var(--soft); color: var(--muted); border: 1px solid var(--line);
+    }
+    .island-nav-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 7px; margin: 6px 0 14px;
+    }
+    .island-nav-item {
+      display: flex; align-items: center; gap: 8px; padding: 9px 12px; border-radius: 12px;
+      background: var(--surface); border: 1px solid var(--line); color: var(--ink);
+      text-decoration: none; font-size: 13px; font-weight: 550;
+      transition: background 0.2s, border-color 0.2s, transform 0.15s;
+    }
+    .island-nav-item:active { transform: scale(0.97); }
+    .island-nav-item:hover { background: var(--soft); border-color: var(--accent); }
+    .ini-icon { font-size: 13px; opacity: 0.85; }
+    .island-exp-footer {
+      display: flex; align-items: center; gap: 8px; padding-top: 12px;
+      border-top: 1px solid var(--line);
+    }
+    .island-foot-btn {
+      flex: 1; display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+      padding: 9px 12px; border-radius: 10px; border: 1px solid var(--line);
+      background: var(--surface); color: var(--ink); font-size: 12px; font-weight: 650;
+      cursor: pointer; text-decoration: none; transition: background 0.2s;
+    }
+    .island-foot-btn:hover { background: var(--soft); }
+    .island-foot-btn.cta {
+      background: var(--accent); color: #fff; border-color: var(--accent);
+    }
+    [data-theme="dark"] .island-foot-btn.cta { color: #0f1512; }
+    .island-backdrop {
+      position: fixed; inset: 0; background: rgba(0,0,0,0.45);
+      -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px);
+      z-index: 998; opacity: 0; pointer-events: none; transition: opacity 0.3s ease;
+    }
+    .island-backdrop.active { opacity: 1; pointer-events: auto; }
+
+    /* ==========================================================
+       SHOWCASE SECTION & CVSS CHART
+       ========================================================== */
+    .showcase-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-bottom: 32px;
+    }
+    .showcase-card {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+      overflow: hidden;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    }
+    .showcase-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--accent);
+      box-shadow: 0 16px 40px var(--accent-glow);
+    }
+    .showcase-top {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--line);
+      background: var(--soft);
+    }
+    .s-dot { width: 9px; height: 9px; border-radius: 50%; }
+    .s-dot.red { background: #e06c75; }
+    .s-dot.yellow { background: #e5c07b; }
+    .s-dot.green { background: #7fa98c; }
+    .showcase-title {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--muted);
+      margin-left: 8px;
+    }
+    .showcase-badge {
+      margin-left: auto;
+      font-size: 10px;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 99px;
+      background: rgba(127, 169, 140, 0.15);
+      color: var(--accent);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .screenshot-box {
+      position: relative;
+      background: #0b110e;
+      overflow: hidden;
+      cursor: zoom-in;
+    }
+    .screenshot-box img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.35s ease;
+    }
+    .screenshot-box:hover img {
+      transform: scale(1.02);
+    }
+    .screenshot-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(15, 21, 18, 0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.25s ease;
+      color: #fff;
+      font-size: 13px;
+      font-weight: 600;
+      gap: 6px;
+    }
+    .screenshot-box:hover .screenshot-overlay {
+      opacity: 1;
+    }
+    .showcase-info {
+      padding: 20px;
+    }
+    .showcase-info h3 {
+      font-size: 17px;
+      margin-bottom: 6px;
+    }
+    .showcase-info p {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.6;
+      margin-bottom: 12px;
+    }
+    .showcase-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .showcase-tags span {
+      font-size: 11px;
+      padding: 3px 9px;
+      border-radius: 7px;
+      background: var(--soft);
+      color: var(--ink);
+      font-weight: 500;
+    }
+
+    /* CVSS Distribution Chart */
+    .chart-panel {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+      padding: 26px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.04);
+    }
+    .chart-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+    .chart-title h3 { margin: 0 0 4px; font-size: 18px; }
+    .chart-title p { margin: 0; font-size: 13px; color: var(--muted); }
+    .chart-badge {
+      font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 99px;
+      background: rgba(127, 169, 140, 0.15); color: var(--accent);
+    }
+    .cvss-bar {
+      height: 16px;
+      border-radius: 99px;
+      background: var(--soft);
+      display: flex;
+      overflow: hidden;
+      margin-bottom: 18px;
+    }
+    .cvss-seg {
+      height: 100%;
+      transition: width 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+    }
+    .cvss-seg.crit { background: #ef4444; }
+    .cvss-seg.high { background: #f97316; }
+    .cvss-seg.med  { background: #eab308; }
+    .cvss-seg.low  { background: #3b82f6; }
+    .cvss-seg.info { background: #7fa98c; }
+
+    .cvss-legend {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+      gap: 12px;
+    }
+    .cvss-legend-item {
+      padding: 12px 14px;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      background: var(--soft);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+    .cvss-legend-item:hover {
+      transform: translateY(-2px);
+      border-color: var(--accent);
+    }
+    .cvss-leg-left { display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; }
+    .cvss-dot { width: 8px; height: 8px; border-radius: 50%; }
+    .cvss-dot.crit { background: #ef4444; }
+    .cvss-dot.high { background: #f97316; }
+    .cvss-dot.med  { background: #eab308; }
+    .cvss-dot.low  { background: #3b82f6; }
+    .cvss-dot.info { background: #7fa98c; }
+    .cvss-leg-val { font-size: 14px; font-weight: 750; color: var(--ink); }
+
+    /* Lightbox Modal */
+    .lightbox-modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 21, 18, 0.88);
+      -webkit-backdrop-filter: blur(16px);
+      backdrop-filter: blur(16px);
+      z-index: 10000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      opacity: 0;
+      transition: opacity 0.25s ease;
+    }
+    .lightbox-modal.active {
+      display: flex;
+      opacity: 1;
+    }
+    .lightbox-content {
+      position: relative;
+      max-width: 1100px;
+      max-height: 90vh;
+      width: 100%;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid rgba(127,169,140,0.3);
+      box-shadow: 0 30px 80px rgba(0,0,0,0.6);
+      background: #0f1512;
+    }
+    .lightbox-content img {
+      width: 100%;
+      height: auto;
+      max-height: 82vh;
+      object-fit: contain;
+      display: block;
+    }
+    .lightbox-close {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: rgba(15, 21, 18, 0.75);
+      border: 1px solid rgba(255,255,255,0.2);
+      color: #fff;
+      display: grid;
+      place-items: center;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      z-index: 2;
+      transition: background 0.2s;
+    }
+    .lightbox-close:hover {
+      background: rgba(255,255,255,0.2);
+    }
+    .lightbox-caption {
+      padding: 12px 18px;
+      background: #131b17;
+      color: #8ca395;
+      font-size: 13px;
+      border-top: 1px solid #1c2720;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; animation: none !important; }
+      .blink { animation: none; }
+      .reveal { opacity: 1 !important; transform: none !important; }
+      .stagger > * { opacity: 1 !important; transform: none !important; }
+      .hero-bg::before { animation: none; }
+      .island-radar::after { animation: none; }
+    }
+
+    @media (max-width: 820px) {
+      .topbar { display: none !important; }
+      .island-wrapper { display: flex; }
+      body { padding-top: 58px; }
+      .bento-grid { grid-template-columns: 1fr; }
+      .bento-card.span-5, .bento-card.span-7 { grid-column: span 1; }
+      .attack-grid { grid-template-columns: 1fr; }
+      .stats { gap: 10px; }
+      .stat-card { min-width: 100px; padding: 18px 12px; }
+      .stat-num { font-size: 28px; }
+      .hero { padding: 48px 0 54px; }
+      .hero-grid, .detail-grid { grid-template-columns: 1fr; }
+      .hero-grid { gap: 34px; }
+      .terminal { max-width: 100%; }
+      .features { grid-template-columns: repeat(2, 1fr); }
+      .showcase-grid { grid-template-columns: 1fr; gap: 18px; }
+      .section { padding: 54px 0; }
+    }
+    @media (max-width: 520px) {
+      .stats { gap: 8px; }
+      .stat-card { min-width: 80px; padding: 14px 8px; }
+      .stat-num { font-size: 24px; }
+      .benchmarks { grid-template-columns: 1fr; }
+      .wrap { width: min(calc(100% - 28px), var(--width)); }
+      .hero { padding: 42px 0 46px; }
+      h1 { font-size: clamp(34px, 11vw, 48px); }
+      .lead { font-size: 15px; }
+      .actions { display: grid; grid-template-columns: 1fr; }
+      .button { width: 100%; }
+      .features { grid-template-columns: 1fr; }
+      .feature { padding: 20px; }
+      pre { padding: 16px; font-size: 11px; }
+      .terminal-note { padding-inline: 16px; }
+      .closing, .footer-row { align-items: flex-start; flex-direction: column; }
+      .closing { padding: 22px; }
+      .footer-links { gap: 15px; }
+      .cvss-legend { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 <body>
   <a href="#main" class="skip-to-content" data-i18n="ui.skip">Skip to content</a>
@@ -69,6 +1202,12 @@
             </div>
           </div>
           <button class="island-close-btn" id="island-close-btn" type="button" aria-label="Close Dynamic Island">✕</button>
+        </div>
+        <div class="island-telemetry">
+          <span class="island-tele-badge">⚡ 15 FPS TUI</span>
+          <span class="island-tele-badge">🛡️ TLS JA3/JA4</span>
+          <span class="island-tele-badge">🎭 10 Playwright</span>
+          <span class="island-tele-badge">🔍 7 Modes</span>
         </div>
         <nav class="island-nav-grid" aria-label="Dynamic Island Links">
           <a href="#features" class="island-nav-item"><span class="ini-icon" aria-hidden="true">⌘</span><span data-i18n="nav.features">Features</span></a>
@@ -143,14 +1282,9 @@
           </div>
           <div class="terminal reveal" id="terminal-container" aria-label="Interactive terminal preview">
             <div class="terminal-top">
-              <div class="terminal-dots" aria-hidden="true">
-                <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
-              </div>
+              <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
               <span class="terminal-label" id="term-label">bash — Verdamt-Snipe v1.4.5 — example.com</span>
-              <div class="terminal-actions">
-                <button class="term-btn" id="term-pause" type="button" aria-label="Pause terminal simulation" title="Pause simulation">⏸</button>
-                <button class="term-btn replay" id="replay" type="button" aria-label="Replay terminal simulation" title="Replay simulation">↻</button>
-              </div>
+              <button class="replay" id="replay" type="button" aria-label="Replay terminal simulation">↻</button>
             </div>
             <pre id="terminal-pre"><span class="prompt">$</span> python3 verd.py example.com --full
 
@@ -214,32 +1348,15 @@
           <p class="section-intro" data-i18n="features.intro">What actually powers a scan, from the network layer to browser-based verification.</p>
         </div>
         <div class="features stagger">
-          <!-- Card 1: 01 // NETWORK (Interactive Collapsible Card) -->
-          <article class="feature collapsible-card is-expanded pr-item is-revealed" id="card-feature-1">
-            <button class="card-header-btn" type="button" aria-expanded="true" aria-controls="card-content-1" id="card-header-1">
-              <div class="feature-top">
-                <span class="feature-tag">01 // NETWORK</span>
-                <div class="card-header-actions">
-                  <span class="feature-icon" aria-hidden="true">⌘</span>
-                  <span class="card-chevron" aria-hidden="true">
-                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
-                  </span>
-                </div>
-              </div>
-              <h3 data-i18n="features.f1.title">Async network engine</h3>
-            </button>
-            <div class="card-collapse-body" id="card-content-1" role="region" aria-labelledby="card-header-1">
-              <div class="card-inner-content">
-                <p data-i18n="features.f1.desc">Python AsyncIO plus HTTP/2 via httpx, with host rate-limiting and a circuit breaker for thousands of concurrent requests.</p>
-                <div class="card-extra-specs">
-                  <span class="spec-pill">HTTP/2 Multiplex</span>
-                  <span class="spec-pill">Circuit Breaker</span>
-                  <span class="spec-pill">AsyncIO Loop</span>
-                </div>
-              </div>
+          <article class="feature">
+            <div class="feature-top">
+              <span class="feature-tag">01 // NETWORK</span>
+              <div class="feature-icon" aria-hidden="true">⌘</div>
             </div>
+            <h3 data-i18n="features.f1.title">Async network engine</h3>
+            <p data-i18n="features.f1.desc">Python AsyncIO plus HTTP/2 via httpx, with host rate-limiting and a circuit breaker for thousands of concurrent requests.</p>
           </article>
-          <article class="feature pr-item">
+          <article class="feature">
             <div class="feature-top">
               <span class="feature-tag">02 // TLS SPOOF</span>
               <div class="feature-icon" aria-hidden="true">◎</div>
@@ -247,7 +1364,7 @@
             <h3 data-i18n="features.f2.title">TLS impersonation</h3>
             <p data-i18n="features.f2.desc">JA3/JA4 fingerprint spoofing via curl_cffi, so traffic presents as a real browser to anti-bot defenses and WAFs.</p>
           </article>
-          <article class="feature pr-item">
+          <article class="feature">
             <div class="feature-top">
               <span class="feature-tag">03 // GO BRIDGE</span>
               <div class="feature-icon" aria-hidden="true">⌁</div>
@@ -255,7 +1372,7 @@
             <h3 data-i18n="features.f3.title">Go native bridge</h3>
             <p data-i18n="features.f3.desc">Hands fuzzing straight to Go binaries — subfinder, httpx, katana, nuclei, dalfox, gau — for native throughput.</p>
           </article>
-          <article class="feature pr-item">
+          <article class="feature">
             <div class="feature-top">
               <span class="feature-tag">04 // PLAYWRIGHT</span>
               <div class="feature-icon" aria-hidden="true">▣</div>
@@ -263,7 +1380,7 @@
             <h3 data-i18n="features.f4.title">Playwright verification</h3>
             <p data-i18n="features.f4.desc">Ten browser-based modules confirm findings live: DOM XSS, CSRF, postMessage leaks, clickjacking, and more.</p>
           </article>
-          <article class="feature pr-item">
+          <article class="feature">
             <div class="feature-top">
               <span class="feature-tag">05 // RICH TUI</span>
               <div class="feature-icon" aria-hidden="true">≡</div>
@@ -271,7 +1388,7 @@
             <h3 data-i18n="features.f5.title">Tactical TUI dashboard</h3>
             <p data-i18n="features.f5.desc">A three-column terminal view refreshed at 15 FPS: pipeline stage, request-rate sparkline, and finding severity.</p>
           </article>
-          <article class="feature pr-item">
+          <article class="feature">
             <div class="feature-top">
               <span class="feature-tag">06 // POLICY AUDIT</span>
               <div class="feature-icon" aria-hidden="true">✓</div>
@@ -279,7 +1396,7 @@
             <h3 data-i18n="features.f6.title">Policy &amp; audit engine</h3>
             <p data-i18n="features.f6.desc">Scope locks, request budgets, and a replayable .jsonl audit log that reconstructs every request as curl.</p>
           </article>
-          <article class="feature pr-item">
+          <article class="feature">
             <div class="feature-top">
               <span class="feature-tag">07 // STATE SNAPSHOT</span>
               <div class="feature-icon" aria-hidden="true">⟳</div>
@@ -300,7 +1417,7 @@
         </div>
         <div class="bento-grid stagger">
           <!-- Bento Card 1: Entry Points -->
-          <div class="bento-card span-5 pr-item is-revealed">
+          <div class="bento-card span-5">
             <div class="bento-head">
               <span class="bento-badge">01 // INGESTION</span>
               <span class="bento-icon" aria-hidden="true">⌘</span>
@@ -316,7 +1433,7 @@
           </div>
 
           <!-- Bento Card 2: Core Engine (Hero Bento) -->
-          <div class="bento-card span-7 hero pr-item">
+          <div class="bento-card span-7 hero">
             <div class="bento-head">
               <span class="bento-badge">02 // DUAL-ENGINE RUNTIME</span>
               <span class="bento-icon" aria-hidden="true">⚡</span>
@@ -333,7 +1450,7 @@
           </div>
 
           <!-- Bento Card 3: Security Modules Suite -->
-          <div class="bento-card span-7 pr-item">
+          <div class="bento-card span-7">
             <div class="bento-head">
               <span class="bento-badge">03 // ASSAULT SUITE</span>
               <span class="bento-icon" aria-hidden="true">🛡️</span>
@@ -350,7 +1467,7 @@
           </div>
 
           <!-- Bento Card 4: Output & State -->
-          <div class="bento-card span-5 pr-item">
+          <div class="bento-card span-5">
             <div class="bento-head">
               <span class="bento-badge">04 // DELIVERABLES</span>
               <span class="bento-icon" aria-hidden="true">📊</span>
@@ -405,7 +1522,7 @@ python3 verd.py --resume outputs/target.com.state</pre>
         </div>
         <div class="attack-grid stagger">
           <!-- Card 1: Injections & Server-Side -->
-          <div class="attack-card pr-item is-revealed">
+          <div class="attack-card">
             <div class="attack-head">
               <div class="attack-title-wrap">
                 <span class="attack-icon" aria-hidden="true">⚡</span>
@@ -423,7 +1540,7 @@ python3 verd.py --resume outputs/target.com.state</pre>
           </div>
 
           <!-- Card 2: Web Cache & HTTP Desync -->
-          <div class="attack-card pr-item">
+          <div class="attack-card">
             <div class="attack-head">
               <div class="attack-title-wrap">
                 <span class="attack-icon" aria-hidden="true">☣️</span>
@@ -441,7 +1558,7 @@ python3 verd.py --resume outputs/target.com.state</pre>
           </div>
 
           <!-- Card 3: Client-Side & DOM Sinks -->
-          <div class="attack-card pr-item">
+          <div class="attack-card">
             <div class="attack-head">
               <div class="attack-title-wrap">
                 <span class="attack-icon" aria-hidden="true">🎭</span>
@@ -460,7 +1577,7 @@ python3 verd.py --resume outputs/target.com.state</pre>
           </div>
 
           <!-- Card 4: Infra & WAF Origin Hunter -->
-          <div class="attack-card pr-item">
+          <div class="attack-card">
             <div class="attack-head">
               <div class="attack-title-wrap">
                 <span class="attack-icon" aria-hidden="true">🛰️</span>
@@ -487,22 +1604,22 @@ python3 verd.py --resume outputs/target.com.state</pre>
           <h2 data-i18n="bench.title">Built for speed and stability.</h2>
         </div>
         <div class="benchmarks stagger">
-          <div class="bench-card pr-item is-revealed">
+          <div class="bench-card">
             <div class="bench-icon" aria-hidden="true">⚡</div>
             <h3 data-i18n="bench.b1.title">Dual-Engine Throughput</h3>
             <p data-i18n="bench.b1.desc">AsyncIO Python + Go native binaries working in parallel for maximum scan speed.</p>
           </div>
-          <div class="bench-card pr-item">
+          <div class="bench-card">
             <div class="bench-icon" aria-hidden="true">◎</div>
             <h3 data-i18n="bench.b2.title">15 FPS Live Dashboard</h3>
             <p data-i18n="bench.b2.desc">Real-time tactical TUI with sparkline RPS, pipeline status, and hardware metrics.</p>
           </div>
-          <div class="bench-card pr-item">
+          <div class="bench-card">
             <div class="bench-icon" aria-hidden="true">⟡</div>
             <h3 data-i18n="bench.b3.title">Zero Memory Leak</h3>
             <p data-i18n="bench.b3.desc">SharedBrowserPool singleton with isolated contexts prevents Playwright memory bloat.</p>
           </div>
-          <div class="bench-card pr-item">
+          <div class="bench-card">
             <div class="bench-icon" aria-hidden="true">⇄</div>
             <h3 data-i18n="bench.b4.title">HTTP/2 Multiplexing</h3>
             <p data-i18n="bench.b4.desc">Concurrent streams over a single TCP connection via httpx for efficient network usage.</p>
@@ -709,8 +1826,526 @@ python3 verd.py --resume outputs/target.com.state</pre>
 
   <button class="to-top" id="to-top" type="button" aria-label="Back to top">↑</button>
 
-  <script src="assets/js/main.js" defer></script>
-  <script src="assets/js/navigation.js" defer></script>
-  <script src="assets/js/animations.js" defer></script>
+  <script>
+  (function () {
+    var $ = function (q) { return document.querySelector(q); };
+    var $$ = function (q) { return Array.prototype.slice.call(document.querySelectorAll(q)); };
+    $("#year").textContent = new Date().getFullYear();
+
+    /* ---------- i18n ---------- */
+    var DICT = {
+      en: {
+        "ui.skip": "Skip to content",
+        "nav.features": "Features", "nav.architecture": "Architecture", "nav.workflow": "Workflow",
+        "nav.attack": "Attack Surface", "nav.showcase": "Showcase", "nav.benchmarks": "Benchmarks",
+        "nav.installation": "Installation", "nav.faq": "FAQ", "nav.about": "About", "nav.cta": "View on GitHub",
+        "island.subtitle": "Interactive Security Suite",
+        "hero.eyebrow": "Open source · Python AsyncIO + Go",
+        "hero.title": "A clearer way to explore web security.",
+        "hero.lead": "Verdamt-Snipe is an async-first reconnaissance and vulnerability assessment framework: a Python AsyncIO engine paired with a Go native bridge, TLS fingerprint impersonation, and a Playwright suite that verifies findings in a real browser.",
+        "hero.cta1": "Explore repository", "hero.cta2": "Read documentation",
+        "hero.byline1": "A personal project by", "hero.byline2": ", built and maintained in the open.",
+        "terminal.label": "terminal preview",
+        "terminal.note": "Live terminal simulation: Full Pipeline + Web Cache Poisoning & Deception against example.com.",
+        "stats.modes": "Scan Modes",
+        "stats.playwright": "Playwright Modules",
+        "stats.layers": "Arch Layers",
+        "stats.checks": "Vuln Checks",
+        "stats.gotools": "Go Binaries",
+        "features.eyebrow": "Under the hood", "features.title": "Six pieces, one pipeline.",
+        "features.intro": "What actually powers a scan, from the network layer to browser-based verification.",
+        "features.f1.title": "Async network engine",
+        "features.f1.desc": "Python AsyncIO plus HTTP/2 via httpx, with host rate-limiting and a circuit breaker for thousands of concurrent requests.",
+        "features.f2.title": "TLS impersonation",
+        "features.f2.desc": "JA3/JA4 fingerprint spoofing via curl_cffi, so traffic presents as a real browser to anti-bot defenses and WAFs.",
+        "features.f3.title": "Go native bridge",
+        "features.f3.desc": "Hands fuzzing straight to Go binaries — subfinder, httpx, katana, nuclei, dalfox, gau — for native throughput.",
+        "features.f4.title": "Playwright verification",
+        "features.f4.desc": "Ten browser-based modules confirm findings live: DOM XSS, CSRF, postMessage leaks, clickjacking, and more.",
+        "features.f5.title": "Tactical TUI dashboard",
+        "features.f5.desc": "A three-column terminal view refreshed at 15 FPS: pipeline stage, request-rate sparkline, and finding severity.",
+        "features.f6.title": "Policy & audit engine",
+        "features.f6.desc": "Scope locks, request budgets, and a replayable .jsonl audit log that reconstructs every request as curl.",
+        "features.f7.title": "State management",
+        "features.f7.desc": "Multi-token session handling (Bearer/Cookie jar) and save/resume scan checkpoints via .state files.",
+        "arch.eyebrow": "System design",
+        "arch.title": "Four-layer modular architecture.",
+        "arch.intro": "A deterministic pipeline from CLI entry to verified findings, with cross-cutting policy enforcement.",
+        "arch.l1.title": "Entry Points & CLI",
+        "arch.l1.desc": "Fast argument parsing, interactive terminal menu, and scope guard enforcement.",
+        "arch.l2.title": "Core Engine & Runtime",
+        "arch.l2.desc": "High-concurrency AsyncIO event loop coordinated with native compiled Go binaries and headless Chromium pools.",
+        "arch.l3.title": "Security Modules Suite",
+        "arch.l3.desc": "Cross-layer vulnerability checks verifying injection vectors, cache poisoning, and client-side flaws.",
+        "arch.l4.title": "Output & State",
+        "arch.l4.desc": "Immutable JSONL audit trail, executive deliverables, and pause-and-resume scan state.",
+        "workflow.eyebrow": "A practical pipeline",
+        "workflow.title": "Recon, then app analysis, then assault.",
+        "workflow.p": "Verdamt-Snipe runs seven scan modes on top of one pipeline, from passive intelligence gathering to a full vulnerability assault. The repository README is the source of truth for current flags and behavior.",
+        "workflow.l1": "Start with --dry-run to validate payloads without sending traffic.",
+        "workflow.l2": "Use --passive to restrict requests to GET, HEAD, and OPTIONS.",
+        "workflow.l3": "Review the .jsonl audit log, replayable as curl for reporting.",
+        "workflow.codeTitle": "Usage examples",
+        "attack.eyebrow": "Coverage",
+        "attack.title": "What it finds.",
+        "attack.intro": "Vulnerability categories tested across client-side, server-side, and infrastructure layers.",
+        "attack.c1.title": "Injections & Server-Side",
+        "attack.c1.desc": "Automated differential latency testing, out-of-band callback listeners, and server-side request forgery verification.",
+        "attack.c2.title": "Web Cache & HTTP Desync",
+        "attack.c2.desc": "Unkeyed header reflection probes, Web Cache Deception path delimiters, and CL-TE request smuggling desynchronization.",
+        "attack.c3.title": "Client-Side & DOM Sinks",
+        "attack.c3.desc": "Live browser verification inside headless Chromium sandbox targeting execution sinks like eval(), innerHTML, and postMessage.",
+        "attack.c4.title": "Infra & WAF Origin Hunter",
+        "attack.c4.desc": "Uncovers actual origin server IP behind Cloudflare/Akamai CDNs, TLS fingerprint impersonation, and comprehensive subdomain intelligence.",
+        "bench.eyebrow": "Performance",
+        "bench.title": "Built for speed and stability.",
+        "bench.b1.title": "Dual-Engine Throughput",
+        "bench.b1.desc": "AsyncIO Python + Go native binaries working in parallel for maximum scan speed.",
+        "bench.b2.title": "15 FPS Live Dashboard",
+        "bench.b2.desc": "Real-time tactical TUI with sparkline RPS, pipeline status, and hardware metrics.",
+        "bench.b3.title": "Zero Memory Leak",
+        "bench.b3.desc": "SharedBrowserPool singleton with isolated contexts prevents Playwright memory bloat.",
+        "bench.b4.title": "HTTP/2 Multiplexing",
+        "bench.b4.desc": "Concurrent streams over a single TCP connection via httpx for efficient network usage.",
+        "showcase.eyebrow": "Visual proof & live demos",
+        "showcase.title": "Tactical TUI & interactive audit reports.",
+        "showcase.intro": "Authentic captures from Verdamt-Snipe v1.4.5 NEXUS: real-time terminal surveillance and executive vulnerability deliverables.",
+        "showcase.tuiBadge": "Terminal UI",
+        "showcase.htmlBadge": "Deliverable",
+        "showcase.zoomPrompt": "Tap / Click to view full resolution",
+        "showcase.c1.title": "Tactical Rich TUI Live Console",
+        "showcase.c1.desc": "Three-column surveillance console rendered at 15 FPS. Tracks pipeline phase progression, active socket pools, CPU/RAM utilization, and real-time finding telemetry without terminal flickering.",
+        "showcase.c2.title": "Executive HTML Vulnerability Report",
+        "showcase.c2.desc": "Single-file zero-dependency HTML & PDF deliverable. Includes interactive severity filters (Critical, High, Medium, Low), automated CVSS v3.1 scoring, and replayable curl commands for instant triage.",
+        "chart.title": "Vulnerability Assessment Severity Distribution",
+        "chart.subtitle": "Aggregated findings verified via AsyncVulnEngine & Playwright Chromium Singleton Pool",
+        "chart.crit": "Critical (9.0 - 10.0)",
+        "chart.high": "High (7.0 - 8.9)",
+        "chart.med": "Medium (4.0 - 6.9)",
+        "chart.low": "Low (0.1 - 3.9)",
+        "chart.info": "Info / Recon",
+        "install.eyebrow": "Getting started", "install.title": "Three steps to a working install.",
+        "install.intro": "Requires Linux or macOS, Python 3.12+, and 2 GB+ of memory. Commands below match the current README.",
+        "install.s1.title": "Clone the project", "install.s1.desc": "Get the source from GitHub using one of the methods above.",
+        "install.s2.title": "Set up a virtual environment", "install.s2.lead": "Install dependencies inside an isolated environment:",
+        "install.s3.title": "Install the Playwright driver", "install.s3.lead": "Required for the browser-based verification modules:",
+        "install.notice": "Use Verdamt-Snipe only on systems you own or have explicit authorization to test — a bug bounty program or a signed penetration-testing agreement. Always stay within scope.",
+        "faq.eyebrow": "Questions", "faq.title": "Quick answers.",
+        "faq.q1": "Who builds Verdamt-Snipe?", "faq.a1": "It's a personal project by Samasta Baskara, developed and shared openly on GitHub.",
+        "faq.q2": "What does a scan actually do?", "faq.a2": "It runs one of seven modes — from passive recon to a full vulnerability assault — combining an async Python engine, a Go native bridge, and Playwright-based verification in a real browser.",
+        "faq.q3": "Which systems may I scan?", "faq.a3": "Only systems you own or are explicitly authorized to test. Validate every finding manually before treating it as confirmed.",
+        "faq.q4": "Where are the current flags and options?", "faq.a4": "In the project README — the terminal preview on this page is illustrative only.",
+        "about.eyebrow": "Explore the project", "about.title": "Built in the open.",
+        "about.p1": "Verdamt-Snipe is a personal project by",
+        "about.p2": ", developed as an async-first security framework and shared as open source. Visit the repository for source, releases, and updates.",
+        "about.cta": "View Verdamt-Snipe",
+        "footer.byline": "a personal project by", "footer.docs": "Documentation", "footer.license": "License",
+        "ui.copy": "Copy command", "ui.copyAll": "Copy all", "ui.copied": "Copied", "ui.copyFailed": "Copy failed",
+        "ui.meterStart": "Tap a step to mark it done · 0 of 3", "ui.meterDone": "All steps done. Open the README to continue."
+      },
+      id: {
+        "ui.skip": "Lewati ke konten",
+        "nav.features": "Fitur", "nav.architecture": "Arsitektur", "nav.workflow": "Alur Kerja",
+        "nav.attack": "Cakupan Serangan", "nav.showcase": "Hasil & Dasbor", "nav.benchmarks": "Benchmark",
+        "nav.installation": "Instalasi", "nav.faq": "FAQ", "nav.about": "Tentang", "nav.cta": "Lihat di GitHub",
+        "island.subtitle": "Suite Keamanan Taktis",
+        "hero.eyebrow": "Sumber terbuka · Python AsyncIO + Go",
+        "hero.title": "Cara yang lebih jernih untuk menjelajahi keamanan web.",
+        "hero.lead": "Verdamt-Snipe adalah framework rekognisi dan asesmen kerentanan berbasis async: mesin Python AsyncIO yang dipadukan dengan Go native bridge, TLS fingerprint impersonation, dan Playwright suite yang memverifikasi temuan langsung di browser.",
+        "hero.cta1": "Jelajahi repository", "hero.cta2": "Baca dokumentasi",
+        "hero.byline1": "Proyek pribadi oleh", "hero.byline2": ", dibangun dan dirawat secara terbuka.",
+        "terminal.label": "pratinjau terminal",
+        "terminal.note": "Simulasi terminal langsung: Full Pipeline + Web Cache Poisoning & Deception terhadap example.com.",
+        "stats.modes": "Mode Scan",
+        "stats.playwright": "Modul Playwright",
+        "stats.layers": "Lapisan Arsitektur",
+        "stats.checks": "Cek Kerentanan",
+        "stats.gotools": "Binary Go",
+        "features.eyebrow": "Di balik layar", "features.title": "Enam komponen, satu alur kerja.",
+        "features.intro": "Yang benar-benar menjalankan sebuah scan, dari lapisan jaringan hingga verifikasi berbasis browser.",
+        "features.f1.title": "Mesin jaringan async",
+        "features.f1.desc": "Python AsyncIO ditambah HTTP/2 lewat httpx, dengan rate-limiting per host dan circuit breaker untuk ribuan request bersamaan.",
+        "features.f2.title": "TLS impersonation",
+        "features.f2.desc": "Spoofing fingerprint JA3/JA4 lewat curl_cffi, sehingga traffic tampil seperti browser asli di hadapan WAF dan proteksi anti-bot.",
+        "features.f3.title": "Go native bridge",
+        "features.f3.desc": "Meneruskan fuzzing langsung ke binary Go — subfinder, httpx, katana, nuclei, dalfox, gau — untuk throughput native.",
+        "features.f4.title": "Verifikasi Playwright",
+        "features.f4.desc": "Sepuluh modul berbasis browser memverifikasi temuan secara langsung: DOM XSS, CSRF, kebocoran postMessage, clickjacking, dan lainnya.",
+        "features.f5.title": "Dasbor TUI taktis",
+        "features.f5.desc": "Tampilan terminal tiga kolom yang diperbarui 15 FPS: tahap pipeline, grafik kecepatan request, dan tingkat keparahan temuan.",
+        "features.f6.title": "Mesin policy & audit",
+        "features.f6.desc": "Penguncian scope, budget request, dan log audit .jsonl yang bisa direplay ulang menjadi perintah curl.",
+        "features.f7.title": "Manajemen state",
+        "features.f7.desc": "Pengelolaan multi-token sesi (Bearer/Cookie jar) dan mekanisme save/resume checkpoint pemindaian via file .state.",
+        "arch.eyebrow": "Desain sistem",
+        "arch.title": "Arsitektur modular empat lapisan.",
+        "arch.intro": "Pipeline deterministik dari entri CLI hingga temuan terverifikasi, dengan penegakan kebijakan lintas-lapisan.",
+        "arch.l1.title": "Titik Masuk & CLI",
+        "arch.l1.desc": "Parsing argumen cepat, menu terminal interaktif, dan penegakan scope guard.",
+        "arch.l2.title": "Core Engine & Runtime",
+        "arch.l2.desc": "Event loop AsyncIO konkurensi tinggi dikoordinasikan dengan binary Go native terkompilasi dan pool headless Chromium.",
+        "arch.l3.title": "Suite Modul Keamanan",
+        "arch.l3.desc": "Pemeriksaan kerentanan lintas-lapisan yang memverifikasi vektor injeksi, cache poisoning, dan celah sisi klien.",
+        "arch.l4.title": "Output & State",
+        "arch.l4.desc": "Jejak audit JSONL tidak dapat diubah, laporan eksekutif, dan checkpoint state yang dapat dijeda/dilanjutkan.",
+        "workflow.eyebrow": "Alur kerja praktis",
+        "workflow.title": "Recon, lalu analisis app, lalu assault.",
+        "workflow.p": "Verdamt-Snipe menjalankan tujuh mode pemindaian di atas satu pipeline, dari pengumpulan intelijen pasif hingga vulnerability assault penuh. README repository adalah sumber kebenaran untuk flag dan perilaku terkini.",
+        "workflow.l1": "Mulai dengan --dry-run untuk memvalidasi payload tanpa mengirim traffic.",
+        "workflow.l2": "Gunakan --passive untuk membatasi request hanya pada GET, HEAD, dan OPTIONS.",
+        "workflow.l3": "Tinjau log audit .jsonl, yang bisa direplay sebagai curl untuk pelaporan.",
+        "workflow.codeTitle": "Contoh pemakaian",
+        "attack.eyebrow": "Cakupan",
+        "attack.title": "Apa yang ditemukan.",
+        "attack.intro": "Kategori kerentanan yang diuji di sisi klien, server, dan infrastruktur.",
+        "attack.c1.title": "Injeksi & Sisi Server",
+        "attack.c1.desc": "Pengujian latensi diferensial otomatis, pendengar panggilan balik out-of-band, dan verifikasi server-side request forgery.",
+        "attack.c2.title": "Web Cache & HTTP Desync",
+        "attack.c2.desc": "Pemeriksaan refleksi header unkeyed, pembatas path Web Cache Deception, dan desinkronisasi penyelundupan request CL-TE.",
+        "attack.c3.title": "Sisi Klien & Sink DOM",
+        "attack.c3.desc": "Verifikasi browser langsung di sandbox Chromium headless untuk sink eksekusi seperti eval(), innerHTML, dan postMessage.",
+        "attack.c4.title": "Infra & WAF Origin Hunter",
+        "attack.c4.desc": "Mengungkap IP server origin sebenarnya di balik CDN Cloudflare/Akamai, peniruan fingerprint TLS, dan intelijen subdomain komprehensif.",
+        "bench.eyebrow": "Performa",
+        "bench.title": "Dibangun untuk kecepatan dan stabilitas.",
+        "bench.b1.title": "Throughput Dual-Engine",
+        "bench.b1.desc": "AsyncIO Python + binary Go native bekerja paralel untuk kecepatan scan maksimum.",
+        "bench.b2.title": "Dasbor Live 15 FPS",
+        "bench.b2.desc": "TUI taktis real-time dengan sparkline RPS, status pipeline, dan metrik hardware.",
+        "bench.b3.title": "Zero Memory Leak",
+        "bench.b3.desc": "SharedBrowserPool singleton dengan konteks terisolasi mencegah bloat memori Playwright.",
+        "bench.b4.title": "HTTP/2 Multiplexing",
+        "bench.b4.desc": "Stream bersamaan melalui satu koneksi TCP via httpx untuk efisiensi jaringan.",
+        "showcase.eyebrow": "Bukti visual & demo langsung",
+        "showcase.title": "Dasbor TUI taktis & laporan audit interaktif.",
+        "showcase.intro": "Tangkapan layar otentik dari Verdamt-Snipe v1.4.5 NEXUS: pemantauan terminal real-time dan deliverable asesmen kerentanan.",
+        "showcase.tuiBadge": "Konsol TUI",
+        "showcase.htmlBadge": "Deliverable",
+        "showcase.zoomPrompt": "Ketuk / Klik untuk memperbesar resolusi",
+        "showcase.c1.title": "Konsol Live TUI Taktis (15 FPS)",
+        "showcase.c1.desc": "Konsol dasbor 3-kolom 15 FPS: status fase pipeline, metrik CPU/RAM, sparkline RPS, dan pemantauan temuan secara real-time tanpa flickering.",
+        "showcase.c2.title": "Laporan Keamanan HTML Interaktif",
+        "showcase.c2.desc": "Laporan mandiri HTML & PDF tanpa dependensi eksternal. Dilengkapi tab filter keparahan OWASP, kalkulasi CVSS v3.1, dan snippet cURL untuk reproduksi temuan seketika.",
+        "chart.title": "Distribusi Tingkat Keparahan Temuan",
+        "chart.subtitle": "Ringkasan temuan terverifikasi via AsyncVulnEngine & Singleton Browser Pool Playwright",
+        "chart.crit": "Kritis (9.0 - 10.0)",
+        "chart.high": "Tinggi (7.0 - 8.9)",
+        "chart.med": "Sedang (4.0 - 6.9)",
+        "chart.low": "Rendah (0.1 - 3.9)",
+        "chart.info": "Info / Pengintaian",
+        "install.eyebrow": "Mulai di sini", "install.title": "Tiga langkah untuk instalasi yang siap pakai.",
+        "install.intro": "Membutuhkan Linux atau macOS, Python 3.12+, dan memori 2 GB+. Perintah di bawah mengikuti README terkini.",
+        "install.s1.title": "Clone proyek", "install.s1.desc": "Ambil source code dari GitHub lewat salah satu cara di atas.",
+        "install.s2.title": "Siapkan virtual environment", "install.s2.lead": "Install dependensi di dalam environment terisolasi:",
+        "install.s3.title": "Install driver Playwright", "install.s3.lead": "Diperlukan untuk modul verifikasi berbasis browser:",
+        "install.notice": "Gunakan Verdamt-Snipe hanya pada sistem yang Anda miliki atau telah mendapat izin resmi untuk diuji — program bug bounty atau perjanjian pentest tertulis. Selalu patuhi batas scope.",
+        "faq.eyebrow": "Pertanyaan", "faq.title": "Jawaban singkat.",
+        "faq.q1": "Siapa yang membuat Verdamt-Snipe?", "faq.a1": "Ini adalah proyek pribadi Samasta Baskara, dikembangkan dan dibagikan secara terbuka di GitHub.",
+        "faq.q2": "Apa yang sebenarnya dilakukan saat scan?", "faq.a2": "Menjalankan salah satu dari tujuh mode — dari recon pasif hingga vulnerability assault penuh — menggabungkan mesin Python async, Go native bridge, dan verifikasi berbasis Playwright di browser sungguhan.",
+        "faq.q3": "Sistem mana saja yang boleh saya scan?", "faq.a3": "Hanya sistem yang Anda miliki atau yang secara eksplisit mengizinkan pengujian. Validasi setiap temuan secara manual sebelum dianggap terkonfirmasi.",
+        "faq.q4": "Di mana flag dan opsi terkini?", "faq.a4": "Di README proyek — pratinjau terminal di halaman ini hanya ilustrasi.",
+        "about.eyebrow": "Jelajahi proyek", "about.title": "Dibangun secara terbuka.",
+        "about.p1": "Verdamt-Snipe adalah proyek pribadi",
+        "about.p2": ", dikembangkan sebagai framework keamanan berbasis async dan dibagikan sebagai open source. Kunjungi repository untuk source code, rilis, dan pembaruan.",
+        "about.cta": "Lihat Verdamt-Snipe",
+        "footer.byline": "proyek pribadi", "footer.docs": "Dokumentasi", "footer.license": "Lisensi",
+        "ui.copy": "Salin perintah", "ui.copyAll": "Salin semua", "ui.copied": "Tersalin", "ui.copyFailed": "Gagal menyalin",
+        "ui.meterStart": "Ketuk langkah untuk menandainya selesai · 0 dari 3", "ui.meterDone": "Semua langkah selesai. Buka README untuk melanjutkan."
+      }
+    };
+    var lang = (function () { try { return localStorage.getItem("vs-lang") || "en"; } catch (e) { return "en"; } })();
+    var langBtn = $("#lang-toggle"), islandLangBtn = $("#island-lang-btn");
+    function translate(l) {
+      lang = l;
+      $$("[data-i18n]").forEach(function (el) {
+        var key = el.getAttribute("data-i18n"), v = DICT[l][key];
+        if (v != null) el.textContent = v;
+      });
+      langBtn.textContent = l === "en" ? "ID" : "EN";
+      langBtn.setAttribute("aria-label", "Switch language to " + (l === "en" ? "Indonesian" : "English"));
+      if (islandLangBtn) islandLangBtn.textContent = l === "en" ? "ID (Bahasa)" : "EN (English)";
+      document.documentElement.lang = l;
+      refreshMeter();
+    }
+    function toggleLang() {
+      var next = lang === "en" ? "id" : "en";
+      translate(next);
+      try { localStorage.setItem("vs-lang", next); } catch (e) {}
+    }
+    langBtn.addEventListener("click", toggleLang);
+    if (islandLangBtn) islandLangBtn.addEventListener("click", toggleLang);
+
+    /* ---------- Theme ---------- */
+    var root = document.documentElement, tbtn = $("#theme-toggle"), islandThemeBtn = $("#island-theme-btn"), meta = $('meta[name="theme-color"]');
+    function applyTheme(t) {
+      root.dataset.theme = t;
+      tbtn.textContent = t === "dark" ? "☀" : "☾";
+      tbtn.setAttribute("aria-label", "Switch to " + (t === "dark" ? "light" : "dark") + " theme");
+      if (islandThemeBtn) islandThemeBtn.textContent = t === "dark" ? "☀ Light" : "☾ Dark";
+      meta.content = t === "dark" ? "#0f1512" : "#f3f6f4";
+    }
+    applyTheme(root.dataset.theme || "light");
+    function toggleTheme() {
+      var n = root.dataset.theme === "dark" ? "light" : "dark";
+      applyTheme(n);
+      try { localStorage.setItem("vs-theme", n); } catch (e) {}
+    }
+    tbtn.addEventListener("click", toggleTheme);
+    if (islandThemeBtn) islandThemeBtn.addEventListener("click", toggleTheme);
+
+    /* ---------- Dynamic Island (Mobile & Tablet) ---------- */
+    var island = $("#dynamic-island"), islandBackdrop = $("#island-backdrop");
+    var islandCompact = $("#island-compact"), islandClose = $("#island-close-btn");
+    function openIsland() {
+      if (!island) return;
+      island.classList.add("expanded");
+      if (islandBackdrop) islandBackdrop.classList.add("active");
+    }
+    function closeIsland() {
+      if (!island) return;
+      island.classList.remove("expanded");
+      if (islandBackdrop) islandBackdrop.classList.remove("active");
+    }
+    if (islandCompact) islandCompact.addEventListener("click", openIsland);
+    if (islandClose) islandClose.addEventListener("click", function(e) { e.stopPropagation(); closeIsland(); });
+    if (islandBackdrop) islandBackdrop.addEventListener("click", closeIsland);
+    $$(".island-nav-item").forEach(function(a) { a.addEventListener("click", closeIsland); });
+    document.addEventListener("keydown", function(e) {
+      if (e.key === "Escape" && island && island.classList.contains("expanded")) closeIsland();
+    });
+
+    /* ---------- Desktop Mobile menu fallback ---------- */
+    var menuBtn = $("#menu-btn"), navl = $("#nav-links");
+    function setMenu(open) {
+      if (!navl) return;
+      navl.classList.toggle("open", open);
+      if (menuBtn) {
+        menuBtn.setAttribute("aria-expanded", String(open));
+        menuBtn.textContent = open ? "✕" : "☰";
+      }
+    }
+    if (menuBtn) menuBtn.addEventListener("click", function () { setMenu(!navl.classList.contains("open")); });
+    if (navl) navl.addEventListener("click", function (e) { if (e.target.closest("a")) setMenu(false); });
+
+    /* ---------- Scroll progress + back-to-top ---------- */
+    var bar = $("#progress"), toTop = $("#to-top");
+    function onScroll() {
+      var max = root.scrollHeight - window.innerHeight;
+      bar.style.transform = "scaleX(" + (max > 0 ? window.scrollY / max : 0) + ")";
+      toTop.classList.toggle("show", window.scrollY > 600);
+    }
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+    toTop.addEventListener("click", function () { window.scrollTo({ top: 0 }); });
+
+    /* ---------- Scroll reveal (Intersection Observer) ---------- */
+    if ('IntersectionObserver' in window) {
+      var revealIO = new IntersectionObserver(function(entries) {
+        entries.forEach(function(e) {
+          if (e.isIntersecting) {
+            e.target.classList.add('visible');
+          }
+        });
+      }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+      $$('.reveal, .stagger').forEach(function(el) { revealIO.observe(el); });
+    }
+
+    /* ---------- Animated counters ---------- */
+    if ('IntersectionObserver' in window) {
+      var counterIO = new IntersectionObserver(function(entries) {
+        entries.forEach(function(e) {
+          if (!e.isIntersecting) return;
+          var el = e.target;
+          var target = parseInt(el.getAttribute('data-count'), 10);
+          var duration = 1200;
+          var start = null;
+          function step(ts) {
+            if (!start) start = ts;
+            var progress = Math.min((ts - start) / duration, 1);
+            el.textContent = Math.round(progress * target);
+            if (progress < 1) requestAnimationFrame(step);
+          }
+          requestAnimationFrame(step);
+          counterIO.unobserve(el);
+        });
+      }, { threshold: 0.5 });
+      $$('[data-count]').forEach(function(el) { counterIO.observe(el); });
+    }
+
+    /* ---------- Scroll-spy ---------- */
+    if ("IntersectionObserver" in window) {
+      var links = $$(".navlinks a, .island-nav-item");
+      var spy = new IntersectionObserver(function (es) {
+        es.forEach(function (e) {
+          if (!e.isIntersecting) return;
+          links.forEach(function (a) {
+            var href = a.getAttribute("href");
+            if (href === "#" + e.target.id) {
+              a.classList.add("active");
+            } else if (href && href.startsWith("#")) {
+              a.classList.remove("active");
+            }
+          });
+        });
+      }, { rootMargin: "-40% 0px -55% 0px" });
+      $$("main section[id]").forEach(function (sec) { spy.observe(sec); });
+    }
+
+    /* ---------- Terminal Stream Engine (Full Pipeline + Cache Poisoning on example.com) ---------- */
+    var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var termPre = $("#terminal-pre"), replayBtn = $("#replay");
+    var fullStreamLines = [
+      '<span class="dim">Verdamt-Snipe v1.4.5 — NEXUS Architecture</span>',
+      '<span class="dim">target: example.com | engine: AsyncIO + Go bridge | TLS: Chrome 120 (JA3)</span>',
+      '',
+      '<span class="good">[recon]</span>      passive intel ............ 14 subdomains discovered',
+      '<span class="good">[waf]</span>        origin hunter ............ <span class="warn">Cloudflare bypassed -> 93.184.216.34</span>',
+      '<span class="good">[app]</span>        playwright crawl ......... 247 endpoints · 89 parameters mapped',
+      '<span class="warn">[assault]</span>    differential latency ..... <span class="err">SQLi confirmed on /api/v1/search</span>',
+      '<span class="good">[browser]</span>    headless chromium ........ <span class="err">DOM XSS sink execution confirmed</span>',
+      '<span class="warn">[poison]</span>     unkeyed headers test ..... <span class="warn">\'X-Forwarded-Host\' reflected on /static/app.js</span>',
+      '<span class="err">[poison]</span>     cache vulnerability ...... <span class="err">POISONED! Cached for 300s (HIT)</span>',
+      '<span class="warn">[deception]</span>  path delimiter probe ..... Web Cache Deception on /user/settings.php.css',
+      '',
+      '<span class="dim">audit summary: 2 Critical · 5 High · 1 Informational</span>',
+      '<span class="dim">deliverables: outputs/example.com/audit.jsonl & report.html</span>',
+      '',
+      '<span class="prompt">$</span> <span class="dim blink">_</span>'
+    ];
+
+    function runTerminalSimulation(animate) {
+      if (!termPre) return;
+      var cmdHeader = '<span class="prompt">$</span> python3 verd.py example.com --full\n\n';
+      if (!animate || reduce) {
+        termPre.innerHTML = cmdHeader + fullStreamLines.join('\n');
+        return;
+      }
+      var allLines = (cmdHeader + fullStreamLines.join('\n')).split('\n');
+      termPre.innerHTML = '';
+      var idx = 0;
+      function nextLine() {
+        idx++;
+        termPre.innerHTML = allLines.slice(0, idx).join('\n');
+        if (idx < allLines.length) setTimeout(nextLine, idx === 1 ? 260 : 45);
+      }
+      nextLine();
+    }
+
+    if (replayBtn) replayBtn.addEventListener("click", function() { runTerminalSimulation(true); });
+
+    var played = false;
+    if ("IntersectionObserver" in window) {
+      var tio = new IntersectionObserver(function (es) {
+        if (es[0].isIntersecting && !played) { played = true; runTerminalSimulation(true); tio.disconnect(); }
+      }, { threshold: .3 });
+      var tCont = $("#terminal-container") || $(".terminal");
+      if (tCont) tio.observe(tCont);
+    } else {
+      runTerminalSimulation(false);
+    }
+
+    /* ---------- Screenshot Lightbox Modal ---------- */
+    var lbModal = $("#lightbox-modal"), lbImg = $("#lightbox-img"), lbCaption = $("#lightbox-caption"), lbClose = $("#lightbox-close");
+    function openLightbox(src, caption) {
+      if (!lbModal || !lbImg) return;
+      lbImg.src = src;
+      if (lbCaption) lbCaption.textContent = caption || "";
+      lbModal.classList.add("active");
+    }
+    function closeLightbox() {
+      if (!lbModal) return;
+      lbModal.classList.remove("active");
+    }
+    $$(".screenshot-box").forEach(function(box) {
+      box.addEventListener("click", function() {
+        var zoomSrc = box.getAttribute("data-zoom") || (box.querySelector("img") ? box.querySelector("img").src : "");
+        var cap = box.getAttribute("data-caption") || "";
+        openLightbox(zoomSrc, cap);
+      });
+    });
+    if (lbClose) lbClose.addEventListener("click", closeLightbox);
+    if (lbModal) lbModal.addEventListener("click", function(e) { if (e.target === lbModal) closeLightbox(); });
+    document.addEventListener("keydown", function(e) {
+      if (e.key === "Escape" && lbModal && lbModal.classList.contains("active")) closeLightbox();
+    });
+
+    /* ---------- Copy buttons ---------- */
+    function copyText(v) {
+      return navigator.clipboard.writeText(v).then(function () { return true; }).catch(function () {
+        var t = document.createElement("textarea");
+        t.value = v; t.style.cssText = "position:fixed;opacity:0";
+        document.body.appendChild(t); t.select();
+        var ok = false;
+        try { ok = document.execCommand("copy"); } catch (e) {}
+        t.remove();
+        return ok;
+      });
+    }
+    $$("[data-copy]").forEach(function (b) {
+      b.addEventListener("click", function () {
+        var idle = b.textContent;
+        copyText(b.getAttribute("data-copy")).then(function (ok) {
+          b.textContent = ok ? DICT[lang]["ui.copied"] : DICT[lang]["ui.copyFailed"];
+          setTimeout(function () { b.textContent = idle; }, 1500);
+        });
+      });
+    });
+
+    /* ---------- Clone method tabs ---------- */
+    var cloneCmd = $("#clone-cmd"), cloneCopy = $("#copy-clone");
+    $$(".tabs button").forEach(function (b) {
+      b.addEventListener("click", function () {
+        $$(".tabs button").forEach(function (x) { x.setAttribute("aria-pressed", String(x === b)); });
+        cloneCmd.textContent = b.dataset.cmd;
+        cloneCopy.setAttribute("data-copy", b.dataset.cmd);
+      });
+    });
+
+    /* ---------- Confetti (Sage Palette) ---------- */
+    function fireConfetti() {
+      var container = document.createElement('div');
+      container.className = 'confetti-container';
+      document.body.appendChild(container);
+      var colors = ['#7fa98c', '#4a7c59', '#cad2c5', '#84a98c', '#e7ede9'];
+      for (var i = 0; i < 50; i++) {
+        var piece = document.createElement('div');
+        piece.className = 'confetti-piece';
+        piece.style.left = Math.random() * 100 + '%';
+        piece.style.background = colors[Math.floor(Math.random() * colors.length)];
+        piece.style.animationDelay = Math.random() * 2 + 's';
+        piece.style.animationDuration = (2 + Math.random() * 2) + 's';
+        container.appendChild(piece);
+      }
+      setTimeout(function() { container.remove(); }, 5000);
+    }
+
+    /* ---------- Setup checklist ---------- */
+    var steps = $$(".step"), mbar = $("#meter-bar"), mtext = $("#meter-text");
+    function refreshMeter() {
+      var d = steps.filter(function (x) { return x.classList.contains("done"); }).length;
+      mbar.style.width = (d / steps.length * 100) + "%";
+      mtext.textContent = d === steps.length ? DICT[lang]["ui.meterDone"] : DICT[lang]["ui.meterStart"].replace(/[\d]+ (of|dari) \d/, d + (lang === "en" ? " of " : " dari ") + steps.length);
+      if (d === steps.length) fireConfetti();
+    }
+    steps.forEach(function (st, idx) {
+      var num = st.querySelector(".step-num");
+      st.tabIndex = 0;
+      st.setAttribute("role", "checkbox");
+      st.setAttribute("aria-checked", "false");
+      function toggle() {
+        var on = st.classList.toggle("done");
+        st.setAttribute("aria-checked", String(on));
+        num.textContent = on ? "✓" : String(idx + 1);
+        refreshMeter();
+      }
+      st.addEventListener("click", toggle);
+      st.addEventListener("keydown", function (e) {
+        if (e.key === " " || e.key === "Enter") { e.preventDefault(); toggle(); }
+      });
+    });
+
+    translate(lang);
+  })();
+  </script>
 </body>
 </html>
