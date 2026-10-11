@@ -2,446 +2,205 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="google-site-verification" content="GgTmEIXJ8sVG6xcNqe3dQNVbA8HdJc1oMrNCI6PDviE" />
+  <meta name="google-site-verification" content="GgTmEIXJ8sVG6xcNqe3dQNVbA8HdJc1oMrNCI6PDviE">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f7f7f5">
+  <meta name="theme-color" content="#080B0A">
   <meta name="author" content="Samasta Baskara">
   <meta name="description" content="Verdamt-Snipe is a personal, open-source async web security reconnaissance and vulnerability assessment framework by Samasta Baskara.">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Verdamt-Snipe — Async Web Security Framework">
   <meta property="og:description" content="A personal open-source project by Samasta Baskara: async recon, TLS impersonation, and Playwright-based vulnerability verification.">
-  <meta property="og:url" content="https://Samasta-Baskara.github.io/">
-  <link rel="canonical" href="https://sambaskara.github.io/">
+  <meta property="og:url" content="https://samasta-baskara.github.io/">
+  <meta property="og:image" content="https://opengraph.githubassets.com/14cfceea899c242364a8bc37cb7941183ed6d8d4e9744755655c53846a8a973b/Samasta-Baskara/Verdamt-Snipe">
+  <link rel="canonical" href="https://samasta-baskara.github.io/">
   <title>Verdamt-Snipe — Async Web Security Framework</title>
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+CiAgPHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByeD0iMTUiIGZpbGw9IiMxNzFhMTgiLz4KICA8Y2lyY2xlIGN4PSIzMiIgY3k9IjMyIiByPSIyMyIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjOWNhNDlhIiBzdHJva2Utb3BhY2l0eT0iLjQ1IiBzdHJva2Utd2lkdGg9IjIuNCIvPgogIDxwYXRoIGQ9Ik0zMiA1djlNMzIgNTB2OU01IDMyaDlNNTAgMzJoOSIgc3Ryb2tlPSIjOWNhNDlhIiBzdHJva2Utb3BhY2l0eT0iLjQ1IiBzdHJva2Utd2lkdGg9IjIuNCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CiAgPHBhdGggZD0iTTE4IDE5bDE0IDI3IDE0LTI3IiBmaWxsPSJub25lIiBzdHJva2U9IiM4ZmI1OWEiIHN0cm9rZS13aWR0aD0iNi41IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPC9zdmc+">
-  <link rel="shortcut icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+CiAgPHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByeD0iMTUiIGZpbGw9IiMxNzFhMTgiLz4KICA8Y2lyY2xlIGN4PSIzMiIgY3k9IjMyIiByPSIyMyIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjOWNhNDlhIiBzdHJva2Utb3BhY2l0eT0iLjQ1IiBzdHJva2Utd2lkdGg9IjIuNCIvPgogIDxwYXRoIGQ9Ik0zMiA1djlNMzIgNTB2OU01IDMyaDlNNTAgMzJoOSIgc3Ryb2tlPSIjOWNhNDlhIiBzdHJva2Utb3BhY2l0eT0iLjQ1IiBzdHJva2Utd2lkdGg9IjIuNCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CiAgPHBhdGggZD0iTTE4IDE5bDE0IDI3IDE0LTI3IiBmaWxsPSJub25lIiBzdHJva2U9IiM4ZmI1OWEiIHN0cm9rZS13aWR0aD0iNi41IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPC9zdmc+">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+CiAgPHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByeD0iMTQiIGZpbGw9IiMwODBCMEEiLz4KICA8Y2lyY2xlIGN4PSIzMiIgY3k9IjMyIiByPSIyMiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMDBENjhGIiBzdHJva2Utb3BhY2l0eT0iLjMiIHN0cm9rZS13aWR0aD0iMS44Ii8+CiAgPGNpcmNsZSBjeD0iMzIiIGN5PSIzMiIgcj0iMTQiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI0Q0QUYzNyIgc3Ryb2tlLW9wYWNpdHk9Ii4yNSIgc3Ryb2tlLXdpZHRoPSIxLjIiLz4KICA8cGF0aCBkPSJNMzIgNnY4TTMyIDUwdjhNNiAzMmg4TTUwIDMyaDgiIHN0cm9rZT0iI0Q0QUYzNyIgc3Ryb2tlLW9wYWNpdHk9Ii40IiBzdHJva2Utd2lkdGg9IjEuOCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CiAgPHBhdGggZD0iTTE2IDE2bDE2IDMwIDE2LTMwIiBmaWxsPSJub25lIiBzdHJva2U9IiMwMEQ2OEYiIHN0cm9rZS13aWR0aD0iNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+CiAgPHBhdGggZD0iTTE2IDE2bDE2IDMwIDE2LTMwIiBmaWxsPSJub25lIiBzdHJva2U9IiNGRkYxQTgiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBvcGFjaXR5PSIuNyIvPgo8L3N2Zz4=">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Verdamt-Snipe",
+    "operatingSystem": "Linux, macOS",
+    "applicationCategory": "SecurityApplication",
+    "author": {
+      "@type": "Person",
+      "name": "Samasta Baskara"
+    },
+    "description": "Async web security reconnaissance and vulnerability assessment framework pairing Python AsyncIO with a Go native bridge, TLS impersonation, and Playwright verification.",
+    "url": "https://samasta-baskara.github.io/",
+    "downloadUrl": "https://github.com/Samasta-Baskara/Verdamt-Snipe"
+  }
+  </script>
   <script>try{var t=localStorage.getItem("vs-theme");if(!t&&matchMedia("(prefers-color-scheme: dark)").matches)t="dark";if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
-  <style>
-    :root {
-      color-scheme: light;
-      --page: #f7f7f5;
-      --surface: #ffffff;
-      --ink: #20221f;
-      --muted: #686d67;
-      --line: #e6e7e2;
-      --soft: #f0f1ed;
-      --accent: #445b4b;
-      --accent-hover: #34483a;
-      --radius: 18px;
-      --width: 1080px;
-    }
-    [data-theme="dark"] { color-scheme: dark; --page:#121512; --surface:#1a1e1b; --ink:#e8ebe6; --muted:#9aa296; --line:#2a2f2b; --soft:#232824; --accent:#8fb59a; --accent-hover:#a4c7ae; }
-
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; scroll-padding-top: 90px; }
-    body {
-      margin: 0;
-      background: var(--page);
-      color: var(--ink);
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      font-size: 16px;
-      line-height: 1.65;
-      -webkit-font-smoothing: antialiased;
-      text-rendering: optimizeLegibility;
-      transition: background .2s ease, color .2s ease;
-    }
-    a { color: inherit; }
-    a:focus-visible, button:focus-visible { outline: 3px solid #8da696; outline-offset: 4px; }
-    .wrap { width: min(var(--width), calc(100% - 48px)); margin-inline: auto; }
-
-    .topbar {
-      position: sticky;
-      top: 0;
-      z-index: 20;
-      background: rgba(247, 247, 245, .88);
-      -webkit-backdrop-filter: blur(16px);
-      backdrop-filter: blur(16px);
-      border-bottom: 1px solid rgba(230, 231, 226, .85);
-    }
-    [data-theme="dark"] .topbar { background: rgba(18,21,18,.85); border-bottom-color: rgba(42,47,43,.85); }
-    .nav {
-      position: relative;
-      min-height: 76px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-    }
-    .brand {
-      display: inline-flex;
-      align-items: center;
-      gap: 11px;
-      text-decoration: none;
-      font-size: 15px;
-      font-weight: 720;
-      letter-spacing: -.035em;
-      white-space: nowrap;
-    }
-    .brand-mark {
-      display: grid;
-      place-items: center;
-      width: 34px;
-      height: 34px;
-      flex: none;
-      border: 1px solid var(--line);
-      background: var(--surface);
-      border-radius: 11px;
-      color: var(--ink);
-    }
-    .brand-mark svg { display: block; }
-    .navlinks { display: flex; align-items: center; gap: 26px; }
-    .navlinks a {
-      text-decoration: none;
-      color: var(--muted);
-      font-size: 13px;
-      transition: color .2s ease;
-    }
-    .navlinks a:hover { color: var(--ink); }
-    .navlinks a.active { color: var(--ink); text-decoration: underline; text-decoration-color: var(--accent); text-underline-offset: 8px; text-decoration-thickness: 2px; }
-    .nav-cta, .button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 9px;
-      border-radius: 999px;
-      padding: 10px 16px;
-      font-size: 13px;
-      font-weight: 650;
-      text-decoration: none;
-      border: 1px solid var(--line);
-      transition: background .2s ease, border-color .2s ease, transform .2s ease;
-      white-space: nowrap;
-    }
-    .nav-cta { background: var(--surface); }
-    .nav-cta:hover, .button.secondary:hover { background: var(--soft); border-color: #d4d7cf; }
-    .button.primary { background: var(--accent); color: #fff; border-color: var(--accent); }
-    [data-theme="dark"] .button.primary { color: #0f130f; }
-    .button.primary:hover { background: var(--accent-hover); transform: translateY(-1px); }
-    .button.secondary { background: transparent; }
-
-    .nav-tools { display: flex; align-items: center; gap: 8px; }
-    .icon-btn {
-      width: 36px; height: 36px;
-      display: inline-grid; place-items: center;
-      border: 1px solid var(--line); border-radius: 50%;
-      background: var(--surface); color: var(--ink);
-      font-size: 13px; font-weight: 700;
-      cursor: pointer; transition: background .2s ease;
-    }
-    .icon-btn:hover { background: var(--soft); }
-    .menu-btn { display: none; font-size: 15px; }
-
-    .hero { padding: 92px 0 86px; }
-    .hero-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1.05fr) minmax(340px, .95fr);
-      align-items: center;
-      gap: clamp(36px, 7vw, 86px);
-    }
-    .eyebrow {
-      margin: 0 0 18px;
-      color: var(--accent);
-      font-size: 11px;
-      font-weight: 750;
-      letter-spacing: .16em;
-      text-transform: uppercase;
-    }
-    h1, h2, h3, p { margin-top: 0; }
-    h1 {
-      max-width: 650px;
-      margin-bottom: 20px;
-      font-size: clamp(42px, 6.2vw, 70px);
-      line-height: 1.04;
-      letter-spacing: -.065em;
-      font-weight: 760;
-    }
-    .lead {
-      max-width: 560px;
-      margin-bottom: 28px;
-      color: var(--muted);
-      font-size: clamp(17px, 2vw, 19px);
-      line-height: 1.75;
-    }
-    .actions { display: flex; flex-wrap: wrap; gap: 10px; }
-    .stack {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 9px;
-      margin-top: 26px;
-      color: var(--muted);
-      font-size: 12px;
-    }
-    .stack span { padding: 4px 10px; border: 1px solid var(--line); border-radius: 999px; background: rgba(255,255,255,.5); }
-    [data-theme="dark"] .stack span { background: rgba(255,255,255,.04); }
-    .byline { margin: 18px 0 0; color: var(--muted); font-size: 13px; }
-    .byline strong { color: var(--ink); font-weight: 650; }
-
-    .terminal {
-      position: relative;
-      overflow: hidden;
-      border: 1px solid #2b302d;
-      border-radius: var(--radius);
-      background: #171a18;
-      color: #e9ece7;
-      box-shadow: 0 24px 60px rgba(30, 35, 30, .10);
-    }
-    .terminal-top {
-      display: flex;
-      align-items: center;
-      gap: 7px;
-      height: 42px;
-      padding: 0 15px;
-      border-bottom: 1px solid #2a2f2b;
-      background: #1d211e;
-    }
-    .dot { width: 8px; height: 8px; border-radius: 50%; background: #747a72; }
-    .terminal-label { margin-left: auto; color: #9ca49a; font-size: 11px; }
-    .replay { margin-left: 10px; border: 0; background: transparent; color: #9ca49a; font-size: 15px; line-height: 1; cursor: pointer; }
-    .replay:hover { color: #e9ece7; }
-    pre {
-      margin: 0;
-      padding: 24px;
-      overflow-x: auto;
-      font: 12px/1.95 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-      white-space: pre;
-    }
-    .prompt { color: #b7cbb9; }
-    .dim { color: #929b91; }
-    .good { color: #b4d2b7; }
-    .warn { color: #d9c08a; }
-    .terminal-note { padding: 0 24px 20px; color: #9ca49a; font-size: 11px; }
-    .blink { animation: blink 1s steps(1) infinite; }
-    @keyframes blink { 50% { opacity: 0; } }
-
-    section { border-top: 1px solid var(--line); }
-    .section { padding: 76px 0; }
-    .section-head { max-width: 640px; margin-bottom: 34px; }
-    h2 { margin-bottom: 12px; font-size: clamp(28px, 4vw, 39px); line-height: 1.15; letter-spacing: -.045em; }
-    .section-intro { color: var(--muted); margin-bottom: 0; }
-    .features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
-    .feature {
-      padding: 24px;
-      border: 1px solid var(--line);
-      border-radius: 15px;
-      background: rgba(255,255,255,.62);
-    }
-    [data-theme="dark"] .feature { background: rgba(255,255,255,.04); }
-    .feature-icon {
-      display: grid;
-      place-items: center;
-      width: 38px;
-      height: 38px;
-      margin-bottom: 20px;
-      border-radius: 12px;
-      background: var(--soft);
-      color: var(--accent);
-      font-size: 17px;
-      font-weight: 700;
-    }
-    h3 { margin-bottom: 8px; font-size: 16px; letter-spacing: -.02em; }
-    .feature p { margin-bottom: 0; color: var(--muted); font-size: 14px; }
-
-    .detail-grid {
-      display: grid;
-      grid-template-columns: .85fr 1.15fr;
-      align-items: center;
-      gap: clamp(32px, 6vw, 76px);
-    }
-    .detail-copy p { color: var(--muted); }
-    .list { display: grid; gap: 12px; margin: 24px 0 0; padding: 0; list-style: none; }
-    .list li { display: flex; gap: 10px; color: var(--muted); font-size: 14px; }
-    .list li::before { content: "✓"; color: var(--accent); font-weight: 800; }
-    .code-card { border: 1px solid var(--line); border-radius: 16px; overflow: hidden; background: var(--surface); }
-    .code-title { padding: 13px 18px; border-bottom: 1px solid var(--line); color: var(--muted); font-size: 12px; }
-    .code-card pre { padding: 20px; color: #3d4d41; font-size: 12px; line-height: 2; }
-    [data-theme="dark"] .code-card pre { color: #b7cbb9; }
-    .code-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
-    .copy {
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      padding: 7px 10px;
-      background: var(--surface);
-      color: var(--muted);
-      font: inherit;
-      font-size: 12px;
-      cursor: pointer;
-    }
-    .copy:hover { background: var(--soft); color: var(--ink); }
-    .tabs { display: flex; gap: 4px; flex-wrap: wrap; }
-    .tabs button { border: 0; border-radius: 8px; padding: 6px 10px; background: transparent; color: var(--muted); font: inherit; font-size: 12px; cursor: pointer; }
-    .tabs button[aria-pressed="true"] { background: var(--soft); color: var(--ink); font-weight: 650; }
-    .steps { display: grid; gap: 22px; }
-    .step { display: grid; grid-template-columns: 34px 1fr; gap: 13px; cursor: pointer; }
-    .step-num {
-      display: grid;
-      place-items: center;
-      width: 32px;
-      height: 32px;
-      border: 1px solid var(--line);
-      border-radius: 50%;
-      background: var(--surface);
-      font-size: 12px;
-      font-weight: 700;
-      transition: background .2s ease, border-color .2s ease, color .2s ease;
-    }
-    .step.done .step-num { background: var(--accent); border-color: var(--accent); color: var(--page); }
-    .step.done strong { text-decoration: line-through; text-decoration-thickness: 1px; color: var(--muted); }
-    .step strong { display: block; margin-bottom: 3px; font-size: 14px; }
-    .step p { margin: 0; color: var(--muted); font-size: 13px; }
-    code.inline { font: 12px/1.5 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; background: var(--soft); border-radius: 6px; padding: 2px 6px; display: inline-block; margin-top: 6px; color: var(--ink); }
-    .meter { margin-top: 26px; height: 6px; border-radius: 99px; background: var(--soft); overflow: hidden; }
-    .meter span { display: block; height: 100%; width: 0; background: var(--accent); transition: width .35s ease; }
-    .meter-text { margin: 10px 0 0; color: var(--muted); font-size: 12px; }
-    .notice { margin-top: 26px; padding: 14px 16px; border: 1px solid var(--line); border-radius: 12px; color: var(--muted); font-size: 12px; }
-
-    .faq { display: grid; gap: 10px; max-width: 760px; }
-    .faq details { border: 1px solid var(--line); border-radius: 14px; background: var(--surface); padding: 0 20px; transition: border-color .2s ease; }
-    .faq details[open] { border-color: var(--accent); }
-    .faq summary { display: flex; justify-content: space-between; gap: 16px; padding: 16px 0; font-size: 15px; font-weight: 650; cursor: pointer; list-style: none; }
-    .faq summary::-webkit-details-marker { display: none; }
-    .faq summary::after { content: "+"; color: var(--accent); font-size: 20px; line-height: 1; transition: transform .25s ease; }
-    .faq details[open] summary::after { transform: rotate(45deg); }
-    .faq details p { margin: 0 0 18px; color: var(--muted); font-size: 14px; }
-
-    .closing {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-      padding: 30px;
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background: var(--surface);
-    }
-    .closing h2 { margin-bottom: 7px; font-size: 25px; }
-    .closing p { margin-bottom: 0; color: var(--muted); font-size: 14px; }
-    .closing p strong { color: var(--ink); font-weight: 650; }
-    .quote { margin: 0 0 20px; color: var(--muted); font-size: 13px; font-style: italic; }
-    footer { border-top: 1px solid var(--line); padding: 28px 0 36px; }
-    .footer-row { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
-    .footer-note { margin: 0; color: var(--muted); font-size: 12px; }
-    .footer-note strong { color: var(--ink); font-weight: 650; }
-    .footer-links { display: flex; flex-wrap: wrap; gap: 20px; }
-    .footer-links a { color: var(--muted); font-size: 12px; text-decoration: none; }
-    .footer-links a:hover { color: var(--ink); }
-
-    .progress { position: fixed; inset: 0 0 auto 0; height: 3px; z-index: 30; background: var(--accent); transform: scaleX(0); transform-origin: left; }
-    .to-top { position: fixed; right: 20px; bottom: calc(20px + env(safe-area-inset-bottom, 0px)); z-index: 15; width: 42px; height: 42px; border-radius: 50%; border: 1px solid var(--line); background: var(--surface); color: var(--ink); font-size: 16px; cursor: pointer; opacity: 0; transform: translateY(8px); pointer-events: none; transition: opacity .25s ease, transform .25s ease; }
-    .to-top.show { opacity: 1; transform: none; pointer-events: auto; }
-
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; }
-      .blink { animation: none; }
-    }
-
-    @media (max-width: 800px) {
-      .menu-btn { display: inline-grid; }
-      .navlinks { display: none; position: absolute; top: 100%; left: 0; right: 0; flex-direction: column; align-items: stretch; gap: 0; padding: 6px 24px 14px; background: var(--page); border-bottom: 1px solid var(--line); }
-      .navlinks.open { display: flex; }
-      .navlinks a { padding: 12px 0; font-size: 15px; border-bottom: 1px solid var(--line); }
-      .navlinks a:last-child { border-bottom: 0; }
-      .navlinks a.active { text-decoration: none; color: var(--accent); }
-      .hero { padding: 64px 0 60px; }
-      .hero-grid, .detail-grid { grid-template-columns: 1fr; }
-      .hero-grid { gap: 38px; }
-      .terminal { max-width: 620px; }
-      .features { grid-template-columns: repeat(2, 1fr); }
-      .section { padding: 58px 0; }
-    }
-    @media (max-width: 520px) {
-      .wrap { width: min(100% - 32px, var(--width)); }
-      .nav { min-height: 66px; gap: 10px; }
-      .navlinks { padding-inline: 16px; }
-      .brand { font-size: 14px; }
-      .brand-mark { width: 31px; height: 31px; }
-      .nav-cta { padding: 9px 12px; font-size: 12px; }
-      .nav-cta-label { display: none; }
-      .hero { padding: 54px 0 50px; }
-      h1 { font-size: clamp(39px, 12vw, 54px); }
-      .lead { font-size: 16px; }
-      .actions { display: grid; grid-template-columns: 1fr; }
-      .button { width: 100%; }
-      .features { grid-template-columns: 1fr; }
-      .feature { padding: 21px; }
-      pre { padding: 17px; font-size: 11px; }
-      .terminal-note { padding-inline: 17px; }
-      .closing, .footer-row { align-items: flex-start; flex-direction: column; }
-      .closing { padding: 23px; }
-      .footer-links { gap: 15px; }
-    }
-  </style>
+  <link rel="stylesheet" href="assets/css/theme.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/components.css">
 </head>
 <body>
+  <a href="#main" class="skip-to-content" data-i18n="ui.skip">Skip to content</a>
   <div class="progress" id="progress" aria-hidden="true"></div>
+
+  <!-- Dynamic Island for Mobile & Tablet -->
+  <div class="island-wrapper" id="island-wrapper" aria-label="Mobile Dynamic Island Navigation">
+    <div class="island" id="dynamic-island" role="region" aria-label="Dynamic Island">
+      <div class="island-compact" id="island-compact">
+        <div class="island-compact-left">
+          <span class="island-radar" aria-hidden="true"></span>
+          <span>Verdamt</span>
+        </div>
+        <div class="island-compact-center">
+          <span class="island-pill-badge" id="island-mode-badge">v1.4.5 NEXUS</span>
+        </div>
+        <div class="island-toggle-icon" aria-hidden="true">
+          <span class="island-bar"></span>
+          <span class="island-bar"></span>
+        </div>
+      </div>
+      <div class="island-expanded-content" id="island-expanded-content">
+        <div class="island-exp-head">
+          <div class="island-exp-status">
+            <span class="island-radar" aria-hidden="true"></span>
+            <div>
+              <strong class="island-title">Verdamt-Snipe v1.4.5</strong>
+              <span class="island-subtitle" data-i18n="island.subtitle">Tactical Security Engine</span>
+            </div>
+          </div>
+          <button class="island-close-btn" id="island-close-btn" type="button" aria-label="Close Dynamic Island">✕</button>
+        </div>
+        <nav class="island-nav-grid" aria-label="Dynamic Island Links">
+          <a href="#features" class="island-nav-item"><span class="ini-icon" aria-hidden="true">⌘</span><span data-i18n="nav.features">Features</span></a>
+          <a href="#architecture" class="island-nav-item"><span class="ini-icon" aria-hidden="true">📐</span><span data-i18n="nav.architecture">Architecture</span></a>
+          <a href="#workflow" class="island-nav-item"><span class="ini-icon" aria-hidden="true">⚡</span><span data-i18n="nav.workflow">Workflow</span></a>
+          <a href="#attack-surface" class="island-nav-item"><span class="ini-icon" aria-hidden="true">🕸️</span><span data-i18n="nav.attack">Attack Surface</span></a>
+          <a href="#showcase" class="island-nav-item"><span class="ini-icon" aria-hidden="true">📊</span><span data-i18n="nav.showcase">Showcase</span></a>
+          <a href="#installation" class="island-nav-item"><span class="ini-icon" aria-hidden="true">📥</span><span data-i18n="nav.installation">Installation</span></a>
+          <a href="#faq" class="island-nav-item"><span class="ini-icon" aria-hidden="true">❓</span><span data-i18n="nav.faq">FAQ</span></a>
+          <a href="https://github.com/Samasta-Baskara/Verdamt-Snipe#readme" target="_blank" rel="noreferrer" class="island-nav-item"><span class="ini-icon" aria-hidden="true">↗</span><span data-i18n="footer.docs">Documentation</span></a>
+        </nav>
+        <div class="island-exp-footer">
+          <button class="island-foot-btn" id="island-lang-btn" type="button" aria-label="Switch language">ID / EN</button>
+          <button class="island-foot-btn" id="island-theme-btn" type="button" aria-label="Switch theme">☾ Theme</button>
+          <a class="island-foot-btn cta" href="https://github.com/Samasta-Baskara/Verdamt-Snipe" target="_blank" rel="noreferrer">GitHub ↗</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="island-backdrop" id="island-backdrop"></div>
 
   <header class="topbar">
     <div class="wrap nav">
       <a class="brand" href="#home" aria-label="Verdamt-Snipe home">
         <span class="brand-mark" aria-hidden="true">
           <svg viewBox="0 0 36 36" width="20" height="20">
-            <circle cx="18" cy="18" r="14" fill="none" stroke="currentColor" stroke-opacity=".35" stroke-width="1.6"/>
-            <path d="M18 2v6M18 28v6M2 18h6M28 18h6" stroke="currentColor" stroke-opacity=".35" stroke-width="1.6" stroke-linecap="round"/>
-            <path d="M10 10l8 16 8-16" fill="none" stroke="var(--accent)" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="18" cy="18" r="14" fill="none" stroke="currentColor" stroke-opacity=".3" stroke-width="1.4"/>
+            <circle cx="18" cy="18" r="8" fill="none" stroke="currentColor" stroke-opacity=".15" stroke-width="1"/>
+            <path d="M18 2v6M18 28v6M2 18h6M28 18h6" stroke="currentColor" stroke-opacity=".3" stroke-width="1.4" stroke-linecap="round"/>
+            <path d="M10 10l8 16 8-16" fill="none" stroke="var(--accent)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </span>
         <span>Verdamt-Snipe</span>
       </a>
       <nav class="navlinks" id="nav-links" aria-label="Main navigation">
         <a href="#features" data-i18n="nav.features">Features</a>
+        <a href="#architecture" data-i18n="nav.architecture">Architecture</a>
         <a href="#workflow" data-i18n="nav.workflow">Workflow</a>
+        <a href="#attack-surface" data-i18n="nav.attack">Attack Surface</a>
+        <a href="#showcase" data-i18n="nav.showcase">Showcase</a>
         <a href="#installation" data-i18n="nav.installation">Installation</a>
         <a href="#faq" data-i18n="nav.faq">FAQ</a>
-        <a href="#about" data-i18n="nav.about">About</a>
       </nav>
       <div class="nav-tools">
         <button class="icon-btn" id="lang-toggle" type="button" aria-label="Switch language to Indonesian">ID</button>
         <button class="icon-btn" id="theme-toggle" type="button" aria-label="Switch to dark theme">☾</button>
         <button class="icon-btn menu-btn" id="menu-btn" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">☰</button>
-        <a class="nav-cta" href="https://github.com/Sambaskara/Verdamt-Snipe" target="_blank" rel="noreferrer" aria-label="View on GitHub">
+        <a class="nav-cta" href="https://github.com/Samasta-Baskara/Verdamt-Snipe" target="_blank" rel="noreferrer" aria-label="View on GitHub">
           <span aria-hidden="true">↗</span><span class="nav-cta-label" data-i18n="nav.cta">View on GitHub</span>
         </a>
       </div>
     </div>
   </header>
 
-  <main>
-    <section id="home" style="border-top:0">
+  <main id="main">
+    <section id="home" style="border-top:0;position:relative;overflow:hidden">
+      <div class="hero-bg" aria-hidden="true"></div>
       <div class="wrap hero">
         <div class="hero-grid">
-          <div>
+          <div class="reveal">
             <p class="eyebrow" data-i18n="hero.eyebrow">Open source · Python AsyncIO + Go</p>
             <h1 data-i18n="hero.title">A clearer way to explore web security.</h1>
             <p class="lead" data-i18n="hero.lead">Verdamt-Snipe is an async-first reconnaissance and vulnerability assessment framework: a Python AsyncIO engine paired with a Go native bridge, TLS fingerprint impersonation, and a Playwright suite that verifies findings in a real browser.</p>
             <div class="actions">
-              <a class="button primary" href="https://github.com/Sambaskara/Verdamt-Snipe" target="_blank" rel="noreferrer"><span data-i18n="hero.cta1">Explore repository</span> <span aria-hidden="true">↗</span></a>
-              <a class="button secondary" href="https://github.com/Sambaskara/Verdamt-Snipe#readme" target="_blank" rel="noreferrer" data-i18n="hero.cta2">Read documentation</a>
+              <a class="button primary" href="https://github.com/Samasta-Baskara/Verdamt-Snipe" target="_blank" rel="noreferrer"><span data-i18n="hero.cta1">Explore repository</span> <span aria-hidden="true">↗</span></a>
+              <a class="button secondary" href="https://github.com/Samasta-Baskara/Verdamt-Snipe#readme" target="_blank" rel="noreferrer" data-i18n="hero.cta2">Read documentation</a>
             </div>
             <div class="stack" aria-label="Project technologies">
-              <span>Python 3.10+</span><span>AsyncIO</span><span>Playwright</span><span>Open source</span><span>Personal project</span>
+              <span>Python 3.12+</span><span>AsyncIO</span><span>Go Native</span><span>Playwright</span><span>HTTP/2</span><span>curl_cffi</span><span>CVSS v3.1</span>
             </div>
             <p class="byline"><span data-i18n="hero.byline1">A personal project by</span> <strong>Samasta Baskara</strong><span data-i18n="hero.byline2">, built and maintained in the open.</span></p>
           </div>
-          <div class="terminal" aria-label="Illustrative terminal preview">
+          <div class="terminal reveal" id="terminal-container" aria-label="Interactive terminal preview">
             <div class="terminal-top">
-              <span class="dot"></span><span class="dot"></span><span class="dot"></span>
-              <span class="terminal-label" data-i18n="terminal.label">terminal preview</span>
-              <button class="replay" id="replay" type="button" aria-label="Replay terminal preview">↻</button>
+              <div class="terminal-dots" aria-hidden="true">
+                <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+              </div>
+              <span class="terminal-label" id="term-label">bash — Verdamt-Snipe v1.4.5 — example.com</span>
+              <div class="terminal-actions">
+                <button class="term-btn" id="term-pause" type="button" aria-label="Pause terminal simulation" title="Pause simulation">⏸</button>
+                <button class="term-btn replay" id="replay" type="button" aria-label="Replay terminal simulation" title="Replay simulation">↻</button>
+              </div>
             </div>
-            <pre><span class="prompt">$</span> python3 verd.py target.com --full
+            <pre id="terminal-pre"><span class="prompt">$</span> python3 verd.py example.com --full
 
-<span class="dim">Verdamt-Snipe v1.4.5</span> <span class="dim">— Nexus</span>
-<span class="dim">dual engine: AsyncIO + Go bridge</span>
+<span class="dim">Verdamt-Snipe v1.4.5 — NEXUS Architecture</span>
+<span class="dim">target: example.com | engine: AsyncIO + Go bridge | TLS: Chrome 120 (JA3)</span>
 
-<span class="good">[recon]</span>   passive intel ............ done
-<span class="good">[app]</span>     origin IP hunt ........... done
-<span class="warn">[assault]</span> vulnerability tests ...... running
-<span class="dim">[verify]</span>  playwright confirmation .. queued
+<span class="good">[recon]</span>      passive intel ............ 14 subdomains discovered
+<span class="good">[waf]</span>        origin hunter ............ <span class="warn">Cloudflare bypassed -> 93.184.216.34</span>
+<span class="good">[app]</span>        playwright crawl ......... 247 endpoints · 89 parameters mapped
+<span class="warn">[assault]</span>    differential latency ..... <span class="err">SQLi confirmed on /api/v1/search</span>
+<span class="good">[browser]</span>    headless chromium ........ <span class="err">DOM XSS sink execution confirmed</span>
+<span class="warn">[poison]</span>     unkeyed headers test ..... <span class="warn">'X-Forwarded-Host' reflected on /static/app.js</span>
+<span class="err">[poison]</span>     cache vulnerability ...... <span class="err">POISONED! Cached for 300s (HIT)</span>
+<span class="warn">[deception]</span>  path delimiter probe ..... Web Cache Deception on /user/settings.php.css
 
-<span class="dim">findings so far: 0 confirmed · 3 pending verification</span>
-<span class="dim">audit log: outputs/target.com/audit.jsonl</span>
+<span class="dim">audit summary: 2 Critical · 5 High · 1 Informational</span>
+<span class="dim">deliverables: outputs/example.com/audit.jsonl & report.html</span>
 
 <span class="prompt">$</span> <span class="dim blink">_</span></pre>
-            <div class="terminal-note" data-i18n="terminal.note">Illustrative preview — see the README for current flags and output.</div>
+            <div class="terminal-note" id="term-note" data-i18n="terminal.note">Live terminal simulation: Full Pipeline + Web Cache Poisoning & Deception against example.com.</div>
+            <div class="terminal-telemetry" id="term-telemetry">
+              <span class="tele-tag">TARGET: <strong>example.com</strong></span>
+              <span class="tele-tag">MODE: <strong>Full (5) + Poisoning</strong></span>
+              <span class="tele-tag">ORIGIN: <strong class="warn">93.184.216.34</strong></span>
+              <span class="tele-tag">FINDINGS: <strong class="err">2 Critical · 5 High</strong></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="wrap">
+        <div class="stats reveal" aria-label="Key statistics">
+          <div class="stat-card">
+            <div class="stat-num" data-count="7">0</div>
+            <div class="stat-label" data-i18n="stats.modes">Scan Modes</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num" data-count="10">0</div>
+            <div class="stat-label" data-i18n="stats.playwright">Playwright Modules</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num" data-count="4">0</div>
+            <div class="stat-label" data-i18n="stats.layers">Arch Layers</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num" data-count="12">0</div>
+            <div class="stat-label" data-i18n="stats.checks">Vuln Checks</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num" data-count="6">0</div>
+            <div class="stat-label" data-i18n="stats.gotools">Go Binaries</div>
           </div>
         </div>
       </div>
@@ -449,49 +208,169 @@
 
     <section id="features">
       <div class="wrap section">
-        <div class="section-head">
+        <div class="section-head reveal">
           <p class="eyebrow" data-i18n="features.eyebrow">Under the hood</p>
           <h2 data-i18n="features.title">Six pieces, one pipeline.</h2>
           <p class="section-intro" data-i18n="features.intro">What actually powers a scan, from the network layer to browser-based verification.</p>
         </div>
-        <div class="features">
-          <article class="feature">
-            <div class="feature-icon" aria-hidden="true">⌘</div>
-            <h3 data-i18n="features.f1.title">Async network engine</h3>
-            <p data-i18n="features.f1.desc">Python AsyncIO plus HTTP/2 via httpx, with host rate-limiting and a circuit breaker for thousands of concurrent requests.</p>
+        <div class="features stagger">
+          <!-- Card 1: 01 // NETWORK (Interactive Collapsible Card) -->
+          <article class="feature collapsible-card is-expanded pr-item is-revealed" id="card-feature-1">
+            <button class="card-header-btn" type="button" aria-expanded="true" aria-controls="card-content-1" id="card-header-1">
+              <div class="feature-top">
+                <span class="feature-tag">01 // NETWORK</span>
+                <div class="card-header-actions">
+                  <span class="feature-icon" aria-hidden="true">⌘</span>
+                  <span class="card-chevron" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                  </span>
+                </div>
+              </div>
+              <h3 data-i18n="features.f1.title">Async network engine</h3>
+            </button>
+            <div class="card-collapse-body" id="card-content-1" role="region" aria-labelledby="card-header-1">
+              <div class="card-inner-content">
+                <p data-i18n="features.f1.desc">Python AsyncIO plus HTTP/2 via httpx, with host rate-limiting and a circuit breaker for thousands of concurrent requests.</p>
+                <div class="card-extra-specs">
+                  <span class="spec-pill">HTTP/2 Multiplex</span>
+                  <span class="spec-pill">Circuit Breaker</span>
+                  <span class="spec-pill">AsyncIO Loop</span>
+                </div>
+              </div>
+            </div>
           </article>
-          <article class="feature">
-            <div class="feature-icon" aria-hidden="true">◎</div>
+          <article class="feature pr-item">
+            <div class="feature-top">
+              <span class="feature-tag">02 // TLS SPOOF</span>
+              <div class="feature-icon" aria-hidden="true">◎</div>
+            </div>
             <h3 data-i18n="features.f2.title">TLS impersonation</h3>
             <p data-i18n="features.f2.desc">JA3/JA4 fingerprint spoofing via curl_cffi, so traffic presents as a real browser to anti-bot defenses and WAFs.</p>
           </article>
-          <article class="feature">
-            <div class="feature-icon" aria-hidden="true">⌁</div>
+          <article class="feature pr-item">
+            <div class="feature-top">
+              <span class="feature-tag">03 // GO BRIDGE</span>
+              <div class="feature-icon" aria-hidden="true">⌁</div>
+            </div>
             <h3 data-i18n="features.f3.title">Go native bridge</h3>
             <p data-i18n="features.f3.desc">Hands fuzzing straight to Go binaries — subfinder, httpx, katana, nuclei, dalfox, gau — for native throughput.</p>
           </article>
-          <article class="feature">
-            <div class="feature-icon" aria-hidden="true">▣</div>
+          <article class="feature pr-item">
+            <div class="feature-top">
+              <span class="feature-tag">04 // PLAYWRIGHT</span>
+              <div class="feature-icon" aria-hidden="true">▣</div>
+            </div>
             <h3 data-i18n="features.f4.title">Playwright verification</h3>
             <p data-i18n="features.f4.desc">Ten browser-based modules confirm findings live: DOM XSS, CSRF, postMessage leaks, clickjacking, and more.</p>
           </article>
-          <article class="feature">
-            <div class="feature-icon" aria-hidden="true">≡</div>
+          <article class="feature pr-item">
+            <div class="feature-top">
+              <span class="feature-tag">05 // RICH TUI</span>
+              <div class="feature-icon" aria-hidden="true">≡</div>
+            </div>
             <h3 data-i18n="features.f5.title">Tactical TUI dashboard</h3>
             <p data-i18n="features.f5.desc">A three-column terminal view refreshed at 15 FPS: pipeline stage, request-rate sparkline, and finding severity.</p>
           </article>
-          <article class="feature">
-            <div class="feature-icon" aria-hidden="true">✓</div>
+          <article class="feature pr-item">
+            <div class="feature-top">
+              <span class="feature-tag">06 // POLICY AUDIT</span>
+              <div class="feature-icon" aria-hidden="true">✓</div>
+            </div>
             <h3 data-i18n="features.f6.title">Policy &amp; audit engine</h3>
             <p data-i18n="features.f6.desc">Scope locks, request budgets, and a replayable .jsonl audit log that reconstructs every request as curl.</p>
           </article>
+          <article class="feature pr-item">
+            <div class="feature-top">
+              <span class="feature-tag">07 // STATE SNAPSHOT</span>
+              <div class="feature-icon" aria-hidden="true">⟳</div>
+            </div>
+            <h3 data-i18n="features.f7.title">State management</h3>
+            <p data-i18n="features.f7.desc">Multi-token session handling (Bearer/Cookie jar) and save/resume scan checkpoints via .state files.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="architecture">
+      <div class="wrap section">
+        <div class="section-head reveal">
+          <p class="eyebrow" data-i18n="arch.eyebrow">System design</p>
+          <h2 data-i18n="arch.title">Four-layer modular architecture.</h2>
+          <p class="section-intro" data-i18n="arch.intro">A deterministic pipeline from CLI entry to verified findings, with cross-cutting policy enforcement.</p>
+        </div>
+        <div class="bento-grid stagger">
+          <!-- Bento Card 1: Entry Points -->
+          <div class="bento-card span-5 pr-item is-revealed">
+            <div class="bento-head">
+              <span class="bento-badge">01 // INGESTION</span>
+              <span class="bento-icon" aria-hidden="true">⌘</span>
+            </div>
+            <h3 data-i18n="arch.l1.title">Entry Points &amp; CLI</h3>
+            <p data-i18n="arch.l1.desc">Fast argument parsing, interactive terminal menu, and scope guard enforcement.</p>
+            <div class="bento-chips">
+              <span class="bento-chip highlight">verd.py</span>
+              <span class="bento-chip">./snipe (Bash)</span>
+              <span class="bento-chip">cli_parser.py</span>
+              <span class="bento-chip">ScopeLock</span>
+            </div>
+          </div>
+
+          <!-- Bento Card 2: Core Engine (Hero Bento) -->
+          <div class="bento-card span-7 hero pr-item">
+            <div class="bento-head">
+              <span class="bento-badge">02 // DUAL-ENGINE RUNTIME</span>
+              <span class="bento-icon" aria-hidden="true">⚡</span>
+            </div>
+            <h3 data-i18n="arch.l2.title">Core Engine &amp; Runtime</h3>
+            <p data-i18n="arch.l2.desc">High-concurrency AsyncIO event loop coordinated with native compiled Go binaries and headless Chromium pools.</p>
+            <div class="bento-chips">
+              <span class="bento-chip highlight">AsyncIO + httpx</span>
+              <span class="bento-chip highlight">Go Native Bridge</span>
+              <span class="bento-chip">curl_cffi (JA3/JA4)</span>
+              <span class="bento-chip">Playwright Singleton Pool</span>
+              <span class="bento-chip">HTTP/2 Multiplexing</span>
+            </div>
+          </div>
+
+          <!-- Bento Card 3: Security Modules Suite -->
+          <div class="bento-card span-7 pr-item">
+            <div class="bento-head">
+              <span class="bento-badge">03 // ASSAULT SUITE</span>
+              <span class="bento-icon" aria-hidden="true">🛡️</span>
+            </div>
+            <h3 data-i18n="arch.l3.title">Security Modules Suite</h3>
+            <p data-i18n="arch.l3.desc">Cross-layer vulnerability checks verifying injection vectors, cache poisoning, and client-side flaws.</p>
+            <div class="bento-chips">
+              <span class="bento-chip highlight">Web Cache Poisoning</span>
+              <span class="bento-chip highlight">SQLi &amp; SSRF Engine</span>
+              <span class="bento-chip">DOM XSS &amp; CORS</span>
+              <span class="bento-chip">Origin Hunter WAF Bypass</span>
+              <span class="bento-chip">Prototype Pollution</span>
+            </div>
+          </div>
+
+          <!-- Bento Card 4: Output & State -->
+          <div class="bento-card span-5 pr-item">
+            <div class="bento-head">
+              <span class="bento-badge">04 // DELIVERABLES</span>
+              <span class="bento-icon" aria-hidden="true">📊</span>
+            </div>
+            <h3 data-i18n="arch.l4.title">Output &amp; State</h3>
+            <p data-i18n="arch.l4.desc">Immutable JSONL audit trail, executive deliverables, and pause-and-resume scan state.</p>
+            <div class="bento-chips">
+              <span class="bento-chip highlight">audit.jsonl (cURL)</span>
+              <span class="bento-chip">Interactive HTML/PDF</span>
+              <span class="bento-chip">.state Checkpoints</span>
+              <span class="bento-chip">15 FPS Rich TUI</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
     <section id="workflow">
       <div class="wrap section">
-        <div class="detail-grid">
+        <div class="detail-grid reveal">
           <div class="detail-copy">
             <p class="eyebrow" data-i18n="workflow.eyebrow">A practical pipeline</p>
             <h2 data-i18n="workflow.title">Recon, then app analysis, then assault.</h2>
@@ -517,24 +396,263 @@ python3 verd.py --resume outputs/target.com.state</pre>
       </div>
     </section>
 
+    <section id="attack-surface">
+      <div class="wrap section">
+        <div class="section-head reveal">
+          <p class="eyebrow" data-i18n="attack.eyebrow">Coverage</p>
+          <h2 data-i18n="attack.title">What it finds.</h2>
+          <p class="section-intro" data-i18n="attack.intro">Vulnerability categories tested across client-side, server-side, and infrastructure layers.</p>
+        </div>
+        <div class="attack-grid stagger">
+          <!-- Card 1: Injections & Server-Side -->
+          <div class="attack-card pr-item is-revealed">
+            <div class="attack-head">
+              <div class="attack-title-wrap">
+                <span class="attack-icon" aria-hidden="true">⚡</span>
+                <h3 data-i18n="attack.c1.title">Injections &amp; Server-Side</h3>
+              </div>
+              <span class="attack-sev crit">CRITICAL</span>
+            </div>
+            <p data-i18n="attack.c1.desc">Automated differential latency testing, out-of-band callback listeners, and server-side request forgery verification.</p>
+            <div class="attack-pills">
+              <span class="attack-pill">SQLi Blind &amp; Time</span>
+              <span class="attack-pill">SSRF Probes</span>
+              <span class="attack-pill">IDOR Authorization</span>
+              <span class="attack-pill">CRLF Header Injection</span>
+            </div>
+          </div>
+
+          <!-- Card 2: Web Cache & HTTP Desync -->
+          <div class="attack-card pr-item">
+            <div class="attack-head">
+              <div class="attack-title-wrap">
+                <span class="attack-icon" aria-hidden="true">☣️</span>
+                <h3 data-i18n="attack.c2.title">Web Cache &amp; HTTP Desync</h3>
+              </div>
+              <span class="attack-sev high">HIGH</span>
+            </div>
+            <p data-i18n="attack.c2.desc">Unkeyed header reflection probes, Web Cache Deception path delimiters, and CL-TE request smuggling desynchronization.</p>
+            <div class="attack-pills">
+              <span class="attack-pill">Cache Poisoning</span>
+              <span class="attack-pill">Cache Deception</span>
+              <span class="attack-pill">Unkeyed Headers</span>
+              <span class="attack-pill">HTTP Desync (CL-TE)</span>
+            </div>
+          </div>
+
+          <!-- Card 3: Client-Side & DOM Sinks -->
+          <div class="attack-card pr-item">
+            <div class="attack-head">
+              <div class="attack-title-wrap">
+                <span class="attack-icon" aria-hidden="true">🎭</span>
+                <h3 data-i18n="attack.c3.title">Client-Side &amp; DOM Sinks</h3>
+              </div>
+              <span class="attack-sev high">HIGH</span>
+            </div>
+            <p data-i18n="attack.c3.desc">Live browser verification inside headless Chromium sandbox targeting execution sinks like eval(), innerHTML, and postMessage.</p>
+            <div class="attack-pills">
+              <span class="attack-pill">DOM XSS Execution</span>
+              <span class="attack-pill">Prototype Pollution</span>
+              <span class="attack-pill">PostMessage Leaks</span>
+              <span class="attack-pill">CORS Wildcard</span>
+              <span class="attack-pill">Clickjacking</span>
+            </div>
+          </div>
+
+          <!-- Card 4: Infra & WAF Origin Hunter -->
+          <div class="attack-card pr-item">
+            <div class="attack-head">
+              <div class="attack-title-wrap">
+                <span class="attack-icon" aria-hidden="true">🛰️</span>
+                <h3 data-i18n="attack.c4.title">Infra &amp; WAF Origin Hunter</h3>
+              </div>
+              <span class="attack-sev tactical">TACTICAL</span>
+            </div>
+            <p data-i18n="attack.c4.desc">Uncovers actual origin server IP behind Cloudflare/Akamai CDNs, TLS fingerprint impersonation, and comprehensive subdomain intelligence.</p>
+            <div class="attack-pills">
+              <span class="attack-pill">Origin IP Bypass</span>
+              <span class="attack-pill">TLS JA3/JA4 Spoofing</span>
+              <span class="attack-pill">Subdomain Discovery</span>
+              <span class="attack-pill">Historical URLs (GAU)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="benchmark">
+      <div class="wrap section">
+        <div class="section-head reveal">
+          <p class="eyebrow" data-i18n="bench.eyebrow">Performance</p>
+          <h2 data-i18n="bench.title">Built for speed and stability.</h2>
+        </div>
+        <div class="benchmarks stagger">
+          <div class="bench-card pr-item is-revealed">
+            <div class="bench-icon" aria-hidden="true">⚡</div>
+            <h3 data-i18n="bench.b1.title">Dual-Engine Throughput</h3>
+            <p data-i18n="bench.b1.desc">AsyncIO Python + Go native binaries working in parallel for maximum scan speed.</p>
+          </div>
+          <div class="bench-card pr-item">
+            <div class="bench-icon" aria-hidden="true">◎</div>
+            <h3 data-i18n="bench.b2.title">15 FPS Live Dashboard</h3>
+            <p data-i18n="bench.b2.desc">Real-time tactical TUI with sparkline RPS, pipeline status, and hardware metrics.</p>
+          </div>
+          <div class="bench-card pr-item">
+            <div class="bench-icon" aria-hidden="true">⟡</div>
+            <h3 data-i18n="bench.b3.title">Zero Memory Leak</h3>
+            <p data-i18n="bench.b3.desc">SharedBrowserPool singleton with isolated contexts prevents Playwright memory bloat.</p>
+          </div>
+          <div class="bench-card pr-item">
+            <div class="bench-icon" aria-hidden="true">⇄</div>
+            <h3 data-i18n="bench.b4.title">HTTP/2 Multiplexing</h3>
+            <p data-i18n="bench.b4.desc">Concurrent streams over a single TCP connection via httpx for efficient network usage.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="showcase">
+      <div class="wrap section">
+        <div class="section-head reveal">
+          <p class="eyebrow" data-i18n="showcase.eyebrow">Visual proof &amp; live demos</p>
+          <h2 data-i18n="showcase.title">Tactical TUI &amp; interactive audit reports.</h2>
+          <p class="section-intro" data-i18n="showcase.intro">Authentic captures from Verdamt-Snipe v1.4.5 NEXUS: real-time terminal surveillance and executive vulnerability deliverables.</p>
+        </div>
+
+        <div class="showcase-grid reveal">
+          <!-- Card 1: Tactical TUI Dashboard -->
+          <article class="showcase-card">
+            <div class="showcase-top">
+              <span class="s-dot red"></span><span class="s-dot yellow"></span><span class="s-dot green"></span>
+              <span class="showcase-title">verd_tui_dashboard.console — 15 FPS</span>
+              <span class="showcase-badge" data-i18n="showcase.tuiBadge">Terminal UI</span>
+            </div>
+            <div class="screenshot-box" data-zoom="https://raw.githubusercontent.com/Samasta-Baskara/Verdamt-Snipe/main/assets/terminal_tui_dashboard.jpg" data-caption="Verdamt-Snipe Tactical TUI: 3-column real-time console with RPS sparkline, pipeline status, and hardware telemetries.">
+              <img src="https://raw.githubusercontent.com/Samasta-Baskara/Verdamt-Snipe/main/assets/terminal_tui_dashboard.jpg" alt="Verdamt-Snipe Tactical Rich TUI Dashboard Console" loading="lazy" width="600" height="350">
+              <div class="screenshot-overlay">
+                <span aria-hidden="true">🔍</span> <span data-i18n="showcase.zoomPrompt">Tap / Click to view full resolution</span>
+              </div>
+            </div>
+            <div class="showcase-info">
+              <h3 data-i18n="showcase.c1.title">Tactical Rich TUI Live Console</h3>
+              <p data-i18n="showcase.c1.desc">Three-column surveillance console rendered at 15 FPS. Tracks pipeline phase progression, active socket pools, CPU/RAM utilization, and real-time finding telemetry without terminal flickering.</p>
+              <div class="showcase-tags">
+                <span>15 FPS Rich Live</span><span>psutil Hardware</span><span>Sparkline RPS</span><span>Phase Pipeline</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 2: Interactive HTML Security Report -->
+          <article class="showcase-card">
+            <div class="showcase-top">
+              <span class="s-dot red"></span><span class="s-dot yellow"></span><span class="s-dot green"></span>
+              <span class="showcase-title">audit_report_target.com.html</span>
+              <span class="showcase-badge" data-i18n="showcase.htmlBadge">Deliverable</span>
+            </div>
+            <div class="screenshot-box" data-zoom="https://raw.githubusercontent.com/Samasta-Baskara/Verdamt-Snipe/main/assets/html_security_report.jpg" data-caption="Interactive HTML Security Report: Executive summary, OWASP severity breakdown tabs, CVSS v3.1 matrix, and curl replayable PoCs.">
+              <img src="https://raw.githubusercontent.com/Samasta-Baskara/Verdamt-Snipe/main/assets/html_security_report.jpg" alt="Interactive HTML Security Report Deliverable" loading="lazy" width="600" height="350">
+              <div class="screenshot-overlay">
+                <span aria-hidden="true">🔍</span> <span data-i18n="showcase.zoomPrompt">Tap / Click to view full resolution</span>
+              </div>
+            </div>
+            <div class="showcase-info">
+              <h3 data-i18n="showcase.c2.title">Executive HTML Vulnerability Report</h3>
+              <p data-i18n="showcase.c2.desc">Single-file zero-dependency HTML &amp; PDF deliverable. Includes interactive severity filters (Critical, High, Medium, Low), automated CVSS v3.1 scoring, and replayable curl commands for instant triage.</p>
+              <div class="showcase-tags">
+                <span>CVSS v3.1 Vector</span><span>Severity Filter Tabs</span><span>cURL Replay PoC</span><span>WeasyPrint PDF</span>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Interactive CVSS Severity Breakdown Bar & Risk Matrix -->
+        <div class="chart-panel reveal">
+          <div class="chart-head">
+            <div class="chart-title">
+              <h3 data-i18n="chart.title">Vulnerability Assessment Severity Distribution</h3>
+              <p data-i18n="chart.subtitle">Aggregated findings verified via AsyncVulnEngine &amp; Playwright Chromium Singleton Pool</p>
+            </div>
+            <span class="chart-badge">CVSS v3.1 Baseline</span>
+          </div>
+
+          <!-- Stacked Bar -->
+          <div class="cvss-bar" role="progressbar" aria-label="Risk Severity Distribution">
+            <div class="cvss-seg crit" style="width: 7%;" title="Critical: 2 (6.7%)"></div>
+            <div class="cvss-seg high" style="width: 17%;" title="High: 5 (16.7%)"></div>
+            <div class="cvss-seg med"  style="width: 27%;" title="Medium: 8 (26.7%)"></div>
+            <div class="cvss-seg low"  style="width: 10%;" title="Low: 3 (10%)"></div>
+            <div class="cvss-seg info" style="width: 39%;" title="Informational: 12 (40%)"></div>
+          </div>
+
+          <!-- Legend with values -->
+          <div class="cvss-legend">
+            <div class="cvss-legend-item" title="Critical: SQLi Blind, Remote Execution vectors">
+              <div class="cvss-leg-left">
+                <span class="cvss-dot crit" aria-hidden="true"></span>
+                <span data-i18n="chart.crit">Critical (9.0 - 10.0)</span>
+              </div>
+              <strong class="cvss-leg-val">2</strong>
+            </div>
+            <div class="cvss-legend-item" title="High: DOM XSS, IDOR, SSRF, Cache Poisoning">
+              <div class="cvss-leg-left">
+                <span class="cvss-dot high" aria-hidden="true"></span>
+                <span data-i18n="chart.high">High (7.0 - 8.9)</span>
+              </div>
+              <strong class="cvss-leg-val">5</strong>
+            </div>
+            <div class="cvss-legend-item" title="Medium: CORS Wildcard, Proto Pollution, PostMessage">
+              <div class="cvss-leg-left">
+                <span class="cvss-dot med" aria-hidden="true"></span>
+                <span data-i18n="chart.med">Medium (4.0 - 6.9)</span>
+              </div>
+              <strong class="cvss-leg-val">8</strong>
+            </div>
+            <div class="cvss-legend-item" title="Low: Clickjacking, Missing Sec Headers">
+              <div class="cvss-leg-left">
+                <span class="cvss-dot low" aria-hidden="true"></span>
+                <span data-i18n="chart.low">Low (0.1 - 3.9)</span>
+              </div>
+              <strong class="cvss-leg-val">3</strong>
+            </div>
+            <div class="cvss-legend-item" title="Info: Origin IP Revealed, Open Ports, Endpoint Map">
+              <div class="cvss-leg-left">
+                <span class="cvss-dot info" aria-hidden="true"></span>
+                <span data-i18n="chart.info">Info / Recon</span>
+              </div>
+              <strong class="cvss-leg-val">12</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Lightbox Modal for Screenshots -->
+    <div class="lightbox-modal" id="lightbox-modal" role="dialog" aria-modal="true" aria-label="Screenshot lightbox view">
+      <div class="lightbox-content">
+        <button class="lightbox-close" id="lightbox-close" type="button" aria-label="Close image preview">✕</button>
+        <img id="lightbox-img" src="" alt="Full resolution screenshot">
+        <div class="lightbox-caption" id="lightbox-caption"></div>
+      </div>
+    </div>
+
     <section id="installation">
       <div class="wrap section">
-        <div class="section-head">
+        <div class="section-head reveal">
           <p class="eyebrow" data-i18n="install.eyebrow">Getting started</p>
           <h2 data-i18n="install.title">Three steps to a working install.</h2>
-          <p class="section-intro" data-i18n="install.intro">Requires Linux or macOS, Python 3.10+, and 2 GB+ of memory. Commands below match the current README.</p>
+          <p class="section-intro" data-i18n="install.intro">Requires Linux or macOS, Python 3.12+, and 2 GB+ of memory. Commands below match the current README.</p>
         </div>
-        <div class="detail-grid">
+        <div class="detail-grid reveal">
           <div class="code-card">
             <div class="code-title code-row">
               <div class="tabs" role="group" aria-label="Clone method">
-                <button type="button" aria-pressed="true" data-cmd="git clone https://github.com/Sambaskara/Verdamt-Snipe.git">HTTPS</button>
-                <button type="button" aria-pressed="false" data-cmd="git clone git@github.com:Sambaskara/Verdamt-Snipe.git">SSH</button>
-                <button type="button" aria-pressed="false" data-cmd="gh repo clone Sambaskara/Verdamt-Snipe">GitHub CLI</button>
+                <button type="button" aria-pressed="true" data-cmd="git clone https://github.com/Samasta-Baskara/Verdamt-Snipe.git">HTTPS</button>
+                <button type="button" aria-pressed="false" data-cmd="git clone git@github.com:Samasta-Baskara/Verdamt-Snipe.git">SSH</button>
+                <button type="button" aria-pressed="false" data-cmd="gh repo clone Samasta-Baskara/Verdamt-Snipe">GitHub CLI</button>
               </div>
-              <button class="copy" id="copy-clone" type="button" data-copy="git clone https://github.com/Sambaskara/Verdamt-Snipe.git" aria-label="Copy clone command" aria-live="polite" data-i18n="ui.copy">Copy command</button>
+              <button class="copy" id="copy-clone" type="button" data-copy="git clone https://github.com/Samasta-Baskara/Verdamt-Snipe.git" aria-label="Copy clone command" aria-live="polite" data-i18n="ui.copy">Copy command</button>
             </div>
-            <pre id="clone-cmd">git clone https://github.com/Sambaskara/Verdamt-Snipe.git</pre>
+            <pre id="clone-cmd">git clone https://github.com/Samasta-Baskara/Verdamt-Snipe.git</pre>
           </div>
           <div class="steps">
             <div class="step"><span class="step-num">1</span><div><strong data-i18n="install.s1.title">Clone the project</strong><p data-i18n="install.s1.desc">Get the source from GitHub using one of the methods above.</p></div></div>
@@ -550,29 +668,29 @@ python3 verd.py --resume outputs/target.com.state</pre>
 
     <section id="faq">
       <div class="wrap section">
-        <div class="section-head">
+        <div class="section-head reveal">
           <p class="eyebrow" data-i18n="faq.eyebrow">Questions</p>
           <h2 data-i18n="faq.title">Quick answers.</h2>
         </div>
-        <div class="faq">
-          <details><summary data-i18n="faq.q1">Who builds Verdamt-Snipe?</summary><p data-i18n="faq.a1">It's a personal project by Samasta Baskara, developed and shared openly on GitHub.</p></details>
-          <details><summary data-i18n="faq.q2">What does a scan actually do?</summary><p data-i18n="faq.a2">It runs one of seven modes — from passive recon to a full vulnerability assault — combining an async Python engine, a Go native bridge, and Playwright-based verification in a real browser.</p></details>
-          <details><summary data-i18n="faq.q3">Which systems may I scan?</summary><p data-i18n="faq.a3">Only systems you own or are explicitly authorized to test. Validate every finding manually before treating it as confirmed.</p></details>
-          <details><summary data-i18n="faq.q4">Where are the current flags and options?</summary><p data-i18n="faq.a4">In the project README — the terminal preview on this page is illustrative only.</p></details>
+        <div class="faq reveal">
+          <details><summary data-i18n="faq.q1">Who builds Verdamt-Snipe?</summary><div class="faq-body"><p data-i18n="faq.a1">It's a personal project by Samasta Baskara, developed and shared openly on GitHub.</p></div></details>
+          <details><summary data-i18n="faq.q2">What does a scan actually do?</summary><div class="faq-body"><p data-i18n="faq.a2">It runs one of seven modes — from passive recon to a full vulnerability assault — combining an async Python engine, a Go native bridge, and Playwright-based verification in a real browser.</p></div></details>
+          <details><summary data-i18n="faq.q3">Which systems may I scan?</summary><div class="faq-body"><p data-i18n="faq.a3">Only systems you own or are explicitly authorized to test. Validate every finding manually before treating it as confirmed.</p></div></details>
+          <details><summary data-i18n="faq.q4">Where are the current flags and options?</summary><div class="faq-body"><p data-i18n="faq.a4">In the project README — the terminal preview on this page is illustrative only.</p></div></details>
         </div>
       </div>
     </section>
 
     <section id="about">
       <div class="wrap section">
-        <div class="closing">
+        <div class="closing reveal">
           <div>
             <p class="eyebrow" data-i18n="about.eyebrow">Explore the project</p>
             <h2 data-i18n="about.title">Built in the open.</h2>
             <p class="quote">“Silent · Precise · Relentless.” — Samasta Baskara</p>
             <p><span data-i18n="about.p1">Verdamt-Snipe is a personal project by</span> <strong>Samasta Baskara</strong><span data-i18n="about.p2">, developed as an async-first security framework and shared as open source. Visit the repository for source, releases, and updates.</span></p>
           </div>
-          <a class="button primary" href="https://github.com/Sambaskara/Verdamt-Snipe" target="_blank" rel="noreferrer"><span data-i18n="about.cta">View Verdamt-Snipe</span> <span aria-hidden="true">↗</span></a>
+          <a class="button primary" href="https://github.com/Samasta-Baskara/Verdamt-Snipe" target="_blank" rel="noreferrer"><span data-i18n="about.cta">View Verdamt-Snipe</span> <span aria-hidden="true">↗</span></a>
         </div>
       </div>
     </section>
@@ -582,277 +700,17 @@ python3 verd.py --resume outputs/target.com.state</pre>
     <div class="wrap footer-row">
       <p class="footer-note">© <span id="year">2026</span> Verdamt-Snipe · <span data-i18n="footer.byline">a personal project by</span> <strong>Samasta Baskara</strong></p>
       <nav class="footer-links" aria-label="Footer navigation">
-        <a href="https://github.com/Sambaskara/Verdamt-Snipe" target="_blank" rel="noreferrer">GitHub</a>
-        <a href="https://github.com/Sambaskara/Verdamt-Snipe#readme" target="_blank" rel="noreferrer" data-i18n="footer.docs">Documentation</a>
-        <a href="https://github.com/Sambaskara/Verdamt-Snipe/blob/main/LICENSE" target="_blank" rel="noreferrer" data-i18n="footer.license">License</a>
+        <a href="https://github.com/Samasta-Baskara/Verdamt-Snipe" target="_blank" rel="noreferrer">GitHub</a>
+        <a href="https://github.com/Samasta-Baskara/Verdamt-Snipe#readme" target="_blank" rel="noreferrer" data-i18n="footer.docs">Documentation</a>
+        <a href="https://github.com/Samasta-Baskara/Verdamt-Snipe/blob/main/LICENSE" target="_blank" rel="noreferrer" data-i18n="footer.license">License</a>
       </nav>
     </div>
   </footer>
 
   <button class="to-top" id="to-top" type="button" aria-label="Back to top">↑</button>
 
-  <script>
-  (function () {
-    var $ = function (q) { return document.querySelector(q); };
-    var $$ = function (q) { return Array.prototype.slice.call(document.querySelectorAll(q)); };
-    $("#year").textContent = new Date().getFullYear();
-
-    /* ---------- i18n ---------- */
-    var DICT = {
-      en: {
-        "nav.features": "Features", "nav.workflow": "Workflow", "nav.installation": "Installation",
-        "nav.faq": "FAQ", "nav.about": "About", "nav.cta": "View on GitHub",
-        "hero.eyebrow": "Open source · Python AsyncIO + Go",
-        "hero.title": "A clearer way to explore web security.",
-        "hero.lead": "Verdamt-Snipe is an async-first reconnaissance and vulnerability assessment framework: a Python AsyncIO engine paired with a Go native bridge, TLS fingerprint impersonation, and a Playwright suite that verifies findings in a real browser.",
-        "hero.cta1": "Explore repository", "hero.cta2": "Read documentation",
-        "hero.byline1": "A personal project by", "hero.byline2": ", built and maintained in the open.",
-        "terminal.label": "terminal preview",
-        "terminal.note": "Illustrative preview — see the README for current flags and output.",
-        "features.eyebrow": "Under the hood", "features.title": "Six pieces, one pipeline.",
-        "features.intro": "What actually powers a scan, from the network layer to browser-based verification.",
-        "features.f1.title": "Async network engine",
-        "features.f1.desc": "Python AsyncIO plus HTTP/2 via httpx, with host rate-limiting and a circuit breaker for thousands of concurrent requests.",
-        "features.f2.title": "TLS impersonation",
-        "features.f2.desc": "JA3/JA4 fingerprint spoofing via curl_cffi, so traffic presents as a real browser to anti-bot defenses and WAFs.",
-        "features.f3.title": "Go native bridge",
-        "features.f3.desc": "Hands fuzzing straight to Go binaries — subfinder, httpx, katana, nuclei, dalfox, gau — for native throughput.",
-        "features.f4.title": "Playwright verification",
-        "features.f4.desc": "Ten browser-based modules confirm findings live: DOM XSS, CSRF, postMessage leaks, clickjacking, and more.",
-        "features.f5.title": "Tactical TUI dashboard",
-        "features.f5.desc": "A three-column terminal view refreshed at 15 FPS: pipeline stage, request-rate sparkline, and finding severity.",
-        "features.f6.title": "Policy & audit engine",
-        "features.f6.desc": "Scope locks, request budgets, and a replayable .jsonl audit log that reconstructs every request as curl.",
-        "workflow.eyebrow": "A practical pipeline",
-        "workflow.title": "Recon, then app analysis, then assault.",
-        "workflow.p": "Verdamt-Snipe runs seven scan modes on top of one pipeline, from passive intelligence gathering to a full vulnerability assault. The repository README is the source of truth for current flags and behavior.",
-        "workflow.l1": "Start with --dry-run to validate payloads without sending traffic.",
-        "workflow.l2": "Use --passive to restrict requests to GET, HEAD, and OPTIONS.",
-        "workflow.l3": "Review the .jsonl audit log, replayable as curl for reporting.",
-        "workflow.codeTitle": "Usage examples",
-        "install.eyebrow": "Getting started", "install.title": "Three steps to a working install.",
-        "install.intro": "Requires Linux or macOS, Python 3.10+, and 2 GB+ of memory. Commands below match the current README.",
-        "install.s1.title": "Clone the project", "install.s1.desc": "Get the source from GitHub using one of the methods above.",
-        "install.s2.title": "Set up a virtual environment", "install.s2.lead": "Install dependencies inside an isolated environment:",
-        "install.s3.title": "Install the Playwright driver", "install.s3.lead": "Required for the browser-based verification modules:",
-        "install.notice": "Use Verdamt-Snipe only on systems you own or have explicit authorization to test — a bug bounty program or a signed penetration-testing agreement. Always stay within scope.",
-        "faq.eyebrow": "Questions", "faq.title": "Quick answers.",
-        "faq.q1": "Who builds Verdamt-Snipe?", "faq.a1": "It's a personal project by Samasta Baskara, developed and shared openly on GitHub.",
-        "faq.q2": "What does a scan actually do?", "faq.a2": "It runs one of seven modes — from passive recon to a full vulnerability assault — combining an async Python engine, a Go native bridge, and Playwright-based verification in a real browser.",
-        "faq.q3": "Which systems may I scan?", "faq.a3": "Only systems you own or are explicitly authorized to test. Validate every finding manually before treating it as confirmed.",
-        "faq.q4": "Where are the current flags and options?", "faq.a4": "In the project README — the terminal preview on this page is illustrative only.",
-        "about.eyebrow": "Explore the project", "about.title": "Built in the open.",
-        "about.p1": "Verdamt-Snipe is a personal project by",
-        "about.p2": ", developed as an async-first security framework and shared as open source. Visit the repository for source, releases, and updates.",
-        "about.cta": "View Verdamt-Snipe",
-        "footer.byline": "a personal project by", "footer.docs": "Documentation", "footer.license": "License",
-        "ui.copy": "Copy command", "ui.copyAll": "Copy all", "ui.copied": "Copied", "ui.copyFailed": "Copy failed",
-        "ui.meterStart": "Tap a step to mark it done · 0 of 3", "ui.meterDone": "All steps done. Open the README to continue."
-      },
-      id: {
-        "nav.features": "Fitur", "nav.workflow": "Alur Kerja", "nav.installation": "Instalasi",
-        "nav.faq": "FAQ", "nav.about": "Tentang", "nav.cta": "Lihat di GitHub",
-        "hero.eyebrow": "Sumber terbuka · Python AsyncIO + Go",
-        "hero.title": "Cara yang lebih jernih untuk menjelajahi keamanan web.",
-        "hero.lead": "Verdamt-Snipe adalah framework rekognisi dan asesmen kerentanan berbasis async: mesin Python AsyncIO yang dipadukan dengan Go native bridge, TLS fingerprint impersonation, dan Playwright suite yang memverifikasi temuan langsung di browser.",
-        "hero.cta1": "Jelajahi repository", "hero.cta2": "Baca dokumentasi",
-        "hero.byline1": "Proyek pribadi oleh", "hero.byline2": ", dibangun dan dirawat secara terbuka.",
-        "terminal.label": "pratinjau terminal",
-        "terminal.note": "Pratinjau ilustratif — lihat README untuk flag dan output terkini.",
-        "features.eyebrow": "Di balik layar", "features.title": "Enam komponen, satu alur kerja.",
-        "features.intro": "Yang benar-benar menjalankan sebuah scan, dari lapisan jaringan hingga verifikasi berbasis browser.",
-        "features.f1.title": "Mesin jaringan async",
-        "features.f1.desc": "Python AsyncIO ditambah HTTP/2 lewat httpx, dengan rate-limiting per host dan circuit breaker untuk ribuan request bersamaan.",
-        "features.f2.title": "TLS impersonation",
-        "features.f2.desc": "Spoofing fingerprint JA3/JA4 lewat curl_cffi, sehingga traffic tampil seperti browser asli di hadapan WAF dan proteksi anti-bot.",
-        "features.f3.title": "Go native bridge",
-        "features.f3.desc": "Meneruskan fuzzing langsung ke binary Go — subfinder, httpx, katana, nuclei, dalfox, gau — untuk throughput native.",
-        "features.f4.title": "Verifikasi Playwright",
-        "features.f4.desc": "Sepuluh modul berbasis browser memverifikasi temuan secara langsung: DOM XSS, CSRF, kebocoran postMessage, clickjacking, dan lainnya.",
-        "features.f5.title": "Dasbor TUI taktis",
-        "features.f5.desc": "Tampilan terminal tiga kolom yang diperbarui 15 FPS: tahap pipeline, grafik kecepatan request, dan tingkat keparahan temuan.",
-        "features.f6.title": "Mesin policy & audit",
-        "features.f6.desc": "Penguncian scope, budget request, dan log audit .jsonl yang bisa direplay ulang menjadi perintah curl.",
-        "workflow.eyebrow": "Alur kerja praktis",
-        "workflow.title": "Recon, lalu analisis app, lalu assault.",
-        "workflow.p": "Verdamt-Snipe menjalankan tujuh mode pemindaian di atas satu pipeline, dari pengumpulan intelijen pasif hingga vulnerability assault penuh. README repository adalah sumber kebenaran untuk flag dan perilaku terkini.",
-        "workflow.l1": "Mulai dengan --dry-run untuk memvalidasi payload tanpa mengirim traffic.",
-        "workflow.l2": "Gunakan --passive untuk membatasi request hanya pada GET, HEAD, dan OPTIONS.",
-        "workflow.l3": "Tinjau log audit .jsonl, yang bisa direplay sebagai curl untuk pelaporan.",
-        "workflow.codeTitle": "Contoh pemakaian",
-        "install.eyebrow": "Mulai di sini", "install.title": "Tiga langkah untuk instalasi yang siap pakai.",
-        "install.intro": "Membutuhkan Linux atau macOS, Python 3.10+, dan memori 2 GB+. Perintah di bawah mengikuti README terkini.",
-        "install.s1.title": "Clone proyek", "install.s1.desc": "Ambil source code dari GitHub lewat salah satu cara di atas.",
-        "install.s2.title": "Siapkan virtual environment", "install.s2.lead": "Install dependensi di dalam environment terisolasi:",
-        "install.s3.title": "Install driver Playwright", "install.s3.lead": "Diperlukan untuk modul verifikasi berbasis browser:",
-        "install.notice": "Gunakan Verdamt-Snipe hanya pada sistem yang Anda miliki atau telah mendapat izin resmi untuk diuji — program bug bounty atau perjanjian pentest tertulis. Selalu patuhi batas scope.",
-        "faq.eyebrow": "Pertanyaan", "faq.title": "Jawaban singkat.",
-        "faq.q1": "Siapa yang membuat Verdamt-Snipe?", "faq.a1": "Ini adalah proyek pribadi Samasta Baskara, dikembangkan dan dibagikan secara terbuka di GitHub.",
-        "faq.q2": "Apa yang sebenarnya dilakukan saat scan?", "faq.a2": "Menjalankan salah satu dari tujuh mode — dari recon pasif hingga vulnerability assault penuh — menggabungkan mesin Python async, Go native bridge, dan verifikasi berbasis Playwright di browser sungguhan.",
-        "faq.q3": "Sistem mana saja yang boleh saya scan?", "faq.a3": "Hanya sistem yang Anda miliki atau yang secara eksplisit mengizinkan pengujian. Validasi setiap temuan secara manual sebelum dianggap terkonfirmasi.",
-        "faq.q4": "Di mana flag dan opsi terkini?", "faq.a4": "Di README proyek — pratinjau terminal di halaman ini hanya ilustrasi.",
-        "about.eyebrow": "Jelajahi proyek", "about.title": "Dibangun secara terbuka.",
-        "about.p1": "Verdamt-Snipe adalah proyek pribadi",
-        "about.p2": ", dikembangkan sebagai framework keamanan berbasis async dan dibagikan sebagai open source. Kunjungi repository untuk source code, rilis, dan pembaruan.",
-        "about.cta": "Lihat Verdamt-Snipe",
-        "footer.byline": "proyek pribadi", "footer.docs": "Dokumentasi", "footer.license": "Lisensi",
-        "ui.copy": "Salin perintah", "ui.copyAll": "Salin semua", "ui.copied": "Tersalin", "ui.copyFailed": "Gagal menyalin",
-        "ui.meterStart": "Ketuk langkah untuk menandainya selesai · 0 dari 3", "ui.meterDone": "Semua langkah selesai. Buka README untuk melanjutkan."
-      }
-    };
-    var lang = (function () { try { return localStorage.getItem("vs-lang") || "en"; } catch (e) { return "en"; } })();
-    var langBtn = $("#lang-toggle");
-    function translate(l) {
-      lang = l;
-      $$("[data-i18n]").forEach(function (el) {
-        var key = el.getAttribute("data-i18n"), v = DICT[l][key];
-        if (v != null) el.textContent = v;
-      });
-      langBtn.textContent = l === "en" ? "ID" : "EN";
-      langBtn.setAttribute("aria-label", "Switch language to " + (l === "en" ? "Indonesian" : "English"));
-      document.documentElement.lang = l;
-      refreshMeter();
-    }
-    langBtn.addEventListener("click", function () {
-      var next = lang === "en" ? "id" : "en";
-      translate(next);
-      try { localStorage.setItem("vs-lang", next); } catch (e) {}
-    });
-
-    /* ---------- Theme ---------- */
-    var root = document.documentElement, tbtn = $("#theme-toggle"), meta = $('meta[name="theme-color"]');
-    function applyTheme(t) {
-      root.dataset.theme = t;
-      tbtn.textContent = t === "dark" ? "☀" : "☾";
-      tbtn.setAttribute("aria-label", "Switch to " + (t === "dark" ? "light" : "dark") + " theme");
-      meta.content = t === "dark" ? "#121512" : "#f7f7f5";
-    }
-    applyTheme(root.dataset.theme || "light");
-    tbtn.addEventListener("click", function () {
-      var n = root.dataset.theme === "dark" ? "light" : "dark";
-      applyTheme(n);
-      try { localStorage.setItem("vs-theme", n); } catch (e) {}
-    });
-
-    /* ---------- Mobile menu ---------- */
-    var menuBtn = $("#menu-btn"), navl = $("#nav-links");
-    function setMenu(open) {
-      navl.classList.toggle("open", open);
-      menuBtn.setAttribute("aria-expanded", String(open));
-      menuBtn.textContent = open ? "✕" : "☰";
-    }
-    menuBtn.addEventListener("click", function () { setMenu(!navl.classList.contains("open")); });
-    navl.addEventListener("click", function (e) { if (e.target.closest("a")) setMenu(false); });
-    document.addEventListener("keydown", function (e) {
-      if (e.key === "Escape" && navl.classList.contains("open")) { setMenu(false); menuBtn.focus(); }
-    });
-
-    /* ---------- Scroll progress + back-to-top ---------- */
-    var bar = $("#progress"), toTop = $("#to-top");
-    function onScroll() {
-      var max = root.scrollHeight - window.innerHeight;
-      bar.style.transform = "scaleX(" + (max > 0 ? window.scrollY / max : 0) + ")";
-      toTop.classList.toggle("show", window.scrollY > 600);
-    }
-    window.addEventListener("scroll", onScroll, { passive: true });
-    onScroll();
-    toTop.addEventListener("click", function () { window.scrollTo({ top: 0 }); });
-
-    /* ---------- Scroll-spy ---------- */
-    if ("IntersectionObserver" in window) {
-      var links = $$(".navlinks a");
-      var spy = new IntersectionObserver(function (es) {
-        es.forEach(function (e) {
-          if (!e.isIntersecting) return;
-          links.forEach(function (a) { a.classList.toggle("active", a.getAttribute("href") === "#" + e.target.id); });
-        });
-      }, { rootMargin: "-40% 0px -55% 0px" });
-      $$("main section[id]").forEach(function (sec) { spy.observe(sec); });
-    }
-
-    /* ---------- Terminal: line-by-line replay ---------- */
-    var term = $(".terminal pre"), lines = term.innerHTML.split("\n");
-    var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    function play() {
-      term.style.minHeight = "";
-      term.innerHTML = lines.join("\n");
-      if (reduce) return;
-      term.style.minHeight = term.offsetHeight + "px";
-      var n = 0;
-      term.innerHTML = "";
-      (function next() {
-        n++;
-        term.innerHTML = lines.slice(0, n).join("\n");
-        if (n < lines.length) setTimeout(next, n === 1 ? 500 : (n % 2 ? 90 : 55));
-      })();
-    }
-    var played = false;
-    if ("IntersectionObserver" in window) {
-      var tio = new IntersectionObserver(function (es) {
-        if (es[0].isIntersecting && !played) { played = true; play(); tio.disconnect(); }
-      }, { threshold: .4 });
-      tio.observe($(".terminal"));
-    }
-    $("#replay").addEventListener("click", play);
-
-    /* ---------- Copy buttons ---------- */
-    function copyText(v) {
-      return navigator.clipboard.writeText(v).then(function () { return true; }).catch(function () {
-        var t = document.createElement("textarea");
-        t.value = v; t.style.cssText = "position:fixed;opacity:0";
-        document.body.appendChild(t); t.select();
-        var ok = false;
-        try { ok = document.execCommand("copy"); } catch (e) {}
-        t.remove();
-        return ok;
-      });
-    }
-    $$("[data-copy]").forEach(function (b) {
-      b.addEventListener("click", function () {
-        var idle = b.textContent;
-        copyText(b.getAttribute("data-copy")).then(function (ok) {
-          b.textContent = ok ? DICT[lang]["ui.copied"] : DICT[lang]["ui.copyFailed"];
-          setTimeout(function () { b.textContent = idle; }, 1500);
-        });
-      });
-    });
-
-    /* ---------- Clone method tabs ---------- */
-    var cloneCmd = $("#clone-cmd"), cloneCopy = $("#copy-clone");
-    $$(".tabs button").forEach(function (b) {
-      b.addEventListener("click", function () {
-        $$(".tabs button").forEach(function (x) { x.setAttribute("aria-pressed", String(x === b)); });
-        cloneCmd.textContent = b.dataset.cmd;
-        cloneCopy.setAttribute("data-copy", b.dataset.cmd);
-      });
-    });
-
-    /* ---------- Setup checklist ---------- */
-    var steps = $$(".step"), mbar = $("#meter-bar"), mtext = $("#meter-text");
-    function refreshMeter() {
-      var d = steps.filter(function (x) { return x.classList.contains("done"); }).length;
-      mbar.style.width = (d / steps.length * 100) + "%";
-      mtext.textContent = d === steps.length ? DICT[lang]["ui.meterDone"] : DICT[lang]["ui.meterStart"].replace(/[\d]+ (of|dari) \d/, d + (lang === "en" ? " of " : " dari ") + steps.length);
-    }
-    steps.forEach(function (st, idx) {
-      var num = st.querySelector(".step-num");
-      st.tabIndex = 0;
-      st.setAttribute("role", "checkbox");
-      st.setAttribute("aria-checked", "false");
-      function toggle() {
-        var on = st.classList.toggle("done");
-        st.setAttribute("aria-checked", String(on));
-        num.textContent = on ? "✓" : String(idx + 1);
-        refreshMeter();
-      }
-      st.addEventListener("click", toggle);
-      st.addEventListener("keydown", function (e) {
-        if (e.key === " " || e.key === "Enter") { e.preventDefault(); toggle(); }
-      });
-    });
-
-    translate(lang);
-  })();
-  </script>
+  <script src="assets/js/main.js" defer></script>
+  <script src="assets/js/navigation.js" defer></script>
+  <script src="assets/js/animations.js" defer></script>
 </body>
 </html>
