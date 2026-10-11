@@ -1,0 +1,163 @@
+/* ==========================================================================
+   VERDAMT-SNIPE — THEME & COLOR SYSTEM
+   Dark Emerald × Metallic Gold × Obsidian Black with Restrained Glassmorphism
+   ========================================================================== */
+
+:root {
+  color-scheme: dark;
+
+  /* --- Obsidian Black & Dark Forest Core --- */
+  --bg-primary: #080B0A;
+  --bg-surface: #151D19;
+  --bg-surface-elevated: #1a241f;
+  --bg-soft: #121915;
+  --bg-solid-code: #0b100d;
+
+  /* --- Typography --- */
+  --text-primary: #F0F3F0;
+  --text-secondary: #A5ACA8;
+  --text-muted: #727e77;
+
+  /* --- Borders & Dividers --- */
+  --border-subtle: #304137;
+  --border-strong: #3d5246;
+
+  /* --- Primary Accent: Emerald Neon --- */
+  --accent-emerald: #00D68F;
+  --accent-emerald-hover: #1affab;
+  --accent-emerald-dim: #008f60;
+  --emerald-glow: rgba(0, 214, 143, 0.22);
+  --emerald-glow-strong: rgba(0, 214, 143, 0.45);
+
+  /* --- Secondary Accent: Metallic Gold & Champagne --- */
+  --accent-gold: #D4AF37;
+  --accent-gold-hover: #e5c358;
+  --gold-highlight: #FFF1A8;
+  --gold-dark: #8C6818;
+  --gold-gradient: linear-gradient(135deg, #8C6818 0%, #D4AF37 38%, #FFF1A8 62%, #D4AF37 100%);
+  --gold-glow: rgba(212, 175, 55, 0.28);
+  --gold-glow-strong: rgba(212, 175, 55, 0.5);
+
+  /* --- Restrained Glassmorphism Tokens --- */
+  --glass-bg: rgba(21, 29, 25, 0.65);
+  --glass-bg-heavy: rgba(15, 22, 18, 0.85);
+  --glass-blur: blur(10px) saturate(180%);
+  --glass-border: 1px solid rgba(48, 65, 55, 0.7);
+  --glass-border-hover: 1px solid rgba(0, 214, 143, 0.45);
+
+  /* --- Backward-Compatible Standard Tokens --- */
+  --page: var(--bg-primary);
+  --surface: var(--bg-surface);
+  --ink: var(--text-primary);
+  --muted: var(--text-secondary);
+  --line: var(--border-subtle);
+  --soft: var(--bg-soft);
+  --accent: var(--accent-emerald);
+  --accent-hover: var(--accent-emerald-hover);
+  --accent-glow: var(--emerald-glow);
+
+  --radius: 18px;
+  --radius-sm: 10px;
+  --radius-lg: 24px;
+  --radius-pill: 999px;
+  --width: 1080px;
+}
+
+/* Explicit Dark Mode Overrides (matches :root) */
+[data-theme="dark"] {
+  color-scheme: dark;
+  --bg-primary: #080B0A;
+  --bg-surface: #151D19;
+  --bg-surface-elevated: #1a241f;
+  --bg-soft: #121915;
+  --bg-solid-code: #0b100d;
+  --text-primary: #F0F3F0;
+  --text-secondary: #A5ACA8;
+  --border-subtle: #304137;
+  --accent-emerald: #00D68F;
+  --accent-gold: #D4AF37;
+  --glass-bg: rgba(21, 29, 25, 0.65);
+  --glass-bg-heavy: rgba(15, 22, 18, 0.85);
+}
+
+/* Light Theme (Clean Crisp Companion Theme) */
+[data-theme="light"] {
+  color-scheme: light;
+  --bg-primary: #f5f8f6;
+  --bg-surface: #ffffff;
+  --bg-surface-elevated: #f0f4f1;
+  --bg-soft: #eaf0ec;
+  --bg-solid-code: #0c120f;
+  --text-primary: #0d1410;
+  --text-secondary: #4d5c52;
+  --text-muted: #728277;
+  --border-subtle: #d2ddd6;
+  --border-strong: #b5c7bd;
+  --accent-emerald: #009e69;
+  --accent-emerald-hover: #008055;
+  --accent-gold: #b38b1f;
+  --accent-gold-hover: #967417;
+  --gold-highlight: #fff2b2;
+  --gold-dark: #7a5a12;
+  --gold-gradient: linear-gradient(135deg, #7a5a12 0%, #b38b1f 38%, #f7df7e 62%, #b38b1f 100%);
+  --gold-glow: rgba(179, 139, 31, 0.2);
+  --glass-bg: rgba(255, 255, 255, 0.78);
+  --glass-bg-heavy: rgba(245, 248, 246, 0.92);
+  --glass-border: 1px solid rgba(210, 221, 214, 0.85);
+  --glass-border-hover: 1px solid rgba(0, 158, 105, 0.4);
+
+  --page: var(--bg-primary);
+  --surface: var(--bg-surface);
+  --ink: var(--text-primary);
+  --muted: var(--text-secondary);
+  --line: var(--border-subtle);
+  --soft: var(--bg-soft);
+  --accent: var(--accent-emerald);
+  --accent-hover: var(--accent-emerald-hover);
+  --accent-glow: rgba(0, 158, 105, 0.16);
+}
+
+/* --- Utility Decorators: Gold Metallic Accents --- */
+.gold-text {
+  background: var(--gold-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 750;
+}
+
+.gold-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  font-weight: 750;
+  padding: 3px 9px;
+  border-radius: var(--radius-pill);
+  background: rgba(212, 175, 55, 0.12);
+  color: var(--accent-gold);
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  box-shadow: 0 0 12px rgba(212, 175, 55, 0.12);
+}
+
+.emerald-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  font-weight: 750;
+  padding: 3px 9px;
+  border-radius: var(--radius-pill);
+  background: rgba(0, 214, 143, 0.12);
+  color: var(--accent-emerald);
+  border: 1px solid rgba(0, 214, 143, 0.35);
+  box-shadow: 0 0 12px rgba(0, 214, 143, 0.15);
+}
+
+.glass-panel {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: var(--glass-border);
+}
